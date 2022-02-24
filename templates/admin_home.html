@@ -1,0 +1,41 @@
+{%  load static %}
+
+{%   block body %}
+
+{%   include 'admin_navigation.html'%}
+
+<style>
+    .mydiv:hover{
+        box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        transform: translateY(-20px);
+    }
+</style>
+
+<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%;">
+    Admin Home
+</marquee>
+
+<hr>
+
+<div class="container mt-5">
+    <br><br>
+    <div class="row ">
+        <div class="col-sm-6 mydiv">
+            <h4 class="text-center font-weight-bold"><i class="fa fa-user" aria-hidden="true"></i> Total Recruiters</h4>
+            <p class="text-center font-weight-bold">{{rcount}}</p>
+
+        </div>
+
+        <div class="col-sm-6 mydiv">
+            <h4 class="text-center font-weight-bold "><i class="fa fa-user" aria-hidden="true"></i> Total Users</h4>
+            <p class="text-center font-weight-bold">{{scount}}</p>
+
+        </div>
+
+        
+    </div>
+
+</div>
+
+
+{%   endblock %}

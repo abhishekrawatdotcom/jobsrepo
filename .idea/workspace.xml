@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="244d6680-9724-4704-b2cb-afd37bfbe493" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="24hCViRCKY7ue7wlt6gLdXgzXwY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="jobpro" type="Python.DjangoServer" factoryName="Django server">
+      <module name="jobpro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="jobpro.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="244d6680-9724-4704-b2cb-afd37bfbe493" name="Default Changelist" comment="" />
+      <created>1644073456280</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644073456280</updated>
+      <workItem from="1644073614227" duration="519000" />
+      <workItem from="1644074190848" duration="254000" />
+      <workItem from="1644074517581" duration="433000" />
+      <workItem from="1644075051632" duration="392000" />
+      <workItem from="1644075482412" duration="112000" />
+      <workItem from="1644075660928" duration="202000" />
+      <workItem from="1644075892340" duration="8000" />
+      <workItem from="1644075916868" duration="7000" />
+      <workItem from="1644075952452" duration="130000" />
+      <workItem from="1644076129047" duration="143000" />
+      <workItem from="1644076327080" duration="258000" />
+      <workItem from="1644076616829" duration="261000" />
+      <workItem from="1644076900653" duration="418000" />
+      <workItem from="1644077369576" duration="727000" />
+      <workItem from="1644078143802" duration="1766000" />
+      <workItem from="1644079981472" duration="92000" />
+      <workItem from="1644080329629" duration="150000" />
+      <workItem from="1644080574001" duration="53000" />
+      <workItem from="1644080720301" duration="408000" />
+      <workItem from="1644086549548" duration="1326000" />
+      <workItem from="1644128226817" duration="949000" />
+      <workItem from="1644133847822" duration="1813000" />
+      <workItem from="1644135712323" duration="631000" />
+      <workItem from="1644136622352" duration="65000" />
+      <workItem from="1644136718689" duration="782000" />
+      <workItem from="1644137555270" duration="585000" />
+      <workItem from="1644142334308" duration="1721000" />
+      <workItem from="1644170117481" duration="962000" />
+      <workItem from="1644244314852" duration="332000" />
+      <workItem from="1644244900696" duration="946000" />
+      <workItem from="1644245933796" duration="122000" />
+      <workItem from="1644246118547" duration="1750000" />
+      <workItem from="1644247914838" duration="1552000" />
+      <workItem from="1644250512766" duration="969000" />
+      <workItem from="1644251651237" duration="601000" />
+      <workItem from="1644252299552" duration="1263000" />
+      <workItem from="1644333964962" duration="1726000" />
+      <workItem from="1644341281179" duration="1747000" />
+      <workItem from="1644343363789" duration="1772000" />
+      <workItem from="1644345184259" duration="1786000" />
+      <workItem from="1644423688661" duration="618000" />
+      <workItem from="1644601833223" duration="1707000" />
+      <workItem from="1644603638585" duration="1769000" />
+      <workItem from="1644605472189" duration="1761000" />
+      <workItem from="1644607309315" duration="1051000" />
+      <workItem from="1644636573908" duration="1715000" />
+      <workItem from="1644638350447" duration="1761000" />
+      <workItem from="1644640160311" duration="1340000" />
+      <workItem from="1644670650084" duration="1719000" />
+      <workItem from="1644672456557" duration="699000" />
+      <workItem from="1644683970499" duration="1715000" />
+      <workItem from="1644685783679" duration="1751000" />
+      <workItem from="1644687775198" duration="1480000" />
+      <workItem from="1644737461831" duration="1708000" />
+      <workItem from="1644739267089" duration="1473000" />
+      <workItem from="1644773242030" duration="1212000" />
+      <workItem from="1644856757807" duration="1717000" />
+      <workItem from="1644858562563" duration="1749000" />
+      <workItem from="1644860398285" duration="1753000" />
+      <workItem from="1644942083484" duration="1737000" />
+      <workItem from="1644943870603" duration="1326000" />
+      <workItem from="1644947002010" duration="625000" />
+      <workItem from="1645031441569" duration="1722000" />
+      <workItem from="1645033251932" duration="1842000" />
+      <workItem from="1645035422141" duration="1361000" />
+      <workItem from="1645122677134" duration="1283000" />
+      <workItem from="1645192065598" duration="1707000" />
+      <workItem from="1645193827365" duration="1710000" />
+      <workItem from="1645195652925" duration="1519000" />
+      <workItem from="1645198091259" duration="107000" />
+      <workItem from="1645377316756" duration="1723000" />
+      <workItem from="1645379094062" duration="1776000" />
+      <workItem from="1645380928804" duration="1901000" />
+      <workItem from="1645409749378" duration="1734000" />
+      <workItem from="1645411536917" duration="97000" />
+      <workItem from="1645419683346" duration="1416000" />
+      <workItem from="1645421480480" duration="1770000" />
+      <workItem from="1645423330483" duration="973000" />
+      <workItem from="1645427705503" duration="1772000" />
+      <workItem from="1645429578747" duration="1599000" />
+      <workItem from="1645435209675" duration="809000" />
+      <workItem from="1645458896803" duration="1412000" />
+      <workItem from="1645460681562" duration="1728000" />
+      <workItem from="1645462520158" duration="867000" />
+      <workItem from="1645465166957" duration="1649000" />
+      <workItem from="1645467028115" duration="1139000" />
+      <workItem from="1645530780649" duration="1715000" />
+      <workItem from="1645532560101" duration="1828000" />
+      <workItem from="1645534439587" duration="888000" />
+      <workItem from="1645623927914" duration="1757000" />
+      <workItem from="1645634902337" duration="913000" />
+      <workItem from="1645636683517" duration="95000" />
+      <workItem from="1645712172016" duration="663000" />
+      <workItem from="1645713095720" duration="204000" />
+      <workItem from="1645713910749" duration="637000" />
+      <workItem from="1645717406422" duration="495000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1306" height="204" key="GridCell.Tab.0.bottom" timestamp="1645635217052">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="204" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1645635217052" />
+    <state width="1306" height="204" key="GridCell.Tab.0.center" timestamp="1645635217044">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="204" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1645635217044" />
+    <state width="1306" height="204" key="GridCell.Tab.0.left" timestamp="1645635217044">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="204" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1645635217044" />
+    <state width="1306" height="204" key="GridCell.Tab.0.right" timestamp="1645635217052">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1306" height="204" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1645635217052" />
+    <state x="184" y="7" key="SettingsEditor" timestamp="1645460120057">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1645460120057" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1645717409302">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1645717409302" />
+  </component>
+</project>

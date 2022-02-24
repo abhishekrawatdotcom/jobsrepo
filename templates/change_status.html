@@ -1,0 +1,43 @@
+{%  load static %}
+
+{%   block body %}
+
+{%   include 'admin_navigation.html'%}
+
+<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%;">
+    View Recruiter - Pending
+</marquee>
+
+<hr>
+<form class="container mt-5s" method="post">
+    {% csrf_token %}
+    <label><b>Student Name</b></label>
+    <input type="text" class="form-control" name="username" value="{{student.user.first_name}} {{student.user.last_name}}">
+
+    <label><b>Status</b></label>
+    <select class="form-control" name="status">
+
+        <option value="Accept">Accept</option>
+        <option value="Reject">Reject</option>
+
+    </select>
+
+    <input type="submit" class="btn btn-primary" style="margin-top: 2%; color:darkcyan; background-color:black; height:40px; font-size:20px">
+
+
+</form>
+
+{% ifequal error "no" %}
+<script>
+    alert("Status Changed Successfully");
+    window.location=('{% url "recruiter_all" %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert("Something went wrong, Try Again...");
+</script>
+{% endifequal %}
+
+{%   endblock %}

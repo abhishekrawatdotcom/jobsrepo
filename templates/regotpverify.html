@@ -1,0 +1,23 @@
+{%  load static %}
+
+{%   block body %}
+
+
+
+<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%;">
+    Add Job Details
+</marquee>
+<hr>
+    <label>Inter your otp</label>
+<form class="container mt-5" action="/votp"  method="post"  style="justify-content: center;text-align: center;padding-top:130px;" >
+    {% csrf_token %}
+
+    <input type="number" name="otp1" required style="width: 80%"><br>
+
+    
+<input type="submit" value="Submit" class="btn btn-primary my-3" style="width: 200px;">
+
+</form>
+
+
+{%   endblock %}

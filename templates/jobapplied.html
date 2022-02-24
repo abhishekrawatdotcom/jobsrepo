@@ -1,0 +1,60 @@
+
+{%  load static %}
+
+{%   block body %}
+
+{%   include 'admin/admin_navigation.html'%}
+
+<style>
+    tr{text-align: center;}
+</style>
+<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%;">
+    Manage Job Details
+</marquee>
+
+<hr>
+<div class="container">
+<table class="table table-hover " id="bootstrapdatatable">
+    <thead>
+        <tr style="background-color:darkolivegreen; color : white">
+            <th>Full Name</th>
+            <th>EmailID</th>
+            <th>Contact No.</th>
+            <th>Name Of The Organization</th>
+            <th>Department</th>
+			<th>Designation</th>
+			<th>Experience</th>
+			<th>Tyep Of Appointment</th>
+            <th>ApplyDate</th>
+        </tr>
+
+    </thead>
+
+        <tbody>
+            {% for i in apj %}
+
+            <tr style="background-color: #DEB887;">
+                <td>{{i.usr.email}}</td>
+                <td>{{i.usr.contact}}</td>
+                <td>{{i.usr.companyname}}</td>
+                <td>{{i.usr.department}}</td>
+                <td>{{i.usr.designation}}</td>
+                <td>{{i.job.Experience}}</td>
+                <td>{{i.job.Education}}</td>
+                <td>{{i.job.created}}</td>
+
+
+                <td>
+                     <a  id="del-aplcan" data-id="{{ i.id }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+</table>
+
+</div>
+
+{%   endblock %}

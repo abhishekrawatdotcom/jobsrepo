@@ -1,0 +1,40 @@
+{%  load static %}
+
+{%   block body %}
+
+{%   include 'admin/admin_navigation.html'%}
+    <br><br>
+
+    <table class="table table-hover " id="bootstrapdatatable">
+    <thead>
+        <tr style="background-color:darkolivegreen; color : white">
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Last Nmae</th>
+            <th>Action</th>
+        </tr>
+
+    </thead>
+
+        <tbody>
+            {% for i in allusers %}
+
+            <tr style="background-color: #DEB887;">
+                <td>{{i.email}}</td>
+                <td>{{i.fname}}</td>
+                <td>{{i.laname}}</td>
+
+
+                <td>
+                    <a href="/edituser/{{i.id}}" class="btn btn-success btn-sm">Edit</a>
+                    |  <a id="deluser" data-id="{{ i.id }}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+</table>
+
+{% endblock %}

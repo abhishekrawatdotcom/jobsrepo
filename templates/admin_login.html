@@ -1,0 +1,77 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html'  %}
+
+    <style>
+    p{
+        margin: 3px 0px;
+    }
+    .container{
+            position: absolute;
+            right: 550px;
+            max-width: 450px;
+            padding: 15px;
+            background: rgb(247,141, 045);
+            border-radius: 10px;
+            top: 190px;
+
+        }
+        input[type=text],input[type=password]{
+            width: 100%;
+            padding:13px;
+            margin: 5px 0 22px 0;
+            border:none;
+            background:#f1f1f1 ;
+            font-size: 15px;
+        }
+        .btn{
+            background: green;
+            color:#fff;
+            padding: 13px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+
+        }
+        .btn:hover{
+            background:#333;
+        }
+        .forget{
+            float: right;
+        }
+
+
+    </style>
+
+
+    <marquee style="font-family:Trebuchet MS; font-size: 25px; color: white;background-color: orangered;margin-top:0.5%">
+        Admin Login
+    </marquee>
+
+{#    <hr>#}
+<form class="container mt-5" method="post">
+    {% csrf_token %}
+
+                <h1>Admin Login</h1>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                    <input type="text" name="ademail" placeholder="Enter Email" required>
+                <label for="password"><b>Password</b></label>
+                    <input type="password" name="adpwd" placeholder="Enter Password" required>
+                <p>
+                    <input type="checkbox"/>Keep Me Sign In
+                <span class="forget"><a href="#">Forget Password</a></span>
+                </p>
+                <button type="submit" class="btn">Login</button>
+       <a href="#" class="btn btn btn-danger btn-lg btn-block" style="margin-top: 4%;" role="button" aria-pressed="true">Sign in with Google</a>
+            </div>
+
+
+
+</form>
+
+
+
+{% endblock %}
