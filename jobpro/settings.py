@@ -131,7 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'abhishek_rawat@rvtechnologies.com'
-EMAIL_HOST_PASSWORD = '@@sharma###123'
+EMAIL_HOST_PASSWORD = '*****'
 EMAIL_PORT = 587
 
 MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
