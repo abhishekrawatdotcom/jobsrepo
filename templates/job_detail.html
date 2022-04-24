@@ -25,7 +25,7 @@
             <br>
             <strong><i class="fa fa-money mr-2 mt-2"></i><i class="fa fa-inr mr-2 mt-2"></i>{{job.salary}}</strong>
             <div class="mt-4">
-            <a href ="{% url 'applyforjob' job.id %}" class="btn btn-danger" style="width: 200px; height: 40px;">Apply for this Job</a>
+            <a href ="/jppl/{{job.id}}" class="btn btn-danger" style="width: 200px; height: 40px;">Apply for this Job</a>
         </div>
     </div>
 </div>
@@ -46,7 +46,7 @@
         <h4>Last Date for Apply</h4>
         <p>{{job.end_date}}</p>
 
-        
+
 
 
     </div>

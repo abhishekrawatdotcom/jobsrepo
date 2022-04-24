@@ -5,7 +5,7 @@
 {%   include 'admin/admin_navigation.html'%}
 
 
-<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%;">
+<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25px; color:white; background-color:orangered; font-weight:bold; margin-top: 0.5%;">
     Add Job Details
 </marquee>
 <hr>
@@ -19,7 +19,7 @@
     </div>
  {% endfor %}
 {% endif %}
-<form class="container mt-5" action="/jobaddform" name="signup" method="post" enctype="multipart/form-data">
+<form id="addjobss" class="container mt-5" action="/jobaddform" name="signup" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-row">
         <div class="form-group col-md-12">
@@ -89,9 +89,13 @@
             <label>Education</label>
             <textarea class="form-control" name="adddeducation" placeholder="Enter Job Description" required></textarea>
         </div>
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-6">
             <label>Job Type</label>
             <textarea class="form-control" name="adddjobtype" placeholder="Enter Job Description" required></textarea>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Price</label>
+            <input type="text" class="form-control" name="adddprice"  required>
         </div>
 
     </div>

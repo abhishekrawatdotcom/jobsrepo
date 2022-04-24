@@ -5,11 +5,11 @@
 {%   include 'admin/admin_navigation.html'%}
 
 
-<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%;">
+<marquee style="font-family: 'Times New Roman', Times, serif; font-size:25; color:white; background-color:orangered; font-weight:bold; margin-top: 0.5%;">
     Edit Job Detail
 </marquee>
 <hr>
-<form class="container mt-5" action="/updatejob/{{ejob.id }}" method="post" enctype="multipart/form-data">
+<form  class="container mt-5" action="/updatejob/{{ejob.id }}" id="myjobsedit" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-row">
         <div class="form-group col-md-12">
@@ -23,12 +23,12 @@
      <div class="form-row">
         <div class="form-group col-md-6">
         <label>Experrience</label><span style="color:red"></span>
-        <input type="text" class="form-control" name="jexp" value="{{ejob.Experience}}" >
+        <input type="text" class="form-control" name="jexp" value="{{ejob.Experience}}" required>
         </div>
 
         <div class="form-group col-md-6">
             <label>Skill</label><span style="color:red"></span>
-            <input type="text" class="form-control" name="jskil" value="{{ejob.skill}}">
+            <input type="text" class="form-control" name="jskil" value="{{ejob.skill}}" required>
         </div>
 
     </div>
@@ -37,12 +37,12 @@
 	<div class="form-row">
         <div class="form-group col-md-6">
         <label>Education </label><span style="color:red"></span>
-        <input type="text" class="form-control" name="jedu" value="{{ejob.Education}}">
+        <input type="text" class="form-control" name="jedu" value="{{ejob.Education}}" required>
         </div>
 
         <div class="form-group col-md-6">
             <label>Job Type</label><span style="color:red"></span>
-            <input type="text" class="form-control" name="jjtype" value="{{ejob.Jobtype}}">
+            <input type="text" class="form-control" name="jjtype" value="{{ejob.Jobtype}}" required>
         </div>
 
     </div>

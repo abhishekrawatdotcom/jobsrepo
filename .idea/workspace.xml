@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="244d6680-9724-4704-b2cb-afd37bfbe493" name="Default Changelist" comment="" />
+    <list default="true" id="244d6680-9724-4704-b2cb-afd37bfbe493" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/job/counter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/myjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/finddata.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forgotaddpassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forgotemail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/forgototp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/payment1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/rotp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/job/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/job/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobpro/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobpro/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobpro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobpro/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/superadmin/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/superadmin/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/superadmin/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/superadmin/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/superadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/superadmin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/addjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/addjob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin_navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin_navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/changepassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/changepassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/editjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/editjob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/joblist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/joblist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/studentview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/studentview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/applied_candidatelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/applied_candidatelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/change_passwordstudent.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/change_passwordstudent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/job_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/job_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/jobapplied.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobapplied.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/jobdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/regotpverify.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/regotpverify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_latestjobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_latestjobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_signup1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_signup1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_signup2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_signup2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stuhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stuhome.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,11 +60,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="24hCViRCKY7ue7wlt6gLdXgzXwY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,9 +79,34 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.jobpro">
+    <configuration name="counter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="jobpro" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/job" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/job/counter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="jobpro" type="Python.DjangoServer" factoryName="Django server">
       <module name="jobpro" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -54,6 +131,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.counter" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -172,7 +254,171 @@
       <workItem from="1645712172016" duration="663000" />
       <workItem from="1645713095720" duration="204000" />
       <workItem from="1645713910749" duration="637000" />
-      <workItem from="1645717406422" duration="495000" />
+      <workItem from="1645717406422" duration="1773000" />
+      <workItem from="1645719225359" duration="119000" />
+      <workItem from="1645725529533" duration="1770000" />
+      <workItem from="1645727399009" duration="578000" />
+      <workItem from="1645753909080" duration="334000" />
+      <workItem from="1645754315151" duration="995000" />
+      <workItem from="1645806760292" duration="952000" />
+      <workItem from="1645853852247" duration="630000" />
+      <workItem from="1645856215397" duration="441000" />
+      <workItem from="1645859374424" duration="1749000" />
+      <workItem from="1645862270993" duration="1690000" />
+      <workItem from="1645864131175" duration="404000" />
+      <workItem from="1645872922093" duration="1194000" />
+      <workItem from="1645960951381" duration="136000" />
+      <workItem from="1645977117896" duration="37000" />
+      <workItem from="1646148135483" duration="1256000" />
+      <workItem from="1646150231728" duration="1272000" />
+      <workItem from="1646156625543" duration="1764000" />
+      <workItem from="1646158476739" duration="1401000" />
+      <workItem from="1646230017499" duration="1731000" />
+      <workItem from="1646231794976" duration="1772000" />
+      <workItem from="1646233611447" duration="1773000" />
+      <workItem from="1646294906644" duration="372000" />
+      <workItem from="1646321902318" duration="1724000" />
+      <workItem from="1646323690140" duration="1649000" />
+      <workItem from="1646327876713" duration="1804000" />
+      <workItem from="1646329727679" duration="1475000" />
+      <workItem from="1646331343627" duration="168000" />
+      <workItem from="1646331562948" duration="1768000" />
+      <workItem from="1646843089348" duration="37000" />
+      <workItem from="1646844485369" duration="32000" />
+      <workItem from="1646850012173" duration="12000" />
+      <workItem from="1646929889979" duration="27000" />
+      <workItem from="1646929933633" duration="67000" />
+      <workItem from="1646930475715" duration="10000" />
+      <workItem from="1646930593259" duration="26000" />
+      <workItem from="1646930654865" duration="16000" />
+      <workItem from="1646931196732" duration="33000" />
+      <workItem from="1646931335790" duration="32000" />
+      <workItem from="1646935265869" duration="23000" />
+      <workItem from="1646936288857" duration="25000" />
+      <workItem from="1646936887936" duration="14000" />
+      <workItem from="1646937584563" duration="23000" />
+      <workItem from="1646937730476" duration="62000" />
+      <workItem from="1646938664064" duration="24000" />
+      <workItem from="1646939581915" duration="18000" />
+      <workItem from="1647016060029" duration="12000" />
+      <workItem from="1647016396857" duration="21000" />
+      <workItem from="1647689107397" duration="88000" />
+      <workItem from="1647689228066" duration="590000" />
+      <workItem from="1647689859655" duration="29000" />
+      <workItem from="1647690065766" duration="129000" />
+      <workItem from="1648882376669" duration="903000" />
+      <workItem from="1648964367507" duration="1688000" />
+      <workItem from="1648968014948" duration="1742000" />
+      <workItem from="1648969870216" duration="1767000" />
+      <workItem from="1648971817959" duration="2117000" />
+      <workItem from="1648973999232" duration="933000" />
+      <workItem from="1648977893073" duration="1740000" />
+      <workItem from="1648979663017" duration="1784000" />
+      <workItem from="1648984872601" duration="1682000" />
+      <workItem from="1648986705132" duration="274000" />
+      <workItem from="1649001108886" duration="1667000" />
+      <workItem from="1649002886475" duration="1469000" />
+      <workItem from="1649088800317" duration="1346000" />
+      <workItem from="1649171555924" duration="1473000" />
+      <workItem from="1649174160911" duration="1567000" />
+      <workItem from="1649175950443" duration="1087000" />
+      <workItem from="1649177781876" duration="1181000" />
+      <workItem from="1649258009588" duration="1705000" />
+      <workItem from="1649259811920" duration="1762000" />
+      <workItem from="1649261627176" duration="1687000" />
+      <workItem from="1649342869520" duration="1156000" />
+      <workItem from="1649345100951" duration="770000" />
+      <workItem from="1649348872362" duration="1722000" />
+      <workItem from="1649350693094" duration="1849000" />
+      <workItem from="1649354563663" duration="1576000" />
+      <workItem from="1649563813770" duration="1706000" />
+      <workItem from="1649565735288" duration="1571000" />
+      <workItem from="1649573907499" duration="888000" />
+      <workItem from="1649576434631" duration="623000" />
+      <workItem from="1649587739452" duration="831000" />
+      <workItem from="1649588824144" duration="1660000" />
+      <workItem from="1649590593726" duration="2114000" />
+      <workItem from="1649592766571" duration="161000" />
+      <workItem from="1649611152334" duration="1267000" />
+      <workItem from="1649612944426" duration="881000" />
+      <workItem from="1649614395336" duration="650000" />
+      <workItem from="1649647566925" duration="853000" />
+      <workItem from="1649691809596" duration="1720000" />
+      <workItem from="1649693594449" duration="1767000" />
+      <workItem from="1649695405374" duration="772000" />
+      <workItem from="1649780327612" duration="1734000" />
+      <workItem from="1649787340099" duration="1564000" />
+      <workItem from="1649789424737" duration="722000" />
+      <workItem from="1649809495539" duration="1728000" />
+      <workItem from="1649811268802" duration="1798000" />
+      <workItem from="1649813114640" duration="1700000" />
+      <workItem from="1649814952395" duration="1791000" />
+      <workItem from="1649817256206" duration="1047000" />
+      <workItem from="1649819089122" duration="540000" />
+      <workItem from="1649867342073" duration="1863000" />
+      <workItem from="1649876814231" duration="1574000" />
+      <workItem from="1649878617013" duration="196000" />
+      <workItem from="1649905914237" duration="1119000" />
+      <workItem from="1649947761463" duration="850000" />
+      <workItem from="1650175522428" duration="1748000" />
+      <workItem from="1650177315201" duration="1420000" />
+      <workItem from="1650293975988" duration="1737000" />
+      <workItem from="1650295776711" duration="1773000" />
+      <workItem from="1650297601279" duration="608000" />
+      <workItem from="1650336305289" duration="892000" />
+      <workItem from="1650379558632" duration="1738000" />
+      <workItem from="1650381330050" duration="1781000" />
+      <workItem from="1650391883653" duration="1753000" />
+      <workItem from="1650468232108" duration="1424000" />
+      <workItem from="1650470575797" duration="1798000" />
+      <workItem from="1650472436194" duration="1789000" />
+      <workItem from="1650474254787" duration="1013000" />
+      <workItem from="1650478763673" duration="1727000" />
+      <workItem from="1650547777473" duration="1717000" />
+      <workItem from="1650549557431" duration="1496000" />
+      <workItem from="1650553346601" duration="435000" />
+      <workItem from="1650553799290" duration="1294000" />
+      <workItem from="1650555138974" duration="1384000" />
+      <workItem from="1650559279998" duration="1823000" />
+      <workItem from="1650561479484" duration="1113000" />
+      <workItem from="1650639833290" duration="1762000" />
+      <workItem from="1650641656751" duration="1784000" />
+      <workItem from="1650643502957" duration="269000" />
+      <workItem from="1650648355734" duration="1780000" />
+      <workItem from="1650650208218" duration="1781000" />
+      <workItem from="1650686850257" duration="1738000" />
+      <workItem from="1650688640868" duration="1474000" />
+      <workItem from="1650691350969" duration="1615000" />
+      <workItem from="1650693174551" duration="1312000" />
+      <workItem from="1650696425244" duration="1716000" />
+      <workItem from="1650698191003" duration="1784000" />
+      <workItem from="1650700020239" duration="712000" />
+      <workItem from="1650706671667" duration="1704000" />
+      <workItem from="1650708425772" duration="1778000" />
+      <workItem from="1650710239796" duration="1773000" />
+      <workItem from="1650712056371" duration="1848000" />
+      <workItem from="1650713978287" duration="1524000" />
+      <workItem from="1650721093287" duration="1712000" />
+      <workItem from="1650722863035" duration="514000" />
+      <workItem from="1650729069174" duration="1719000" />
+      <workItem from="1650730859899" duration="1817000" />
+      <workItem from="1650732855210" duration="1943000" />
+      <workItem from="1650735397641" duration="1200000" />
+      <workItem from="1650738848544" duration="1783000" />
+      <workItem from="1650740670334" duration="1786000" />
+      <workItem from="1650742485736" duration="291000" />
+      <workItem from="1650768849806" duration="1768000" />
+      <workItem from="1650770672183" duration="1769000" />
+      <workItem from="1650772495761" duration="1769000" />
+      <workItem from="1650774318110" duration="1959000" />
+      <workItem from="1650776327319" duration="1774000" />
+      <workItem from="1650778140020" duration="881000" />
+      <workItem from="1650779971188" duration="1317000" />
+      <workItem from="1650786381106" duration="1711000" />
+      <workItem from="1650788149453" duration="953000" />
+      <workItem from="1650794114592" duration="1721000" />
+      <workItem from="1650796962593" duration="1776000" />
+      <workItem from="1650798773707" duration="509000" />
     </task>
     <servers />
   </component>
@@ -180,29 +426,32 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1306" height="204" key="GridCell.Tab.0.bottom" timestamp="1645635217052">
+    <state width="1306" height="180" key="GridCell.Tab.0.bottom" timestamp="1650799339647">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="204" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1645635217052" />
-    <state width="1306" height="204" key="GridCell.Tab.0.center" timestamp="1645635217044">
+    <state width="1306" height="180" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1650799339646" />
+    <state width="1306" height="180" key="GridCell.Tab.0.center" timestamp="1650799339646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="204" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1645635217044" />
-    <state width="1306" height="204" key="GridCell.Tab.0.left" timestamp="1645635217044">
+    <state width="1306" height="180" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1650799339646" />
+    <state width="1306" height="180" key="GridCell.Tab.0.left" timestamp="1650799339646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="204" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1645635217044" />
-    <state width="1306" height="204" key="GridCell.Tab.0.right" timestamp="1645635217052">
+    <state width="1306" height="180" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1650799339646" />
+    <state width="1306" height="180" key="GridCell.Tab.0.right" timestamp="1650799339646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1306" height="204" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1645635217052" />
-    <state x="184" y="7" key="SettingsEditor" timestamp="1645460120057">
+    <state width="1306" height="180" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1650799339646" />
+    <state x="184" y="7" key="SettingsEditor" timestamp="1649565965825">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1645460120057" />
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1645717409302">
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1649565965825" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1650798777152">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1645717409302" />
+    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1650798777152" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/jobpro$counter.coverage" NAME="counter Coverage Results" MODIFIED="1649573941124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/job" />
   </component>
 </project>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zipcode</title>
+
+    <!-- ===== =====>> Custom Css Link <<===== =====  -->
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+    <!-- ===== =====>> Remixicon Cdn <<===== =====  -->
+    <link rel="stylesheet" href="fonts/remixicon.css">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://www.solodev.com/assets/password/strength.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="zipcode">
+            <input type="text"  id="zipcode" value="" required>
+            <label for="zipcode">Zip code...</label>
+            <span class="indicator">
+                <i class="ri-close-circle-fill ri icon"></i>
+            </span>
+        </div>
+        <p class="info"></p>
+        <p class="info1"></p>
+        <p class="info2"></p>
+        <p class="info3"></p>
+    </div>
+
+
+<script>
+
+     var input = document.querySelector('#zipcode');
+    var indicator = document.querySelector('.ri');
+    alert('yess boss');
+    var info = document.querySelector('.info');
+    var info1 = document.querySelector('.info1');
+    var info2 = document.querySelector('.info2');
+    var info3 = document.querySelector('.info3');
+    var codelength = /^\d{6}$/
+
+    input.addEventListener('keyup', () => {
+
+        if (input.value.match(codelength)) {
+             alert('yess kkkk');
+             debugger;
+
+            $.ajax({
+                type: "GET",
+                url: "https://api.postalpincode.in/pincode/" + input.value,
+
+                success: (response) => {
+                    info.innerHTML = (response[0].PostOffice[0].Name);
+                    info1.innerHTML = (response[0].PostOffice[0].District);
+                    info2.innerHTML = (response[0].PostOffice[0].State);
+                    info3.innerHTML = (response[0].PostOffice[0].taluk);
+                    console.log('ohh',response)
+                }
+            });
+
+            indicator.classList.add('ri-checkbox-circle-fill');
+            indicator.classList.remove('ri-close-circle-fill');
+        }
+
+        else {
+            indicator.classList.add('ri-close-circle-fill');
+            indicator.classList.remove('ri-checkbox-circle-fill');
+            info.innerHTML = "Type valid zipcode";
+
+        }
+
+    });
+</script>
+
+</body>
+</html>

@@ -26,7 +26,12 @@
     }
     .navbar-brand:hover{
         color:yellow !important;
-    
+
+    }
+    .error{
+        color: red;
+    }
+
     }
     </style>
 
@@ -58,16 +63,16 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
 
         <!--datatable end -->
-        
+
 
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3">
-                <img src="{% static 'images/MUJ logo_High.png'%}" style="width:200px; height:100px" alt="">
+                <img src="{% static 'images/MUJ logo_High.png'%}" style="margin-left:-5px;width:330px; height:80px" alt="">
             </div>
-        </div>    
+        </div>
     </div>
 
 <nav class="navbar-expand-sm" style="background-color: rgb(211,100,046)">
@@ -89,18 +94,18 @@
             <a class="nav-link" href="/joblist"><i class="fa fa-list-ol mr-1"></i>Job List</a>
         </li>
 
-        
 
-        
+
+
 
         <li class="nav-item">
             <a class="nav-link" href="/showuser"><i class="fa fa-user-o mr-1"></i>View Users</a>
              <div class="dropdown-menu">
 
-            <a class="dropdown-item" href="">Pending</a>
-            <a class="dropdown-item" href="">Accepted</a>
-            <a class="dropdown-item" href="">Rejected</a>
-            <a class="dropdown-item" href="">All Recruiters</a>
+            <a class="dropdown-item" href="{% url 'student_pending'%}">Pending</a>
+            <a class="dropdown-item" href="#">Accepted</a>
+            <a class="dropdown-item" href="#">Rejected</a>
+            <a class="dropdown-item" href="{% url 'showuser'%}">All Users</a>
 
         </div>
         </li>
@@ -108,9 +113,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/changepass"><i class="fa fa-cog mr-1"></i>Change Password</a>
         </li>
-        
+
         <li class="nav-item">
-            <a class="nav-link" href=""> <i class="fa fa-sign-out mr-1"></i>Logout</a>
+            <a class="nav-link" href="{% url 'Logout'%}"> <i class="fa fa-sign-out mr-1"></i>Logout</a>
         </li>
 
     </ul>
@@ -210,13 +215,116 @@ swal({
 
          </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+                <script>
+ $(document).ready(function() {
+$("#addjobss").validate({
+rules: {
+addjobtitle : {
+required: true,
+minlength: 3,
+maximum:40,
+},
+
+
+weight: {
+required: {
+depends: function(elem) {
+return $("#age").val() > 50
+}
+},
+number: true,
+min: 0
+}
+},
+messages : {
+      addjobtitle: {
+        required: "Please Job titile",
+      },
+      addstartdate: {
+        required: "Please enter startdate",
+      },
+      addenddate: {
+        required: "Please enter enddate",
+      },
+      addsalary: {
+        required: "Please enter salary",
+      },
+      addlogo: {
+        required: "Please enter salary",
+      },
+      addexperience: {
+        required: "Please enter salary",
+      },
+      addlocation: {
+        required: "Please enter salary",
+      },
+      addskills: {
+        required: "Please enter salary",
+      },
+      adddescription: {
+        required: "Please enter salary",
+      },
+      adddeducation: {
+        required: "Please enter salary",
+      },
+      adddjobtype: {
+        required: "Please enter salary",
+      },
+      adddprice: {
+        required: "Please enter salary",
+      },
+
+      }
+
+});
+});
+</script>
+
+
+                    <script>
+ $(document).ready(function() {
+$("#myjobsedit").validate({
+rules: {
+jorganization : {
+required: true,
+minlength: 3,
+maximum:40,
+},
+
+
+weight: {
+required: {
+depends: function(elem) {
+return $("#age").val() > 50
+}
+},
+number: true,
+min: 0
+}
+},
+messages : {
+      jorganization: {
+        required: "Please Job organization",
+      },
+
+      }
+
+});
+});
+</script>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
          <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
          <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
        <script src="https://cdn.datatables.net/1.10.16/js/dataTables/bootstrap4.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+
+
 
 
 

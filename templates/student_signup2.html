@@ -1,736 +1,515 @@
 
+
+
 {% load static %}
 
 {% block body %}
 
 {% include 'navigation.html'  %}
 
-    <! DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
+    <!--suppress ALL -->
     <marquee style="font-family:Trebuchet MS; font-size: 25px; color: white;background-color: orangered;margin-top:0.5%">
         Student Registration
     </marquee>
 
-    <style>
 
-        html {
-            height: 100%
-        }
+    <! DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://www.solodev.com/assets/password/strength.js"></script>
 
-        p {
-            color: grey
-        }
+    </head>
+<style>
+    .error{
+        color: red;
+    }
 
-        h1 {
-            text-transform: uppercase;
-            color: green;
-            font-weight: normal;
-            text-align: center;
-        }
+    html {
+        height: 100%
+    }
 
-        #heading {
-            text-transform: uppercase;
-            color: rgb(211,100,046);
-            font-weight: normal
-        }
+    p {
+        color: grey
+    }
 
-        #msform {
-            text-align: center;
-            position: relative;
-            margin-top: 20px
-        }
+    h1 {
+        text-transform: uppercase;
+        color: green;
+        font-weight: normal;
+        text-align: center;
+    }
 
-            #msform fieldset {
-                background: white;
-                border: 0 none;
-                border-radius: 0.5rem;
-                box-sizing: border-box;
-                width: 100%;
-                margin: 0;
-                padding-bottom: 20px;
-                position: relative
-            }
+    #heading {
+        text-transform: uppercase;
+        color: rgb(211,100,046);
+        font-weight: normal
+    }
 
-        .form-card {
-            text-align: left
-        }
+    #msform {
+        text-align: center;
+        position: relative;
+        margin-top: 20px
+    }
 
-        #msform fieldset:not(:first-of-type) {
-            display: none
-        }
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+        position: relative
+    }
 
-        #msform input {
-            padding: 8px 15px 8px 15px;
-            border: 1px solid #ccc;
-            border-radius: 0px;
-            margin-bottom: 15px;
-            margin-top: 2px;
-            width: 100%;
-            box-sizing: border-box;
-            font-family: montserrat;
-            color: #2C3E50;
-            background-color: #ECEFF1;
-            font-size: 16px;
-            letter-spacing: 1px
-        }
+    .form-card {
+        text-align: left
+    }
 
-        #msform textarea {
-            padding: 8px 15px 8px 15px;
-            border: 1px solid #ccc;
-            border-radius: 0px;
-            margin-bottom: 15px;
-            margin-top: 2px;
-            width: 100%;
-            box-sizing: border-box;
-            font-family: montserrat;
-            color: #2C3E50;
-            background-color: #ECEFF1;
-            font-size: 16px;
-            letter-spacing: 1px
-        }
+    #msform fieldset:not(:first-of-type) {
+        display: none;
+    }
 
-        #msform input:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid green;
-            outline-width: 0
-        }
+    #msform input {
+        padding: 8px 15px 8px 15px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 15px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        background-color: #ECEFF1;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-family: Trebuchet MS;
+    }
 
-        #msform textarea:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid green;
-            outline-width: 0
-        }
+    #msform textarea {
+        padding: 8px 15px 8px 15px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 15px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        background-color: #ECEFF1;
+        font-size: 16px;
+        letter-spacing: 1px;
 
-        #msform .action-button {
-            width: 100px;
-            background: rgb(211,100,046);
-            font-weight: bold;
-            color: white;
-            border: 0 none;
-            border-radius: 0px;
-            cursor: pointer;
-            padding: 10px 5px;
-            margin: 10px 0px 10px 5px;
-            float: right
-        }
+    }
 
-            #msform .action-button:hover {
-                background-color: green;
-            }
+    #msform input:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid green;
+        outline-width: 0
+    }
 
-            #msform .action-button:focus {
-                background-color: rgb(211,100,046);
-            }
+    #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid green;
+        outline-width: 0
+    }
 
-        #msform .action-button-pre {
-            width: 100px;
-            background: rgb(211,100,046);
-            font-weight: bold;
-            color: white;
-            border: 0 none;
-            border-radius: 0px;
-            cursor: pointer;
-            padding: 10px 5px;
-            margin: 10px 5px 10px 0px;
-            float: right
-        }
+    #msform .action-button {
+        width: 100px;
+        background: rgb(211,100,046);
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 0px 10px 5px;
+        float: right
+    }
 
-            #msform .action-button-pre:hover {
-                background-color: #000000
-            }
+    #msform .action-button:hover {
+        background-color: green;
+    }
 
-            #msform .action-button-pre:focus {
-                background-color: #000000
-            }
+    #msform .action-button:focus {
+        background-color: rgb(211,100,046);
+    }
 
-        .card {
-            z-index: 0;
-            border: none;
-            position: relative
-        }
+    #msform .action-button-pre {
+        width: 100px;
+        background: rgb(211,100,046);
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px 10px 0px;
+        float: right
+    }
 
-        .fs-title {
-            font-size: 20px;
-            color: rgb(211,100,046);
-            margin-bottom: 15px;
-            font-weight: normal;
-            text-align: left
-        }
+    #msform .action-button-pre:hover {
+        border: none;
+        position: relative
+    }
 
-        .purple-text {
-            color: green;
-            font-weight: normal
-        }
+    .fs-title {
+        font-size: 20px;
+        color: rgb(211,100,046);
+        margin-bottom: 15px;
+        font-weight: normal;
+        text-align: left;
+        font-family: Trebuchet MS;
+    }
 
-        .steps {
-            font-size: 15px;
-            color: gray;
-            margin-bottom: 1px;
-            font-weight: normal;
-            text-align: right
-        }
+    .purple-text {
+        color: green;
+        font-weight: normal
+    }
 
-        .fieldlabels {
-            color: gray;
-            text-align: left
-        }
+    .steps {
+        font-size: 15px;
+        color: gray;
+        margin-bottom: 1px;
+        font-weight: normal;
+        text-align: right
+    }
 
-        #progressbar {
-            margin-bottom: 20px;
-            overflow: hidden;
-            color: lightgrey
-        }
+    .fieldlabels {
+        color: gray;
+        text-align: left;
+        font-family: Trebuchet MS;
+    }
 
-            #progressbar .active {
-                color: rgb(211,100,046);
-            }
+    #progressbar {
+        margin-bottom: 20px;
+        overflow: hidden;
+        color: lightgrey
+    }
 
-            #progressbar li {
-                list-style-type: none;
-                font-size: 7px;
-                width: 16%;
-                float: left;
-                position: relative;
-                font-weight: 400
-            }
+    #progressbar .active {
+        color: rgb(211,100,046);
+    }
 
-            #progressbar #account:before {
-                font-family: FontAwesome;
-                content: "\f13e"
-            }
+    #progressbar li {
+        list-style-type: none;
+        font-size: 7px;
+        width: 14%;
+        float: left;
+        position: relative;
+        font-weight: 400
+    }
 
-            #progressbar #personal:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
+    #progressbar #account:before {
+        font-family: FontAwesome;
+        content: "\f13e"
+    }
 
-            #progressbar #address:before {
-                font-family: FontAwesome;
-                content: "\F007"
-            }
+    #progressbar #personal:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
+    #progressbar #address:before {
+        font-family: FontAwesome;
+        content: "\F007"
+    }
+    #progressbar #qualification:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
+     #progressbar #workexperience:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
 
-            #progressbar #qualification:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
-
-            #progressbar #workexperience:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
-
-            #progressbar #criteria:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
+     #progressbar #criteria:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
 
 
 
-            #progressbar #payment:before {
-                font-family: FontAwesome;
-                content: "\f030"
-            }
+    #progressbar #payment:before {
+        font-family: FontAwesome;
+        content: "\f030"
+    }
 
-            #progressbar #confirm:before {
-                font-family: FontAwesome;
-                content: "\f00c"
-            }
+    #progressbar #confirm:before {
+        font-family: FontAwesome;
+        content: "\f00c"
+    }
 
-            #progressbar li:before {
-                width: 50px;
-                height: 50px;
-                line-height: 45px;
-                display: block;
-                font-size: 20px;
-                color: #ffffff;
-                background: lightgray;
-                border-radius: 50%;
-                margin: 0 auto 10px auto;
-                padding: 2px
-            }
+    #progressbar li:before {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        display: block;
+        font-size: 20px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px
+    }
 
-            #progressbar li:after {
-                content: '';
-                width: 100%;
-                height: 2px;
-                background: lightgray;
-                position: absolute;
-                left: 0;
-                top: 25px;
-                z-index: -1
-            }
+    #progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: lightgray;
+        position: absolute;
+        left: 0;
+        top: 25px;
+        z-index: -1
+    }
 
-            #progressbar li.active:before {
-                background: green
-            }
+    #progressbar li.active:before {
+        background: green
+    }
 
-            #progressbar li.active:after {
-                background: green
-            }
+    #progressbar li.active:after {
+        background: green
+    }
 
-        .progress {
-            height: 20px
-        }
+    .progress {
+        height: 20px
+    }
 
-        .pbar {
-            background-color: rgb(211,100,046);
-        }
+        background-color: red;
+    }
 
-        .fit-image {
-            width: 100%;
-            object-fit: cover
-        }
-    </style>
+    #msform .action-button-pre:focus {
+        background-color: #000000
+    }
 
-</head>
+    .card {
+        z-index: 0;
+    .pbar {
+        background-color: rgb(211,100,046);
+    }
 
+    .fit-image {
+        width: 100%;
+        object-fit: cover
+    }
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+</style>
 <body>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7 col-xl-6 col-xl-5 col-xl-4 text-center p-0 mt-3 mb-2">
-                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+<div class="container-fluid" >
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7 col-xl-6 col-xl-5 col-xl-4 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
-                    <form id="msform"  method="post" enctype="multipart/form-data" action="{% url 'student_signup_save' %}">
-                        {% csrf_token %}
-                        <h2 id="heading"> Sign Up Form </h2>
-                        <ul id="progressbar">
-                            <li class="active" id="account"><strong> Account Information </strong></li>
-                            <li id="personal"><strong> Personal Information </strong></li>
-                            <li id="address"><strong>Address Details</strong></li>
-                            <li id="qualification"><strong>Qualification Details</strong></li>
-                            <li id="workexperience"><strong>Work Experience Details</strong></li>
-                            <li id="payment"><strong>Certificate/Documents Upload</strong></li>
-                        </ul>
-                        <div class="progress">
-                            <div class="pbar pbar-striped pbar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"> </div>
-                        </div> <br>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Account Information: </h2>
-                                        <p> All Fields Required </p>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 1 - 6 </h2>
-                                    </div>
-                                </div>
-                                <label class="fieldlabels"> Username: * </label> <input type="text" name="username" placeholder="UserName" required />
-                                <label class="fieldlabels"> Email: * </label> <input type="email" name="email" placeholder="Email Id" required />
-                                <label class="fieldlabels"> Contact No.: * </label> <input type="text" name="contact" placeholder="Contact No." />
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" />
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Personal Information: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 2 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> First Name: * </label> <input type="text" name="fname" placeholder="First Name" />
-                                <label class="fieldlabels"> Last Name: * </label> <input type="text" name="lname" placeholder="Last Name" />
-                                <label class="fieldlabels"> Father Name: * </label> <input type="text" name="father" placeholder="Father Name" />
-                                <label class="fieldlabels"> Mother Name: * </label> <input type="text" name="mother" placeholder="Mother Name" />
-                                <label class="fieldlabels"> Aadhar No.: * </label> <input type="text" name="aadhar" placeholder="Aadhar No." />
-                                <label class="fieldlabels"> Marital Status: * </label> <input type="text" name="marital" />
-                                <label class="fieldlabels"> Age: * </label> <input type="date" name="age" />
-                                <label> Gender: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Male" name="gender" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Male</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" value="Female" name="gender" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline2">Female</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Others" name="gender" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Others</label>
-                                    </div>
-                                </div>
-
-                                <label class="fieldlabels"> Password</label> <input type="password" name="pwd1" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
-                                <label class="fieldlabels"> Confirm Password</label> <input type="password" name="cpwd" placeholder="Confirm Password" required />
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Address Details: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 3 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Address 1: * </label> <input type="text" name="address1" placeholder="Adresss" />
-                                <label class="fieldlabels"> Address 2: * </label> <input type="text" name="adress2" placeholder="Address" />
-                                <label class="fieldlabels"> State: * </label> <input type="text" name="state" placeholder="State" />
-                                <label class="fieldlabels"> City: * </label> <input type="text" name="city" placeholder="City" />
-                                <label class="fieldlabels"> District: * </label> <input type="text" name="district" placeholder="District" />
-                                <label class="fieldlabels"> Pincode: * </label> <input type="text" name="pin" placeholder="Pincode" />
-                                <label class="fieldlabels"> Tehsil: * </label> <input type="text" name="tehsil" placeholder="Tehsil" />
-                                <label> Nationality: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Indian" name="nationality" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Indian</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Others" name="nationality" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Others</label>
-                                    </div>
-                                </div>
-                                <label> Caste: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInli" value="General" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">General</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInl" value="OBC" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">OBC</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInl" value="SC" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">SC</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInli" value="ST" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">ST</label>
-                                    </div>
+                <form id="msform"  method="post" enctype="multipart/form-data" action="/emailverify">
+                    {% csrf_token %}
+                 <h2 id="heading"> Sign Up Form </h2>
+                    <ul id="progressbar">
+                        <li class="active" id="account"><strong> Account Information </strong></li>
+                        <li id="personal"><strong> Personal Information </strong></li>
+                        <li id="address"><strong>Address Details</strong></li>
+                        <li id="qualification"><strong>Qualification Details</strong></li>
+                        <li id="workexperience"><strong>Work Experience Details</strong></li>
+                        <!--<li id="criteria"><strong>Criteria Details</strong></li>-->
+                        <li id="payment"><strong>Certificate/Documents Upload</strong></li>
+{#                        <li id="confirm"><strong> Review </strong></li>#}
+                    </ul>
+                    <div class="progress">
+                        <div class="pbar pbar-striped pbar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"> </div>
+                    </div> <br>
+                    <fieldset>
+                                                                                       {% if messages %}#}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      ×
+      </button>
+      <strong>{{message}}<strong>
+    </div>
+ {% endfor %}
+{% endif %}
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Account Information: </h2>
+                                    <p> All Fields Required </p>
 
                                 </div>
-                                <label> Physically Handicap: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInlin" value="Yes" name="physicallyhandicap" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioIn" value="No" name="physicallyhandicap" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">No</label>
-                                    </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 1 - 6 </h2>
                                 </div>
+                            </div>
+                            <label class="fieldlabels"> Email: * </label> <input type="email" id="emailn11" name="email" placeholder="Enter Email Id" required onkeyup="isempty()"/>
+                            <label class="fieldlabels"> Contact No.: * </label> <input type="text" id="cont12" name="contact" placeholder="Enter Contact No." maxlength="10"  required />
 
-                                <label class="fieldlabels"> Economically Weaker Section: * </label> <input type="text" name="economically" placeholder="Economically Weaker" />
-
-
-                                <label> Quota: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Sports" name="quota" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Sports</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Ex Army" name="quota" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Ex Army</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="NCC" name="quota" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">NCC</label>
-                                    </div>
-                                </div>
-
-                                <label> Minority: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Minority" name="minority" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Minority</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Non-Minority" name="minority" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Non-Minority</label>
-                                    </div>
-                                </div>
+                        </div>
+                    </fieldset>
 
 
 
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Qualification Details: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 4 - 6 </h2>
-                                    </div>
-                                </div>
-                                <!--<label class="fieldlabels"> 10th: * </label> <input type="text" name="tenth" placeholder="Enter 10th marks" />
-                                <label class="fieldlabels"> 12th: * </label> <input type="text" name="twelve" placeholder="Enter 12th marks" />
-                                <label class="fieldlabels"> Graduation: * </label> <input type="text" name="graduation" placeholder="Enter Graduation marks" />
-                                <label class="fieldlabels"> Post Graduation: * </label> <input type="text" name="postgraduation" placeholder="Enter PG marks" />-->
-                                <label class="fieldlabels">10th: *</label>
-                                <input type="text" name="tenth_sc" placeholder="Enter School/College" />
-                                <input type="text" name="tenth_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="tenth_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="tenth_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="tenth_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="tenth_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-
-                                <label class="fieldlabels">12th: *</label>
-                                <input type="text" name="twelve_sc" placeholder="Enter School/College" />
-                                <input type="text" name="twelve_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="twelve_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="twelve_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="twelve_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="twelve_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-                                <label class="fieldlabels">Graduation: *</label>
-                                <input type="text" name="graduation_sc" placeholder="Enter School/College" />
-                                <input type="text" name="graduation_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="graduation_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="graduation_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="graduation_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="graduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-
-                                <label class="fieldlabels">Postgraduation: *</label>
-                                <input type="text" name="postgraduation_sc" placeholder="Enter School/College" />
-                                <input type="text" name="postgraduation_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="postgraduation_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="postgraduation_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="postgraduation_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="postgraduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Work Experience Details: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 5 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Year: * </label> <input type="number" name="year" placeholder="Enter Year" />
-                                <label class="fieldlabels"> Month: * </label> <input type="number" name="month" placeholder="Enter Month" />
-                                <label class="fieldlabels"> Designation: * </label> <input type="text" name="designation" placeholder="Enter Designation" />
-                                <label class="fieldlabels"> Department: * </label> <input type="text" name="department" placeholder="Enter Department" />
-                                <label class="fieldlabels"> Company name: * </label> <input type="text" name="companyname" placeholder="Enter Company Name" />
-                                <label class="fieldlabels"> Type Of Appointmen: * </label> <input type="text" name="appointmen" placeholder="Enter Appointmen" />
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <!--<fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Criteria : </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 6 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Designation: * </label> <input type="text" name="designation" placeholder="Enter Designation" />
-                                <label class="fieldlabels"> Department: * </label> <input type="text" name="department" placeholder="Enter Department" />
-                                <label class="fieldlabels"> Academic: * </label> <input type="text" name="academic" placeholder="Enter %" />
-                                <label class="fieldlabels"> Experiences: * </label> <input type="text" name="experiences" placeholder="Enter Experience" />
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>-->
+                    <!--<fieldset>-->
+                    <!--    <div class="form-card">-->
+                    <!--        <div class="row">-->
+                    <!--            <div class="col-7">-->
+                    <!--                <h2 class="fs-title">Criteria : </h2>-->
+                    <!--            </div>-->
+                    <!--            <div class="col-5">-->
+                    <!--                <h2 class="steps"> Step 6 - 8 </h2>-->
+                    <!--            </div>-->
+                    <!--        </div> <label class="fieldlabels"> Designation: * </label> <input type="text" name="designation" placeholder="Enter Designation" />-->
+                    <!--        <label class="fieldlabels"> Department: * </label> <input type="text" name="department" placeholder="Enter Department" />-->
+                    <!--        <label class="fieldlabels"> Name of Organization: * </label> <input type="text" name="organization" placeholder="Enter Organization " />-->
+                    <!--        <label class="fieldlabels"> Appointment: * </label> <input type="text" name="appointmen" placeholder="Enter Appointment" />-->
+                    <!--    </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />-->
+                    <!--</fieldset>-->
 
 
 
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Documents Upload: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 6 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Upload Your Photo: </label> <input type="file" name="profilepic">
-                                <label class="fieldlabels"> Upload Signature Photo: </label> <input type="file" name="signature">
-
-                            </div> <input type="submit" name="submit" class="submit action-button" value="Submit" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-                        <!--<fieldset>#}
-                        {#                        <div class="form-card">#}
-                        {#                            <div class="row">#}
-                        {#                                <div class="col-7">#}
-                        {#                                    <h2 class="fs-title"> Review: </h2>#}
-                        {#                                </div>#}
-                        {#                                <div class="col-5">#}
-                        {#                                    <h2 class="steps"> Step 8 - 8 </h2>#}
-                        {#                                </div>#}
-                        {#                            </div> <br> <br>#}
-                        {#                            <h2 class="purple-text text-center"><strong> SUCCESS ! </strong></h2> <br>#}
-                        {#                            <div class="row justify-content-center">#}
-                        {#                                <div class="col-3"> <img src="1.png" class="fit-image"> </div>#}
-                        {#                            </div> <br><br>#}
-                        {#                            <div class="row justify-content-center">#}
-                        {#                                <div class="col-7 text-center">#}
-                        {#                                    <h5 class="purple-text text-center"> You Have Successfully Signed Up </h5>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                    </fieldset>#}-->
-                    </form>
-                </div>
+{#                    <fieldset>#}
+{#                        <div class="form-card">#}
+{#                            <div class="row">#}
+{#                                <div class="col-7">#}
+{#                                    <h2 class="fs-title"> Review: </h2>#}
+{#                                </div>#}
+{#                                <div class="col-5">#}
+{#                                    <h2 class="steps"> Step 8 - 8 </h2>#}
+{#                                </div>#}
+{#                            </div> <br> <br>#}
+{#                            <h2 class="purple-text text-center"><strong> SUCCESS ! </strong></h2> <br>#}
+{#                            <div class="row justify-content-center">#}
+{#                                <div class="col-3"> <img src="1.png" class="fit-image"> </div>#}
+{#                            </div> <br><br>#}
+{#                            <div class="row justify-content-center">#}
+{#                                <div class="col-7 text-center">#}
+{#                                    <h5 class="purple-text text-center"> You Have Successfully Signed Up </h5>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </fieldset>#}
+                    <input type="submit"  name="next" id="nextbutt" class="next action-button" value="sent otp" />
+                </form>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="form-group">
-                {% if messages %}
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            {% if messages %}
                 {% for message in messages %}
-                {% if message.tags == 'success' %}
-                <div class="alert alert-success">{{ message }}</div>
-                {% elif message.tags == 'error' %}
-                <div class="alert alert-danger">{{ message }}</div>
-                {% endif %}
+                    {% if message.tags == 'success' %}
+                        <div class="alert alert-success">{{ message }}</div>
+                    {% elif message.tags == 'error' %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% endif %}
                 {% endfor %}
-                {% endif %}
-            </div>
+            {% endif %}
         </div>
     </div>
+</div>
 
-    <script>
 
-        $(document).ready(function () {
-            var current_fs, next_fs, pre_fs;
-            var opacity;
-            var current = 1;
-            var steps = $("fieldset").length;
-            setProgressBar(current);
-            $(".next").click(function () {
-                current_fs = $(this).parent();
-                next_fs = $(this).parent().next();
-                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-                next_fs.show();
-                current_fs.animate({ opacity: 0 }, {
-                    step: function (now) {
-                        opacity = 1 - now;
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-                        next_fs.css({ 'opacity': opacity });
-                    },
-                    duration: 500
-                });
-                setProgressBar(++current);
-            });
-            $(".pre").click(function () {
-                current_fs = $(this).parent();
-                pre_fs = $(this).parent().prev();
-                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-                pre_fs.show();
-                current_fs.animate({ opacity: 0 }, {
-                    step: function (now) {
-                        opacity = 1 - now;
-                        current_fs.css({
-                            'display': 'none',
-                            'position': 'relative'
-                        });
-                        pre_fs.css({ 'opacity': opacity });
-                    },
-                    duration: 500
-                });
-                setProgressBar(--current);
-            });
 
-            function setProgressBar(curStep) {
-                var percent = parseFloat(100 / steps) * curStep;
-                percentpercent = percent.toFixed();
-                $(".pbar")
-                    .css("width", percent + "%")
-            }
 
-        });
-    </script>
 
+
+                    <script>
+ $(document).ready(function() {
+$("#msform").validate({
+rules: {
+
+    contact : {
+required: true,
+minlength: 10,
+maximum:10,
+},
+
+
+
+weight: {
+required: {
+depends: function(elem) {
+return $("#age").val() > 50
+}
+},
+number: true,
+min: 0
+}
+},
+messages : {
+      email: {
+        required: "Please enter email",
+      },
+    contact: {
+        required: "Please enter contact number",
+      },
+
+      }
+
+});
+});
+</script>
+
+
+
+
+
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+       <script src="https://cdn.datatables.net/1.10.16/js/dataTables/bootstrap4.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
 
 {% endblock %}
 
-<!--//var myInput = document.getElementById("psw");
-        //var letter = document.getElementById("letter");
-        //var capital = document.getElementById("capital");
-        //var number = document.getElementById("number");
-        //var length = document.getElementById("length");
 
-        //// When the user clicks on the password field, show the message box
-        //myInput.onfocus = function() {
-        //document.getElementById("message").style.display = "block";
-        //}
 
-        //// When the user clicks outside of the password field, hide the message box
-        //myInput.onblur = function() {
-        //document.getElementById("message").style.display = "none";
-        //}
 
-        //// When the user starts to type something inside the password field
-        //myInput.onkeyup = function() {
-        //// Validate lowercase letters
-        //var lowerCaseLetters = /[a-z]/g;
-        //if(myInput.value.match(lowerCaseLetters)) {
-        //    letter.classList.remove("invalid");
-        //    letter.classList.add("valid");
-        //} else {
-        //    letter.classList.remove("valid");
-        //    letter.classList.add("invalid");
-        //}
 
-        //// Validate capital letters
-        //var upperCaseLetters = /[A-Z]/g;
-        //if(myInput.value.match(upperCaseLetters)) {
-        //    capital.classList.remove("invalid");
-        //    capital.classList.add("valid");
-        //} else {
-        //    capital.classList.remove("valid");
-        //    capital.classList.add("invalid");
-        //}
 
-        //// Validate numbers
-        //var numbers = /[0-9]/g;
-        //if(myInput.value.match(numbers)) {
-        //    number.classList.remove("invalid");
-        //    number.classList.add("valid");
-        //} else {
-        //    number.classList.remove("valid");
-        //    number.classList.add("invalid");
-        //}
-
-        //// Validate length
-        //if(myInput.value.length >= 8) {
-        //    length.classList.remove("invalid");
-        //    length.classList.add("valid");
-        //} else {
-        //    length.classList.remove("valid");
-        //    length.classList.add("invalid");
-        //}
-        //}-->

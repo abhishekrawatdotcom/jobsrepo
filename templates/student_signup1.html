@@ -1,624 +1,1470 @@
-
 {% load static %}
 
 {% block body %}
 
 {% include 'navigation.html'  %}
 
+
+    <!--suppress ALL -->
+
+
     <! DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
     <marquee style="font-family:Trebuchet MS; font-size: 25px; color: white;background-color: orangered;margin-top:0.5%">
         Student Registration
     </marquee>
 
-    <style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://www.solodev.com/assets/password/strength.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>-->
 
-        html {
-            height: 100%
-        }
+    </head>
+<style>
 
-        p {
-            color: grey
-        }
+    .error{
+        color: red;
+    }
 
-        h1 {
-            text-transform: uppercase;
-            color: green;
-            font-weight: normal;
-            text-align: center;
-        }
+    html {
+        height: 100%
+    }
 
-        #heading {
-            text-transform: uppercase;
-            color: rgb(211,100,046);
-            font-weight: normal
-        }
+    p {
+        color: grey
+    }
 
-        #msform {
-            text-align: center;
-            position: relative;
-            margin-top: 20px
-        }
+    h1 {
+        text-transform: uppercase;
+        color: green;
+        font-weight: normal;
+        text-align: center;
+    }
 
-            #msform fieldset {
-                background: white;
-                border: 0 none;
-                border-radius: 0.5rem;
-                box-sizing: border-box;
-                width: 100%;
-                margin: 0;
-                padding-bottom: 20px;
-                position: relative
-            }
+    #heading {
+        text-transform: uppercase;
+        color: rgb(211,100,046);
+        font-weight: normal
+    }
 
-        .form-card {
-            text-align: left
-        }
+    #msform {
+        text-align: center;
+        position: relative;
+        margin-top: 20px
+    }
 
-        #msform fieldset:not(:first-of-type) {
-            display: none
-        }
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+        position: relative
+    }
 
-        #msform input {
-            padding: 8px 15px 8px 15px;
-            border: 1px solid #ccc;
-            border-radius: 0px;
-            margin-bottom: 15px;
-            margin-top: 2px;
-            width: 100%;
-            box-sizing: border-box;
-            font-family: montserrat;
-            color: #2C3E50;
-            background-color: #ECEFF1;
-            font-size: 16px;
-            letter-spacing: 1px
-        }
+    .form-card {
+        text-align: left
+    }
 
-        #msform textarea {
-            padding: 8px 15px 8px 15px;
-            border: 1px solid #ccc;
-            border-radius: 0px;
-            margin-bottom: 15px;
-            margin-top: 2px;
-            width: 100%;
-            box-sizing: border-box;
-            font-family: montserrat;
-            color: #2C3E50;
-            background-color: #ECEFF1;
-            font-size: 16px;
-            letter-spacing: 1px
-        }
+    #msform fieldset:not(:first-of-type) {
+        display: none;
+    }
 
-        #msform input:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid green;
-            outline-width: 0
-        }
+    #msform input {
+        padding: 8px 15px 8px 15px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 15px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        background-color: #ECEFF1;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-family: Trebuchet MS;
+    }
 
-        #msform textarea:focus {
-            -moz-box-shadow: none !important;
-            -webkit-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 1px solid green;
-            outline-width: 0
-        }
+    #msform textarea {
+        padding: 8px 15px 8px 15px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        margin-bottom: 15px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2C3E50;
+        background-color: #ECEFF1;
+        font-size: 16px;
+        letter-spacing: 1px;
 
-        #msform .action-button {
-            width: 100px;
-            background: rgb(211,100,046);
-            font-weight: bold;
-            color: white;
-            border: 0 none;
-            border-radius: 0px;
-            cursor: pointer;
-            padding: 10px 5px;
-            margin: 10px 0px 10px 5px;
-            float: right
-        }
+    }
 
-            #msform .action-button:hover {
-                background-color: green;
-            }
+    #msform input:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid green;
+        outline-width: 0
+    }
 
-            #msform .action-button:focus {
-                background-color: rgb(211,100,046);
-            }
+    #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 1px solid green;
+        outline-width: 0
+    }
 
-        #msform .action-button-pre {
-            width: 100px;
-            background: rgb(211,100,046);
-            font-weight: bold;
-            color: white;
-            border: 0 none;
-            border-radius: 0px;
-            cursor: pointer;
-            padding: 10px 5px;
-            margin: 10px 5px 10px 0px;
-            float: right
-        }
+    #msform .action-button {
+        width: 100px;
+        background: rgb(211,100,046);
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 0px 10px 5px;
+        float: right
+    }
 
-            #msform .action-button-pre:hover {
-                background-color: #000000
-            }
+    #msform .action-button:hover {
+        background-color: green;
+    }
 
-            #msform .action-button-pre:focus {
-                background-color: #000000
-            }
+    #msform .action-button:focus {
+        background-color: rgb(211,100,046);
+    }
 
-        .card {
-            z-index: 0;
-            border: none;
-            position: relative
-        }
+    #msform .action-button-pre {
+        width: 100px;
+        background: rgb(211,100,046);
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px 10px 0px;
+        float: right
+    }
 
-        .fs-title {
-            font-size: 20px;
-            color: rgb(211,100,046);
-            margin-bottom: 15px;
-            font-weight: normal;
-            text-align: left
-        }
+    #msform .action-button-pre:hover {
+        background-color: red;
+    }
 
-        .purple-text {
-            color: green;
-            font-weight: normal
-        }
+    #msform .action-button-pre:focus {
+        background-color: #000000
+    }
 
-        .steps {
-            font-size: 15px;
-            color: gray;
-            margin-bottom: 1px;
-            font-weight: normal;
-            text-align: right
-        }
+    .card {
+        z-index: 0;
+        border: none;
+        position: relative
+    }
 
-        .fieldlabels {
-            color: gray;
-            text-align: left
-        }
+    .fs-title {
+        font-size: 20px;
+        color: rgb(211,100,046);
+        margin-bottom: 15px;
+        font-weight: normal;
+        text-align: left;
+        font-family: Trebuchet MS;
+    }
 
-        #progressbar {
-            margin-bottom: 20px;
-            overflow: hidden;
-            color: lightgrey
-        }
+    .purple-text {
+        color: green;
+        font-weight: normal
+    }
 
-            #progressbar .active {
-                color: rgb(211,100,046);
-            }
+    .steps {
+        font-size: 15px;
+        color: gray;
+        margin-bottom: 1px;
+        font-weight: normal;
+        text-align: right
+    }
 
-            #progressbar li {
-                list-style-type: none;
-                font-size: 7px;
-                width: 16%;
-                float: left;
-                position: relative;
-                font-weight: 400
-            }
+    .fieldlabels {
+        color: gray;
+        text-align: left;
+        font-family: Trebuchet MS;
+    }
 
-            #progressbar #account:before {
-                font-family: FontAwesome;
-                content: "\f13e"
-            }
+    #progressbar {
+        margin-bottom: 20px;
+        overflow: hidden;
+        color: lightgrey
+    }
 
-            #progressbar #personal:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
+    #progressbar .active {
+        color: rgb(211,100,046);
+    }
 
-            #progressbar #address:before {
-                font-family: FontAwesome;
-                content: "\F007"
-            }
+    #progressbar li {
+        list-style-type: none;
+        font-size: 7px;
+        width: 14%;
+        float: left;
+        position: relative;
+        font-weight: 400
+    }
 
-            #progressbar #qualification:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
+    #progressbar #account:before {
+        font-family: FontAwesome;
+        content: "\f13e"
+    }
 
-            #progressbar #workexperience:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
+    #progressbar #personal:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
+    #progressbar #address:before {
+        font-family: FontAwesome;
+        content: "\F007"
+    }
+    #progressbar #qualification:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
+     #progressbar #workexperience:before {
+        font-family: FontAwesome;
+        content: "\f007"
+    }
 
-            #progressbar #criteria:before {
-                font-family: FontAwesome;
-                content: "\f007"
-            }
+    /* #progressbar #criteria:before {*/
+    /*    font-family: FontAwesome;*/
+    /*    content: "\f007"*/
+    /*}*/
 
 
 
-            #progressbar #payment:before {
-                font-family: FontAwesome;
-                content: "\f030"
-            }
+    #progressbar #payment:before {
+        font-family: FontAwesome;
+        content: "\f030"
+    }
 
-            #progressbar #confirm:before {
-                font-family: FontAwesome;
-                content: "\f00c"
-            }
+    #progressbar li:before {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        display: block;
+        font-size: 20px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px
+    }
 
-            #progressbar li:before {
-                width: 50px;
-                height: 50px;
-                line-height: 45px;
-                display: block;
-                font-size: 20px;
-                color: #ffffff;
-                background: lightgray;
-                border-radius: 50%;
-                margin: 0 auto 10px auto;
-                padding: 2px
-            }
+    #progressbar li:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: lightgray;
+        position: absolute;
+        left: 0;
+        top: 25px;
+        z-index: -1
+    }
 
-            #progressbar li:after {
-                content: '';
-                width: 100%;
-                height: 2px;
-                background: lightgray;
-                position: absolute;
-                left: 0;
-                top: 25px;
-                z-index: -1
-            }
+    #progressbar li.active:before {
+        background: green
+    }
 
-            #progressbar li.active:before {
-                background: green
-            }
+    #progressbar li.active:after {
+        background: green
+    }
 
-            #progressbar li.active:after {
-                background: green
-            }
+    .progress {
+        height: 20px
+    }
 
-        .progress {
-            height: 20px
-        }
+    .pbar {
+        background-color: rgb(211,100,046);
+    }
 
-        .pbar {
-            background-color: rgb(211,100,046);
-        }
+    .fit-image {
+        width: 100%;
+        object-fit: cover
+    }
 
-        .fit-image {
-            width: 100%;
-            object-fit: cover
-        }
-    </style>
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
 
-</head>
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
 
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+.menu1,
+.content3{
+    width: 100%;
+}
+.menu2,
+.content2{
+    width: 100%;
+}
+.content3{
+    margin: 30px 0;
+}
+.content2{
+    margin: 30px 0;
+}
+.content3 .data1{
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #8bc34a;
+    border-radius: 8px;
+}
+.content3 input{
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+.content2 input{
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+.content3 input :last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.content2 input :last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.data3{
+    display: none;
+}
+.data1{
+    display: none;
+}
+.data2{
+    display: none;
+}
+
+
+
+</style>
 <body>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7 col-xl-6 col-xl-5 col-xl-4 text-center p-0 mt-3 mb-2">
-                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+<div class="container-fluid" >
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7 col-xl-6 col-xl-5 col-xl-4 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
-                    <form id="msform"  method="post" enctype="multipart/form-data" action="{% url 'student_signup_save' %}">
-                        {% csrf_token %}
-                        <h2 id="heading"> Sign Up Form </h2>
-                        <ul id="progressbar">
-                            <li class="active" id="account"><strong> Account Information </strong></li>
-                            <li id="personal"><strong> Personal Information </strong></li>
-                            <li id="address"><strong>Address Details</strong></li>
-                            <li id="qualification"><strong>Qualification Details</strong></li>
-                            <li id="workexperience"><strong>Work Experience Details</strong></li>
-                            <li id="payment"><strong>Certificate/Documents Upload</strong></li>
-                        </ul>
-                        <div class="progress">
-                            <div class="pbar pbar-striped pbar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"> </div>
-                        </div> <br>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Account Information: </h2>
-                                        <p> All Fields Required </p>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 1 - 6 </h2>
+                <form id="msform"  method="post" enctype="multipart/form-data" action="{% url 'student_signup_save' %}">
+                    {% csrf_token %}
+                 <h2 id="heading"> Sign Up Form </h2>
+                    <ul id="progressbar">
+                        <li class="active" id="account"><strong> Account Information </strong></li>
+                        <li id="personal"><strong> Personal Information </strong></li>
+                        <li id="address"><strong>Address Details</strong></li>
+                        <li id="qualification"><strong>Qualification Details</strong></li>
+                        <li id="workexperience"><strong>Work Experience Details</strong></li>
+                        <!--<li id="criteria"><strong>Criteria Details</strong></li>-->
+                        <li id="payment"><strong>Certificate/Documents Upload</strong></li>
+                      <!--<li id="confirm"><strong> Review </strong></li>-->
+                    </ul>
+                    <div class="progress">
+                        <div class="pbar pbar-striped pbar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"> </div>
+                    </div> <br>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Account Information: </h2>
+                                    <p> All Fields Required </p>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 1 - 6 </h2>
+                                </div>
+                            </div>
+                            <!--<label class="fieldlabels"> Username: * </label> <input type="text" id="usern11" name="username" placeholder="Enter UserName"  required onkeyup="isempty()"/>-->
+                            <label class="fieldlabels"> Email: * </label> <input type="email" id="emailn11" value="{{ b }}" name="email" placeholder="Enter Email Id" required readonly />
+                            <label class="fieldlabels"> Contact No.: * </label> <input type="number" value="{{ a }}" id="contactn11" name="contact" placeholder="Enter Contact No." oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required  readonly/>
+
+                        </div> <input type="button"  name="next"  class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Personal Information: </h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 2 - 6 </h2>
+                                </div>
+                            </div> <label class="fieldlabels"> First Name: * </label> <input type="text" id="fn1" name="fname" placeholder="First Name" required/>
+                            <label class="fieldlabels"> Middle Name: </label> <input type="text" name="mname" id="mn1"  placeholder="Middle Name (Optional)"  />
+                            <label class="fieldlabels"> Last Name: * </label> <input type="text" name="lname" id="ln1" placeholder="Last Name" required />
+                            <label class="fieldlabels"> Father Name: * </label> <input type="text" name="father" id="fathn" placeholder="Father Name" required />
+                            <label class="fieldlabels"> Mother Name: * </label> <input type="text" name="mother" id="mothn" placeholder="Mother Name" required/>
+
+                            <label for="identity">Identity Details:* </label>
+                            <select name="identity" id="identity" class="form-control" required>
+                                <option value="" selected hidden>Select Option</option>
+                                <option value="aadhar">Aadhar Card</option>
+                                <option value="passport">Passport</option>
+                                <option value="pan">PAN</option>
+                                <option value="drivinglicence">Driving Licence</option>
+                                </select><br>
+                                <div class="content1">
+                                    <div id="aadhar" class="data1">
+                                        <input type="number" name="identitydd" placeholder="Enter Aadhar Number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12" >
                                     </div>
                                 </div>
-                                <label class="fieldlabels"> Username: * </label> <input type="text" name="username" placeholder="UserName" required />
-                                <label class="fieldlabels"> Email: * </label> <input type="email" name="email" placeholder="Email Id" required />
-                                <label class="fieldlabels"> Contact No.: * </label> <input type="text" name="contact" placeholder="Contact No." />
+                                <div class="content1">
+                                    <div id="passport" class="data1">
+                                        <input type="number" name="passport" placeholder="Enter Passport Number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="9" >
+                                    </div>
+                                    </div>
+                                <div class="content1">
+                                    <div id="pan" class="data1">
+                                        <input type="text" name="pancard" placeholder="Enter Pan Number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" >
+                                    </div>
+                                    </div>
+                                <div class="content1">
+                                    <div id="drivinglicence" class="data1">
+                                        <input type="number" name="driving" placeholder="Enter Driving Licence Number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" >
+                                    </div>
+                                    </div>
+                            <label for="marital">Marital Status: * </label>
+                            <select name="marital" id="marital" class="form-control" required>
+                                <option value="" selected hidden>Select Option</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widow">Widow</option>
+                                <option value="separated">Separated</option>
 
-                            </div> <input type="button" name="next" class="next action-button" value="Next" />
-                        </fieldset>
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Personal Information: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 2 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> First Name: * </label> <input type="text" name="fname" placeholder="First Name" />
-                                <label class="fieldlabels"> Last Name: * </label> <input type="text" name="lname" placeholder="Last Name" />
-                                <label class="fieldlabels"> Father Name: * </label> <input type="text" name="father" placeholder="Father Name" />
-                                <label class="fieldlabels"> Mother Name: * </label> <input type="text" name="mother" placeholder="Mother Name" />
-                                <label class="fieldlabels"> Aadhar No.: * </label> <input type="text" name="aadhar" placeholder="Aadhar No." />
-                                <label class="fieldlabels"> Marital Status: * </label> <input type="text" name="marital" />
-                                <label class="fieldlabels"> Age: * </label> <input type="date" name="age" />
-                                <label> Gender: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Male" name="gender" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Male</label>
-                                    </div>
+                                </select><br>
 
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline2" value="Female" name="gender" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline2">Female</label>
-                                    </div>
+                            <label class="fieldlabels"> Date of Birth: * </label> <input type="date" id="age1" name="age" required/>
+                            <label > Gender: * </label>
+                            <div style="border: 6px solid lightgrey;padding: 6px;border-radius: 6px">
+                            <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" value="Male" name="gender" class="custom-control-input" required/>
+                                <label class="custom-control-label" for="customRadioInline1">Male</label>
+                             </div>
 
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Others" name="gender" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Others</label>
-                                    </div>
+                             <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" value="Female" name="gender" class="custom-control-input" />
+                                <label class="custom-control-label" for="customRadioInline2">Female</label>
+                             </div>
+
+                             <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline3" value="Others" name="gender" class="custom-control-input"/>
+                                <label class="custom-control-label" for="customRadioInline3">Others</label>
+                             </div>
+                            </div>
+
+                            <label class="fieldlabels"> Password</label> <input type="password"  name="pwd11" id="pass11" placeholder="Enter a strong password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
+                            <label class="fieldlabels"> Confirm Password</label> <input type="password" name="cpwd" id="pass12" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must be same as password" required/>
+
+                        </div><input type="submit" name="next" id="sub11"   class=" action-button " value="Next" /> <input type="button" name="next" id="sub12" style="display: none"  class="next action-button " value="Next" />   <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+
+
+
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Address Details: </h2>
                                 </div>
-
-                                <label class="fieldlabels"> Password</label> <input type="password" name="pwd1" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                                                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
-                                <label class="fieldlabels"> Confirm Password</label> <input type="password" name="cpwd" placeholder="Confirm Password" required />
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Address Details: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 3 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Address 1: * </label> <input type="text" name="address1" placeholder="Adresss" />
-                                <label class="fieldlabels"> Address 2: * </label> <input type="text" name="adress2" placeholder="Address" />
-                                <label class="fieldlabels"> State: * </label> <input type="text" name="state" placeholder="State" />
-                                <label class="fieldlabels"> City: * </label> <input type="text" name="city" placeholder="City" />
-                                <label class="fieldlabels"> District: * </label> <input type="text" name="district" placeholder="District" />
-                                <label class="fieldlabels"> Pincode: * </label> <input type="text" name="pin" placeholder="Pincode" />
-                                <label class="fieldlabels"> Tehsil: * </label> <input type="text" name="tehsil" placeholder="Tehsil" />
-                                <label> Nationality: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="nation1" value="Indian" name="nationality" class="custom-control-input" />
-                                        <label class="custom-control-label" for="nation1">Indian</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="nation2" value="Others" name="nationality" class="custom-control-input" />
-                                        <label class="custom-control-label" for="nation2">Others</label>
-                                    </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 3 - 6 </h2>
                                 </div>
-                                <label> Caste: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInli" value="General" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">General</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInl" value="OBC" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">OBC</label>
-                                    </div>
+                            </div>
+                            <h3 class="text-primary">Permanent Address</h3>
+                                        <p>Enter permanent address as your Identity card</p>
 
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInl" value="SC" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">SC</label>
-                                    </div>
+                                        <!--=== Permanent address=== -->
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" name="add1" placeholder="Address Line 1*" id="pAddressLine1" required>
+                                         </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="add2" placeholder="Address Line 2" id="pAddressLine2" required>
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="landmark1" placeholder="Landmark" id="pLandmark" required>
+                                           </div>
+                                          <div class="form-group">
+                                              <input type="number" class="form-control" name="zipcode1" placeholder="Zip Code*" id="myzipcode" required>
+                                           </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="city1" placeholder="City*" id="myCity" required>
+                                           </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control " name="district1" placeholder="District*" id="myDistrict" required>
+                                           </div>
+                                           <div class="form-group">
+                                              <input type="text" class="form-control" name="tehsil1" placeholder="Tehsil*" id="myTehsil" required>
+                                            </div>
+                            <label for="state">State:</label>
+                            <select name="state" id="pState" class="form-control" required>
+                                <option value="" selected hidden>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            </select><br>
+                            <label for="domicile">Domicile:*</label>
+                                            <select id="pDomicile" name="domicile" class="form-control" required>
+                                                <option value="" selected hidden>Choose Domicile</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chandigarh">Chandigarh</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                                <option value="Daman and Diu">Daman and Diu</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Lakshadweep">Lakshadweep</option>
+                                                <option value="Puducherry">Puducherry</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                                </select>
+                                                <div class="content2">
+                                                        <div id="Rajasthan" class="data2">
+                                                            <input type="number" name="certificateno" placeholder="Enter (Sthai Niwas Praman Patra) Certificate No">
+                                                            <input type="date" name="issuedate" placeholder="Enter (Sthai Niwas Praman Patra) Issuing Date ">
+                                                            <input type="text" name="domidistrict" placeholder="Enter (Sthai Niwas Praman Patra) Issuing District ">
+                                                        </div>
+                                                </div>
+                            <label for="nationality">Nationality:</label>
+                            <select id="pNationality" name="nationality" data-name="nationality" required="" ms-field="nationality" data-parsley-required-message="Please let us know your nationality." class="form-control" >
+                                            	<option value="">Select Nationality</option>
+                                            	<option value='afghan'>Afghan</option>
+                                            	<option value='albanian'>Albanian</option>
+                                            	<option value='algerian'>Algerian</option>
+                                            	<option value='american'>American</option>
+                                            	<option value='andorran'>Andorran</option>
+                                            	<option value='angolan'>Angolan</option>
+                                            	<option value='anguillan'>Anguillan</option>
+                                            	<option value='citizen-of-antigua-and-barbuda'>Citizen of Antigua and Barbuda</option>
+                                            	<option value='argentine'>Argentine</option>
+                                            	<option value='armenianaustralian'>ArmenianAustralian</option>
+                                            	<option value='austrian'>Austrian</option>
+                                            	<option value='azerbaijani'>Azerbaijani</option>
+                                            	<option value='bahamian'>Bahamian</option>
+                                            	<option value='bahraini'>Bahraini</option>
+                                            	<option value='bangladeshi'>Bangladeshi</option>
+                                            	<option value='barbadian'>Barbadian</option>
+                                            	<option value='belarusian'>Belarusian</option>
+                                            	<option value='belgian'>Belgian</option>
+                                            	<option value='belizean'>Belizean</option>
+                                            	<option value='beninese'>Beninese</option>
+                                            	<option value='bermudian'>Bermudian</option>
+                                            	<option value='bhutanese'>Bhutanese</option>
+                                            	<option value='bolivian'>Bolivian</option>
+                                            	<option value='citizen-of-bosnia-and-herzegovina'>Citizen of Bosnia and Herzegovina</option>
+                                            	<option value='botswanan'>Botswanan</option>
+                                            	<option value='brazilian'>Brazilian</option>
+                                            	<option value='british'>British</option>
+                                            	<option value='british-virgin-islander'>British Virgin Islander</option>
+                                            	<option value='bruneian'>Bruneian</option>
+                                            	<option value='bulgarian'>Bulgarian</option>
+                                            	<option value='burkinan'>Burkinan</option>
+                                            	<option value='burmese'>Burmese</option>
+                                            	<option value='burundian'>Burundian</option>
+                                            	<option value='cambodian'>Cambodian</option>
+                                            	<option value='cameroonian'>Cameroonian</option>
+                                            	<option value='canadian'>Canadian</option>
+                                            	<option value='cape-verdean'>Cape Verdean</option>
+                                            	<option value='cayman-islander'>Cayman Islander</option>
+                                            	<option value='central-african'>Central African</option>
+                                            	<option value='chadian'>Chadian</option>
+                                            	<option value='chilean'>Chilean</option>
+                                            	<option value='chinese'>Chinese</option>
+                                            	<option value='colombian'>Colombian</option>
+                                            	<option value='comoran'>Comoran</option>
+                                            	<option value='congolese-(congo)'>Congolese (Congo)</option>
+                                            	<option value='congolese-(drc)'>Congolese (DRC)</option>
+                                            	<option value='cook-islander'>Cook Islander</option>
+                                            	<option value='costa-rican'>Costa Rican</option>
+                                            	<option value='croatian'>Croatian</option>
+                                            	<option value='cuban'>Cuban</option>
+                                            	<option value='cymraes'>Cymraes</option>
+                                            	<option value='cymro'>Cymro</option>
+                                            	<option value='cypriot'>Cypriot</option>
+                                            	<option value='czech'>Czech</option>
+                                            	<option value='danish'>Danish</option>
+                                            	<option value='djiboutian'>Djiboutian</option>
+                                            	<option value='dominican'>Dominican</option>
+                                            	<option value='citizen-of-the-dominican-republic'>Citizen of the Dominican Republic</option>
+                                            	<option value='dutch'>Dutch</option>
+                                            	<option value='east-timorese'>East Timorese</option>
+                                            	<option value='ecuadorean'>Ecuadorean</option>
+                                            	<option value='egyptian'>Egyptian</option>
+                                            	<option value='emirati'>Emirati</option>
+                                            	<option value='english'>English</option>
+                                            	<option value='equatorial-guinean'>Equatorial Guinean</option>
+                                            	<option value='eritrean'>Eritrean</option>
+                                            	<option value='estonian'>Estonian</option>
+                                            	<option value='ethiopian'>Ethiopian</option>
+                                            	<option value='faroese'>Faroese</option>
+                                            	<option value='fijian'>Fijian</option>
+                                            	<option value='filipino'>Filipino</option>
+                                            	<option value='finnish'>Finnish</option>
+                                            	<option value='french'>French</option>
+                                            	<option value='gabonese'>Gabonese</option>
+                                            	<option value='gambian'>Gambian</option>
+                                            	<option value='georgian'>Georgian</option>
+                                            	<option value='german'>German</option>
+                                            	<option value='ghanaian'>Ghanaian</option>
+                                            	<option value='gibraltarian'>Gibraltarian</option>
+                                            	<option value='greek'>Greek</option>
+                                            	<option value='greenlandic'>Greenlandic</option>
+                                            	<option value='grenadian'>Grenadian</option>
+                                            	<option value='guamanian'>Guamanian</option>
+                                            	<option value='guatemalan'>Guatemalan</option>
+                                            	<option value='citizen-of-guinea-bissau'>Citizen of Guinea-Bissau</option>
+                                            	<option value='guinean'>Guinean</option>
+                                            	<option value='guyanese'>Guyanese</option>
+                                            	<option value='haitian'>Haitian</option>
+                                            	<option value='honduran'>Honduran</option>
+                                            	<option value='hong-konger'>Hong Konger</option>
+                                            	<option value='hungarian'>Hungarian</option>
+                                            	<option value='icelandic'>Icelandic</option>
+                                            	<option value='indian'>Indian</option>
+                                            	<option value='indonesian'>Indonesian</option>
+                                            	<option value='iranian'>Iranian</option>
+                                            	<option value='iraqi'>Iraqi</option>
+                                            	<option value='irish'>Irish</option>
+                                            	<option value='israeli'>Israeli</option>
+                                            	<option value='italian'>Italian</option>
+                                            	<option value='ivorian'>Ivorian</option>
+                                            	<option value='jamaican'>Jamaican</option>
+                                            	<option value='japanese'>Japanese</option>
+                                            	<option value='jordanian'>Jordanian</option>
+                                            	<option value='kazakh'>Kazakh</option>
+                                            	<option value='kenyan'>Kenyan</option>
+                                            	<option value='kittitian'>Kittitian</option>
+                                            	<option value='citizen-of-kiribati'>Citizen of Kiribati</option>
+                                            	<option value='kosovan'>Kosovan</option>
+                                            	<option value='kuwaiti'>Kuwaiti</option>
+                                            	<option value='kyrgyz'>Kyrgyz</option>
+                                            	<option value='lao'>Lao</option>
+                                            	<option value='latvian'>Latvian</option>
+                                            	<option value='lebanese'>Lebanese</option>
+                                            	<option value='liberian'>Liberian</option>
+                                            	<option value='libyan'>Libyan</option>
+                                            	<option value='liechtenstein-citizen'>Liechtenstein citizen</option>
+                                            	<option value='lithuanian'>Lithuanian</option>
+                                            	<option value='luxembourger'>Luxembourger</option>
+                                            	<option value='macanese'>Macanese</option>
+                                            	<option value='macedonian'>Macedonian</option>
+                                            	<option value='malagasy'>Malagasy</option>
+                                            	<option value='malawian'>Malawian</option>
+                                            	<option value='malaysian'>Malaysian</option>
+                                            	<option value='maldivian'>Maldivian</option>
+                                            	<option value='malian'>Malian</option>
+                                            	<option value='maltese'>Maltese</option>
+                                            	<option value='marshallese'>Marshallese</option>
+                                            	<option value='martiniquais'>Martiniquais</option>
+                                            	<option value='mauritanian'>Mauritanian</option>
+                                            	<option value='mauritian'>Mauritian</option>
+                                            	<option value='mexican'>Mexican</option>
+                                            	<option value='micronesian'>Micronesian</option>
+                                            	<option value='moldovan'>Moldovan</option>
+                                            	<option value='monegasque'>Monegasque</option>
+                                            	<option value='mongolian'>Mongolian</option>
+                                            	<option value='montenegrin'>Montenegrin</option>
+                                            	<option value='montserratian'>Montserratian</option>
+                                            	<option value='moroccan'>Moroccan</option>
+                                            	<option value='mosotho'>Mosotho</option>
+                                            	<option value='mozambican'>Mozambican</option>
+                                            	<option value='namibian'>Namibian</option>
+                                            	<option value='nauruan'>Nauruan</option>
+                                            	<option value='nepalese'>Nepalese</option>
+                                            	<option value='new-zealander'>New Zealander</option>
+                                            	<option value='nicaraguan'>Nicaraguan</option>
+                                            	<option value='nigerian'>Nigerian</option>
+                                            	<option value='nigerien'>Nigerien</option>
+                                            	<option value='niuean'>Niuean</option>
+                                            	<option value='north-korean'>North Korean</option>
+                                            	<option value='northern-irish'>Northern Irish</option>
+                                            	<option value='norwegian'>Norwegian</option>
+                                            	<option value='omani'>Omani</option>
+                                            	<option value='pakistani'>Pakistani</option>
+                                            	<option value='palauan'>Palauan</option>
+                                            	<option value='palestinian'>Palestinian</option>
+                                            	<option value='panamanian'>Panamanian</option>
+                                            	<option value='papua-new-guinean'>Papua New Guinean</option>
+                                            	<option value='paraguayan'>Paraguayan</option>
+                                            	<option value='peruvian'>Peruvian</option>
+                                            	<option value='pitcairn-islander'>Pitcairn Islander</option>
+                                            	<option value='polish'>Polish</option>
+                                            	<option value='portuguese'>Portuguese</option>
+                                            	<option value='prydeinig'>Prydeinig</option>
+                                            	<option value='puerto-rican'>Puerto Rican</option>
+                                            	<option value='qatari'>Qatari</option>
+                                            	<option value='romanian'>Romanian</option>
+                                            	<option value='russian'>Russian</option>
+                                            	<option value='rwandan'>Rwandan</option>
+                                            	<option value='salvadorean'>Salvadorean</option>
+                                            	<option value='sammarinese'>Sammarinese</option>
+                                            	<option value='samoan'>Samoan</option>
+                                            	<option value='sao-tomean'>Sao Tomean</option>
+                                            	<option value='saudi-arabian'>Saudi Arabian</option>
+                                            	<option value='scottish'>Scottish</option>
+                                            	<option value='senegalese'>Senegalese</option>
+                                            	<option value='serbian'>Serbian</option>
+                                            	<option value='citizen-of-seychelles'>Citizen of Seychelles</option>
+                                            	<option value='sierra-leonean'>Sierra Leonean</option>
+                                            	<option value='singaporean'>Singaporean</option>
+                                            	<option value='slovak'>Slovak</option>
+                                            	<option value='slovenian'>Slovenian</option>
+                                            	<option value='solomon-islander'>Solomon Islander</option>
+                                            	<option value='somali'>Somali</option>
+                                            	<option value='south-african'>South African</option>
+                                            	<option value='south-korean'>South Korean</option>
+                                            	<option value='south-sudanese'>South Sudanese</option>
+                                            	<option value='spanish'>Spanish</option>
+                                            	<option value='sri-lankan'>Sri Lankan</option>
+                                            	<option value='st-helenian'>St Helenian</option>
+                                            	<option value='st-lucian'>St Lucian</option>
+                                            	<option value='stateless'>Stateless</option>
+                                            	<option value='sudanese'>Sudanese</option>
+                                            	<option value='surinamese'>Surinamese</option>
+                                            	<option value='swazi'>Swazi</option>
+                                            	<option value='swedish'>Swedish</option>
+                                            	<option value='swiss'>Swiss</option>
+                                            	<option value='syrian'>Syrian</option>
+                                            	<option value='taiwanese'>Taiwanese</option>
+                                            	<option value='tajik'>Tajik</option>
+                                            	<option value='tanzanian'>Tanzanian</option>
+                                            	<option value='thai'>Thai</option>
+                                            	<option value='togolese'>Togolese</option>
+                                            	<option value='tongan'>Tongan</option>
+                                            	<option value='trinidadian'>Trinidadian</option>
+                                            	<option value='tristanian'>Tristanian</option>
+                                            	<option value='tunisian'>Tunisian</option>
+                                            	<option value='turkish'>Turkish</option>
+                                            	<option value='turkmen'>Turkmen</option>
+                                            	<option value='turks-and-caicos-islander'>Turks and Caicos Islander</option>
+                                            	<option value='tuvaluan'>Tuvaluan</option>
+                                            	<option value='ugandan'>Ugandan</option>
+                                            	<option value='ukrainian'>Ukrainian</option>
+                                            	<option value='uruguayan'>Uruguayan</option>
+                                            	<option value='uzbek'>Uzbek</option>
+                                            	<option value='vatican-citizen'>Vatican citizen</option>
+                                            	<option value='citizen-of-vanuatu'>Citizen of Vanuatu</option>
+                                            	<option value='venezuelan'>Venezuelan</option>
+                                            	<option value='vietnamese'>Vietnamese</option>
+                                            	<option value='vincentian'>Vincentian</option>
+                                            	<option value='wallisian'>Wallisian</option>
+                                            	<option value='welsh'>Welsh</option>
+                                            	<option value='yemeni'>Yemeni</option>
+                                            	<option value='zambian'>Zambian</option>
+                                            	<option value='zimbabwean'>Zimbabwean</option>
+                                            </select><br>
 
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInli" value="ST" name="caste" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">ST</label>
-                                    </div>
+                                            <h3 class="text-primary">Current Address</h3>
+                                               <div class="form-group">
+                                                  <input type="checkbox" id="checkBox" style="margin-left:-356px;" onclick="autoFilAddress()">
+                                               </div>
+                                                <div class="form-group">
+                                            <input type="text" class="form-control" name="cadd" placeholder="Address Line 1" id="cAddressLine1" required>
+                                         </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="cadd1" placeholder="Address Line 2" id="cAddressLine2" required>
+                                          </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="clandmark" placeholder="Landmark" id="cLandmark" required>
+                                           </div>
+                                          <div class="form-group">
+                                              <input type="number" class="form-control" name="czip" placeholder="Zip Code" id="cZipcode" required>
+                                           </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="ccity" placeholder="City" id="cCity" required>
+                                           </div>
+                                          <div class="form-group">
+                                              <input type="text" class="form-control" name="cdistrict" placeholder="District" id="cDistrict" required>
+                                           </div>
+                                           <div class="form-group">
+                                              <input type="text" class="form-control" name="ctehsil" placeholder="Tehsil" id="cTehsil" required>
+                                            </div>
+                            <label for="state">State:</label>
+                            <select name="state1" id="cState" class="form-control" required>
+                                <option value="" selected hidden>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chandigarh">Chandigarh</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                            <option value="Daman and Diu">Daman and Diu</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Lakshadweep">Lakshadweep</option>
+                            <option value="Puducherry">Puducherry</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                            </select>
+                            <label for="nationality">Nationality:</label>
+                            <select id="cNationality" name="cnationality" data-name="nationality" required="" ms-field="nationality" data-parsley-required-message="Please let us know your nationality." class="form-control">
+                                            	<option value="">Select Nationality</option>
+                                            	<option value='afghan'>Afghan</option>
+                                            	<option value='albanian'>Albanian</option>
+                                            	<option value='algerian'>Algerian</option>
+                                            	<option value='american'>American</option>
+                                            	<option value='andorran'>Andorran</option>
+                                            	<option value='angolan'>Angolan</option>
+                                            	<option value='anguillan'>Anguillan</option>
+                                            	<option value='citizen-of-antigua-and-barbuda'>Citizen of Antigua and Barbuda</option>
+                                            	<option value='argentine'>Argentine</option>
+                                            	<option value='armenianaustralian'>ArmenianAustralian</option>
+                                            	<option value='austrian'>Austrian</option>
+                                            	<option value='azerbaijani'>Azerbaijani</option>
+                                            	<option value='bahamian'>Bahamian</option>
+                                            	<option value='bahraini'>Bahraini</option>
+                                            	<option value='bangladeshi'>Bangladeshi</option>
+                                            	<option value='barbadian'>Barbadian</option>
+                                            	<option value='belarusian'>Belarusian</option>
+                                            	<option value='belgian'>Belgian</option>
+                                            	<option value='belizean'>Belizean</option>
+                                            	<option value='beninese'>Beninese</option>
+                                            	<option value='bermudian'>Bermudian</option>
+                                            	<option value='bhutanese'>Bhutanese</option>
+                                            	<option value='bolivian'>Bolivian</option>
+                                            	<option value='citizen-of-bosnia-and-herzegovina'>Citizen of Bosnia and Herzegovina</option>
+                                            	<option value='botswanan'>Botswanan</option>
+                                            	<option value='brazilian'>Brazilian</option>
+                                            	<option value='british'>British</option>
+                                            	<option value='british-virgin-islander'>British Virgin Islander</option>
+                                            	<option value='bruneian'>Bruneian</option>
+                                            	<option value='bulgarian'>Bulgarian</option>
+                                            	<option value='burkinan'>Burkinan</option>
+                                            	<option value='burmese'>Burmese</option>
+                                            	<option value='burundian'>Burundian</option>
+                                            	<option value='cambodian'>Cambodian</option>
+                                            	<option value='cameroonian'>Cameroonian</option>
+                                            	<option value='canadian'>Canadian</option>
+                                            	<option value='cape-verdean'>Cape Verdean</option>
+                                            	<option value='cayman-islander'>Cayman Islander</option>
+                                            	<option value='central-african'>Central African</option>
+                                            	<option value='chadian'>Chadian</option>
+                                            	<option value='chilean'>Chilean</option>
+                                            	<option value='chinese'>Chinese</option>
+                                            	<option value='colombian'>Colombian</option>
+                                            	<option value='comoran'>Comoran</option>
+                                            	<option value='congolese-(congo)'>Congolese (Congo)</option>
+                                            	<option value='congolese-(drc)'>Congolese (DRC)</option>
+                                            	<option value='cook-islander'>Cook Islander</option>
+                                            	<option value='costa-rican'>Costa Rican</option>
+                                            	<option value='croatian'>Croatian</option>
+                                            	<option value='cuban'>Cuban</option>
+                                            	<option value='cymraes'>Cymraes</option>
+                                            	<option value='cymro'>Cymro</option>
+                                            	<option value='cypriot'>Cypriot</option>
+                                            	<option value='czech'>Czech</option>
+                                            	<option value='danish'>Danish</option>
+                                            	<option value='djiboutian'>Djiboutian</option>
+                                            	<option value='dominican'>Dominican</option>
+                                            	<option value='citizen-of-the-dominican-republic'>Citizen of the Dominican Republic</option>
+                                            	<option value='dutch'>Dutch</option>
+                                            	<option value='east-timorese'>East Timorese</option>
+                                            	<option value='ecuadorean'>Ecuadorean</option>
+                                            	<option value='egyptian'>Egyptian</option>
+                                            	<option value='emirati'>Emirati</option>
+                                            	<option value='english'>English</option>
+                                            	<option value='equatorial-guinean'>Equatorial Guinean</option>
+                                            	<option value='eritrean'>Eritrean</option>
+                                            	<option value='estonian'>Estonian</option>
+                                            	<option value='ethiopian'>Ethiopian</option>
+                                            	<option value='faroese'>Faroese</option>
+                                            	<option value='fijian'>Fijian</option>
+                                            	<option value='filipino'>Filipino</option>
+                                            	<option value='finnish'>Finnish</option>
+                                            	<option value='french'>French</option>
+                                            	<option value='gabonese'>Gabonese</option>
+                                            	<option value='gambian'>Gambian</option>
+                                            	<option value='georgian'>Georgian</option>
+                                            	<option value='german'>German</option>
+                                            	<option value='ghanaian'>Ghanaian</option>
+                                            	<option value='gibraltarian'>Gibraltarian</option>
+                                            	<option value='greek'>Greek</option>
+                                            	<option value='greenlandic'>Greenlandic</option>
+                                            	<option value='grenadian'>Grenadian</option>
+                                            	<option value='guamanian'>Guamanian</option>
+                                            	<option value='guatemalan'>Guatemalan</option>
+                                            	<option value='citizen-of-guinea-bissau'>Citizen of Guinea-Bissau</option>
+                                            	<option value='guinean'>Guinean</option>
+                                            	<option value='guyanese'>Guyanese</option>
+                                            	<option value='haitian'>Haitian</option>
+                                            	<option value='honduran'>Honduran</option>
+                                            	<option value='hong-konger'>Hong Konger</option>
+                                            	<option value='hungarian'>Hungarian</option>
+                                            	<option value='icelandic'>Icelandic</option>
+                                            	<option value='indian'>Indian</option>
+                                            	<option value='indonesian'>Indonesian</option>
+                                            	<option value='iranian'>Iranian</option>
+                                            	<option value='iraqi'>Iraqi</option>
+                                            	<option value='irish'>Irish</option>
+                                            	<option value='israeli'>Israeli</option>
+                                            	<option value='italian'>Italian</option>
+                                            	<option value='ivorian'>Ivorian</option>
+                                            	<option value='jamaican'>Jamaican</option>
+                                            	<option value='japanese'>Japanese</option>
+                                            	<option value='jordanian'>Jordanian</option>
+                                            	<option value='kazakh'>Kazakh</option>
+                                            	<option value='kenyan'>Kenyan</option>
+                                            	<option value='kittitian'>Kittitian</option>
+                                            	<option value='citizen-of-kiribati'>Citizen of Kiribati</option>
+                                            	<option value='kosovan'>Kosovan</option>
+                                            	<option value='kuwaiti'>Kuwaiti</option>
+                                            	<option value='kyrgyz'>Kyrgyz</option>
+                                            	<option value='lao'>Lao</option>
+                                            	<option value='latvian'>Latvian</option>
+                                            	<option value='lebanese'>Lebanese</option>
+                                            	<option value='liberian'>Liberian</option>
+                                            	<option value='libyan'>Libyan</option>
+                                            	<option value='liechtenstein-citizen'>Liechtenstein citizen</option>
+                                            	<option value='lithuanian'>Lithuanian</option>
+                                            	<option value='luxembourger'>Luxembourger</option>
+                                            	<option value='macanese'>Macanese</option>
+                                            	<option value='macedonian'>Macedonian</option>
+                                            	<option value='malagasy'>Malagasy</option>
+                                            	<option value='malawian'>Malawian</option>
+                                            	<option value='malaysian'>Malaysian</option>
+                                            	<option value='maldivian'>Maldivian</option>
+                                            	<option value='malian'>Malian</option>
+                                            	<option value='maltese'>Maltese</option>
+                                            	<option value='marshallese'>Marshallese</option>
+                                            	<option value='martiniquais'>Martiniquais</option>
+                                            	<option value='mauritanian'>Mauritanian</option>
+                                            	<option value='mauritian'>Mauritian</option>
+                                            	<option value='mexican'>Mexican</option>
+                                            	<option value='micronesian'>Micronesian</option>
+                                            	<option value='moldovan'>Moldovan</option>
+                                            	<option value='monegasque'>Monegasque</option>
+                                            	<option value='mongolian'>Mongolian</option>
+                                            	<option value='montenegrin'>Montenegrin</option>
+                                            	<option value='montserratian'>Montserratian</option>
+                                            	<option value='moroccan'>Moroccan</option>
+                                            	<option value='mosotho'>Mosotho</option>
+                                            	<option value='mozambican'>Mozambican</option>
+                                            	<option value='namibian'>Namibian</option>
+                                            	<option value='nauruan'>Nauruan</option>
+                                            	<option value='nepalese'>Nepalese</option>
+                                            	<option value='new-zealander'>New Zealander</option>
+                                            	<option value='nicaraguan'>Nicaraguan</option>
+                                            	<option value='nigerian'>Nigerian</option>
+                                            	<option value='nigerien'>Nigerien</option>
+                                            	<option value='niuean'>Niuean</option>
+                                            	<option value='north-korean'>North Korean</option>
+                                            	<option value='northern-irish'>Northern Irish</option>
+                                            	<option value='norwegian'>Norwegian</option>
+                                            	<option value='omani'>Omani</option>
+                                            	<option value='pakistani'>Pakistani</option>
+                                            	<option value='palauan'>Palauan</option>
+                                            	<option value='palestinian'>Palestinian</option>
+                                            	<option value='panamanian'>Panamanian</option>
+                                            	<option value='papua-new-guinean'>Papua New Guinean</option>
+                                            	<option value='paraguayan'>Paraguayan</option>
+                                            	<option value='peruvian'>Peruvian</option>
+                                            	<option value='pitcairn-islander'>Pitcairn Islander</option>
+                                            	<option value='polish'>Polish</option>
+                                            	<option value='portuguese'>Portuguese</option>
+                                            	<option value='prydeinig'>Prydeinig</option>
+                                            	<option value='puerto-rican'>Puerto Rican</option>
+                                            	<option value='qatari'>Qatari</option>
+                                            	<option value='romanian'>Romanian</option>
+                                            	<option value='russian'>Russian</option>
+                                            	<option value='rwandan'>Rwandan</option>
+                                            	<option value='salvadorean'>Salvadorean</option>
+                                            	<option value='sammarinese'>Sammarinese</option>
+                                            	<option value='samoan'>Samoan</option>
+                                            	<option value='sao-tomean'>Sao Tomean</option>
+                                            	<option value='saudi-arabian'>Saudi Arabian</option>
+                                            	<option value='scottish'>Scottish</option>
+                                            	<option value='senegalese'>Senegalese</option>
+                                            	<option value='serbian'>Serbian</option>
+                                            	<option value='citizen-of-seychelles'>Citizen of Seychelles</option>
+                                            	<option value='sierra-leonean'>Sierra Leonean</option>
+                                            	<option value='singaporean'>Singaporean</option>
+                                            	<option value='slovak'>Slovak</option>
+                                            	<option value='slovenian'>Slovenian</option>
+                                            	<option value='solomon-islander'>Solomon Islander</option>
+                                            	<option value='somali'>Somali</option>
+                                            	<option value='south-african'>South African</option>
+                                            	<option value='south-korean'>South Korean</option>
+                                            	<option value='south-sudanese'>South Sudanese</option>
+                                            	<option value='spanish'>Spanish</option>
+                                            	<option value='sri-lankan'>Sri Lankan</option>
+                                            	<option value='st-helenian'>St Helenian</option>
+                                            	<option value='st-lucian'>St Lucian</option>
+                                            	<option value='stateless'>Stateless</option>
+                                            	<option value='sudanese'>Sudanese</option>
+                                            	<option value='surinamese'>Surinamese</option>
+                                            	<option value='swazi'>Swazi</option>
+                                            	<option value='swedish'>Swedish</option>
+                                            	<option value='swiss'>Swiss</option>
+                                            	<option value='syrian'>Syrian</option>
+                                            	<option value='taiwanese'>Taiwanese</option>
+                                            	<option value='tajik'>Tajik</option>
+                                            	<option value='tanzanian'>Tanzanian</option>
+                                            	<option value='thai'>Thai</option>
+                                            	<option value='togolese'>Togolese</option>
+                                            	<option value='tongan'>Tongan</option>
+                                            	<option value='trinidadian'>Trinidadian</option>
+                                            	<option value='tristanian'>Tristanian</option>
+                                            	<option value='tunisian'>Tunisian</option>
+                                            	<option value='turkish'>Turkish</option>
+                                            	<option value='turkmen'>Turkmen</option>
+                                            	<option value='turks-and-caicos-islander'>Turks and Caicos Islander</option>
+                                            	<option value='tuvaluan'>Tuvaluan</option>
+                                            	<option value='ugandan'>Ugandan</option>
+                                            	<option value='ukrainian'>Ukrainian</option>
+                                            	<option value='uruguayan'>Uruguayan</option>
+                                            	<option value='uzbek'>Uzbek</option>
+                                            	<option value='vatican-citizen'>Vatican citizen</option>
+                                            	<option value='citizen-of-vanuatu'>Citizen of Vanuatu</option>
+                                            	<option value='venezuelan'>Venezuelan</option>
+                                            	<option value='vietnamese'>Vietnamese</option>
+                                            	<option value='vincentian'>Vincentian</option>
+                                            	<option value='wallisian'>Wallisian</option>
+                                            	<option value='welsh'>Welsh</option>
+                                            	<option value='yemeni'>Yemeni</option>
+                                            	<option value='zambian'>Zambian</option>
+                                            	<option value='zimbabwean'>Zimbabwean</option>
+                                            </select><br>
 
+
+                              <label for="economically">Economically Weaker: * </label>
+                            <select name="economically" id="economically" class="form-control">
+                                <option value="" selected hidden>Select Option</option>
+                                <option value="lowincomegroup">Low Income Group</option>
+                                <option value="mig">Middle Income Group</option>
+                                <option value="highincomegroup">High Income Group</option>
+                                </select><br>
+                            <label for="caste">Caste:</label>
+                            <select id="caste" name="caste" data-name="caste" required="" ms-field="caste" data-parsley-required-message="Please let us know your nationality." class="form-control">
+                                            	<option value="" selected hidden>Select Caste</option>
+                                            	<option value="general">General</option>
+                                            	<option value="obc">Obc</option>
+                                            	<option value="sc">Sc</option>
+                                            	<option value="st">St</option>
+                             </select><br>
+
+                             <label for="physicallyhandicap"> Physically Challenged or Divyang:</label>
+                            <select id="physicallyhandicap" name="physicallyhandicap" data-name="physicallyhandicap" required="" ms-field="physicallyhandicap" data-parsley-required-message="Please let us know your nationality." class="form-control">
+                                            	<option value="" selected hidden>Select Option</option>
+                                            	<option value="yes">Yes</option>
+                                            	<option value="no">No</option>
+                             </select><br>
+
+                              <label for="quota">Quota:</label>
+                            <select id="quota" name="quota" data-name="quota" required="" ms-field="quota" data-parsley-required-message="Please let us know your nationality." class="form-control">
+                                            	<option value="" selected hidden>Select Quota</option>
+                                            	<option value="sports">Sports</option>
+                                            	<option value="exarmy">Ex-Army</option>
+                                            	<option value="ncc">Ncc</option>
+                             </select><br>
+
+                             <label for="minority">Minority:</label>
+                            <select id="minority" name="minority" data-name="minority" required="" ms-field="minority" data-parsley-required-message="Please let us know your nationality." class="form-control">
+                                            	<option value="" selected hidden>Select Minority</option>
+                                            	<option value="minority">Minority</option>
+                                            	<option value="nonminority">Non-minority</option>
+                                            	<option value="ncc">Ncc</option>
+                             </select><br>
+                        </div> <input type="submit"  name="next" id="sub21" class=" action-button" value="Next" /> <input type="button" id="sub22" style="display: none" name="next"  class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                    </fieldset>
+
+                    <!--<fieldset>-->
+                    <!--    <div class="form-card">-->
+                    <!--        <div class="row">-->
+                    <!--            <div class="col-7">-->
+                    <!--                <h2 class="fs-title"> Qualification Details: </h2>-->
+                    <!--            </div>-->
+                    <!--            <div class="col-5">-->
+                    <!--                <h2 class="steps"> Step 4 - 6 </h2>-->
+                    <!--            </div>-->
+                    <!--        </div>-->
+
+                    <!--            <label for="">Qualifiction:</label>-->
+                    <!--                <select id="qualification"  class="form-control">-->
+                    <!--                    <option value="" selected hidden>Choose Qualifiction</option>-->
+                    <!--                    <option value="illiterate">Illiterate</option>-->
+                    <!--                    <option value="ssc">SSC</option>-->
+                    <!--                    <option value="hsc">HSC</option>-->
+                    <!--                    <option value="graduation">Graduation</option>-->
+                    <!--                    <option value="postgraduation">PostGraduation</option>-->
+                    <!--                    <option value="phd">PHD</option>-->
+                    <!--                </select>-->
+                    <!--            <div class="content">-->
+                    <!--                    <div id="illiterate" class="data2">-->
+                    <!--                        <input type="text" name="illiterate_bu"  placeholder="Enter Board/University" />-->
+                    <!--                        <input type="text" name="tenth_sc" placeholder="Enter School/College" />-->
+                    <!--                        <input type="date" name="tenth_py"  placeholder="Enter Year of Passing" />-->
+                    <!--                        <input type="number" name="tenth_tm"  placeholder="Enter Total Marks" />-->
+                    <!--                        <input type="number" name="tenth_mo"  placeholder="Enter Marks Obtain" />-->
+                    <!--                        <input type="number" step="0.01"  name="tenth_pgc" placeholder="Enter Percentage/Grade/CGPA" />-->
+                    <!--                        <input type="file" name="illiterateimg"  accept=".jpg, .png" >-->
+                    <!--                    </div>-->
+
+                    <!--                    <div id="ssc" class="data2">-->
+                    <!--                        <input type="text" name="tenth_bu"  placeholder="Enter Board/University" />-->
+                    <!--                        <input type="text" name="tenth_sc"  placeholder="Enter School/College" />-->
+                    <!--                        <input type="date" name="tenth_py"  placeholder="Enter Year of Passing" />-->
+                    <!--                        <input type="number" name="tenth_tm" placeholder="Enter Total Marks" />-->
+                    <!--                        <input type="number" name="tenth_mo" placeholder="Enter Marks Obtain" />-->
+                    <!--                        <input type="number" step="0.01"  name="tenth_pgc" placeholder="Enter Percentage/Grade/CGPA" />-->
+                    <!--                        <input type="file" name="sscimg"  accept=".jpg, .png" >-->
+                    <!--                    </div>-->
+
+
+                    <!--                    <div id="hsc" class="data2">-->
+                    <!--                        <input type="text" name="twelve_bu" placeholder="Enter Board/University" />-->
+                    <!--                            <input type="text" name="twelve_sc"  placeholder="Enter School/College" />-->
+                    <!--                            <input type="date" name="twelve_py" placeholder="Enter Year of Passing" />-->
+                    <!--                            <input type="number" name="twelve_tm"  placeholder="Enter Total Marks" />-->
+                    <!--                            <input type="number" name="twelve_mo" placeholder="Enter Marks Obtain" />-->
+                    <!--                            <input type="number" step="0.01" name="twelve_pgc"  placeholder="Enter Percentage/Grade/CGPA" />-->
+                    <!--                            <input type="file" name="tweleveimg"  accept=".jpg, .png" >-->
+                    <!--                     </div>-->
+
+
+
+                    <!--                    <div id="graduation" class="data2">-->
+                    <!--                    <input type="text" name="graduation_bu" placeholder="Enter Board/University" />-->
+                    <!--                    <input type="text" name="graduation_sc"  placeholder="Enter School/College" />-->
+                    <!--                    <input type="date" name="graduation_py"  placeholder="Enter Year of Passing" />-->
+                    <!--                    <input type="number" name="graduation_tm"  placeholder="Enter Total Marks" />-->
+                    <!--                    <input type="number" name="graduation_mo"  placeholder="Enter Marks Obtain" />-->
+                    <!--                    <input type="number" step="0.01"  name="graduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />-->
+                    <!--                    <input type="file" name="graduationimg" accept=".jpg, .png" >-->
+
+                    <!--                    </div>-->
+
+
+
+
+                    <!--                    <div id="postgraduation" class="data2">-->
+                    <!--                    <input type="text" name="postgraduation_bu" placeholder="Enter Board/University" />-->
+                    <!--                    <input type="text" name="postgraduation_sc"  placeholder="Enter School/College" />-->
+                    <!--                    <input type="date" name="postgraduation_py"  placeholder="Enter Year of Passing" />-->
+                    <!--                    <input type="number" name="postgraduation_tm" placeholder="Enter Total Marks" />-->
+                    <!--                    <input type="number" name="postgraduation_mo"  placeholder="Enter Marks Obtain" />-->
+                    <!--                    <input type="number" step="0.01"  name="postgraduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />-->
+                    <!--                    <input type="file" name="postgradimg"  accept=".jpg, .png" >-->
+
+                    <!--                    </div>-->
+
+
+                    <!--                    <div id="phd" class="data2">-->
+                    <!--                        <input type="text" name="phd_bu" placeholder="Enter Board/University" />-->
+                    <!--                        <input type="text" name="phd_sc"  placeholder="Enter School/College" />-->
+                    <!--                        <input type="date" name="phd_py"  placeholder="Enter Year of Passing" />-->
+                    <!--                        <input type="number" name="phd_tm"  placeholder="Enter Total Marks" />-->
+                    <!--                        <input type="number" name="phd_mo"  placeholder="Enter Marks Obtain" />-->
+                    <!--                        <input type="number" step="0.01"  name="phd_pgc" placeholder="Enter Percentage/Grade/CGPA" />-->
+                    <!--                        <input type="file" name="phdimg"  accept=".jpg, .png" >-->
+                    <!--                    </div>-->
+
+                    <!--                    </div>-->
+
+                    <!--</div>-->
+                    <!--<input type="button" name="next"  class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />-->
+                    <!--</fieldset>-->
+
+                                        <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Qualification Details: </h2>
                                 </div>
-                                <label> Physically Handicap: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInlin" value="Yes" name="physicallyhandicap" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Yes</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioIn" value="No" name="physicallyhandicap" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">No</label>
-                                    </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 4 - 6 </h2>
                                 </div>
+                            </div>
 
-                                <label class="fieldlabels"> Economically Weaker Section: * </label> <input type="text" name="economically" placeholder="Economically Weaker" />
-
-
-                                <label> Quota: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Sports" name="quota" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Sports</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Ex Army" name="quota" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Ex Army</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="NCC" name="quota" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">NCC</label>
-                                    </div>
+                                <label for="">Qualifiction:</label>
+                                        <select onchange="yesnoCheck(this);" class="form-control" id="qualification1" name="qualification" required>
+                                        <option value="" selected hidden>Choose Qualifiction</option>
+                                        <option value="illiterate">Illiterate</option>
+                                        <option value="ssc">SSC</option>
+                                        <option value="hsc">HSC</option>
+                                        <option value="graduation">Graduation</option>
+                                        <option value="postgraduation">PostGraduation</option>
+                                        <option value="phd">PHD</option>
+                                    </select>
+                                <div id="ifYes" style="display: none;">
+                                            <!--<input type="text" name="illiterate_bu"  placeholder="Enter Board/University" />-->
+                                            <!--<input type="text" name="tenth_sc" placeholder="Enter School/College" />-->
+                                            <!--<input type="date" name="tenth_py"  placeholder="Enter Year of Passing" />-->
+                                            <!--<input type="number" name="tenth_tm"  placeholder="Enter Total Marks" />-->
+                                            <!--<input type="number" name="tenth_mo"  placeholder="Enter Marks Obtain" />-->
+                                            <!--<input type="number" step="0.01"  name="tenth_pgc" placeholder="Enter Percentage/Grade/CGPA" />-->
+                                            <!--<input type="file" name="illiterateimg"  accept=".jpg, .png" >-->
                                 </div>
+                                <div id="ifYes1" style="display: none;">
+                              <input type="text" name="ssc1"  placeholder="Enter Board/University" />
+                                            <input type="text" name="ssc2"  placeholder="Enter School/College" />Passing Year
+                                            <input type="date" name="ssc3"   />
+                                            <input type="number" name="ssc4" placeholder="Enter Total Marks" />
+                                            <input type="number" name="ssc5" placeholder="Enter Marks Obtain" />
+                                            <input type="number" step="0.01"  name="ssc6" placeholder="Enter Percentage/Grade/CGPA" />
+                                            <input type="file" name="ssc7"  accept=".jpg, .png" >
+                          </div>
+                               <div id="ifYes2" style="display: none;">
+                              <input type="text" name="hsc1" placeholder="Enter Board/University" />
+                                                <input type="text" name="hsc2"  placeholder="Enter School/College" />Passing Year
+                                                <input type="date" name="hsc3" placeholder="Enter Year of Passing" />
+                                                <input type="number" name="hsc4"  placeholder="Enter Total Marks" />
+                                                <input type="number" name="hsc5" placeholder="Enter Marks Obtain" />
+                                                <input type="number" step="0.01" name="hsc6"  placeholder="Enter Percentage/Grade/CGPA" />
+                                                <input type="file" name="hsc7"  accept=".jpg, .png" >
+                          </div>
+                                 <div id="ifYes3" style="display: none;">
+                              <input type="text" name="graduation_bu" placeholder="Enter Board/University" />
+                                        <input type="text" name="graduation_sc"  placeholder="Enter School/College" />Passing Year
+                                        <input type="date" name="graduation_py"  placeholder="Enter Year of Passing" />
+                                        <input type="number" name="graduation_tm"  placeholder="Enter Total Marks" />
+                                        <input type="number" name="graduation_mo"  placeholder="Enter Marks Obtain" />
+                                        <input type="number" step="0.01"  name="graduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />
+                                        <input type="file" name="graduationimg" accept=".jpg, .png" >
+                          </div>
 
-                                <label> Minority: * </label>
-                                <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline1" value="Minority" name="minority" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline1">Minority</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="customRadioInline3" value="Non-Minority" name="minority" class="custom-control-input" />
-                                        <label class="custom-control-label" for="customRadioInline3">Non-Minority</label>
-                                    </div>
+                                 <div id="ifYes4" style="display: none;">
+                             <input type="text" name="postgraduation_bu" placeholder="Enter Board/University" />
+                                        <input type="text" name="postgraduation_sc"  placeholder="Enter School/College" />Passing Year
+                                        <input type="date" name="postgraduation_py"  placeholder="Enter Year of Passing" />
+                                        <input type="number" name="postgraduation_tm" placeholder="Enter Total Marks" />
+                                        <input type="number" name="postgraduation_mo"  placeholder="Enter Marks Obtain" />
+                                        <input type="number" step="0.01"  name="postgraduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />
+                                        <input type="file" name="postgradimg"  accept=".jpg, .png" >
+                          </div>
+
+                                 <div id="ifYes5" style="display: none;">
+                               <input type="text" name="phd_bu" placeholder="Enter Board/University" />
+                                            <input type="text" name="phd_bh"  placeholder="Enter School/College" />Passing Year
+                                            <input type="date" name="phd_py"  placeholder="Enter Year of Passing" />
+                                            <input type="number" name="phd_tm"  placeholder="Enter Total Marks" />
+                                            <input type="number" name="phd_mo"  placeholder="Enter Marks Obtain" />
+                                            <input type="number" step="0.01"  name="phd_pgc" placeholder="Enter Percentage/Grade/CGPA" />
+                                            <input type="file" name="phdimg"  accept=".jpg, .png" >
+                          </div>
+
+
+
+
+
+                    </div>
+                    <input type="submit" name="next" id="sub31" class=" action-button" value="Next" /> <input type="button" id="sub32" name="next" style="display: none" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Work Experience Details: </h2>
                                 </div>
-
-
-
-
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Qualification Details: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 4 - 6 </h2>
-                                    </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 5 - 6 </h2>
                                 </div>
-                                <!--<label class="fieldlabels"> 10th: * </label> <input type="text" name="tenth" placeholder="Enter 10th marks" />
-                                <label class="fieldlabels"> 12th: * </label> <input type="text" name="twelve" placeholder="Enter 12th marks" />
-                                <label class="fieldlabels"> Graduation: * </label> <input type="text" name="graduation" placeholder="Enter Graduation marks" />
-                                <label class="fieldlabels"> Post Graduation: * </label> <input type="text" name="postgraduation" placeholder="Enter PG marks" />-->
-                                <label class="fieldlabels">10th: *</label>
-                                <input type="text" name="tenth_sc" placeholder="Enter School/College" />
-                                <input type="text" name="tenth_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="tenth_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="tenth_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="tenth_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="tenth_pgc" placeholder="Enter Percentage/Grade/CGPA" />
+                            </div>
+                            <label class="fieldlabels"> Designation: * </label> <input type="text" id="p1" name="designation" placeholder="Enter Designation" required />
+                            <label class="fieldlabels"> Department: * </label> <input type="text" id="p2" name="department" placeholder="Enter Department" required/>
+                            <label class="fieldlabels"> Name of Organization: * </label> <input type="text" id="p3" name="organization" placeholder="Enter Organization " required/>
+                            <label class="fieldlabels"> Appointment: * </label> <input type="text" id="p4" name="appointmen" placeholder="Enter Appointment" required />
 
+                            <label class="fieldlabels"> Year: * </label> <input type="number" name="year" id="p5" placeholder="Enter Experience In Year" required/>
+                            <label class="fieldlabels"> Month: * </label> <input type="number" name="month" id="p6" placeholder="Enter Experience In Month" required />
+                            <label class="fieldlabels"> Salary: * </label> <input type="number" id="p5" name="salary1" placeholder="Enter  Current Salary" required />
+                            <input type="number" id="p6" name="salary2" placeholder="Enter Expeected Salary" required/>
+                             <div id="addmore">
+                            <a href="#" id="add_mode_fields"><i class="fa fa-plus"></i>Add More Experience</a>
+                        </div>
+                        </div><input type="submit" name="next"  id="sub41" class=" action-button"  value="Next" />  <input type="button" name="next" style="display: none"  id="sub42" class="next action-button"  value="Next" />  <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fs-title"> Certificate/Documents Upload: </h2>
+                                </div>
+                                <div class="col-5">
+                                    <h2 class="steps"> Step 6 - 6 </h2>
+                                </div>
+                            </div> <label class="fieldlabels"> Upload Your Photo: </label> <input type="file" name="profilepic" id="filesizecheck" accept=".jpg, .png" >
+                             <label class="fieldlabels"> Upload Signature Photo: </label> <input type="file" name="signature" id="filesizecheck1" accept=".jpg, .png">
 
-                                <label class="fieldlabels">12th: *</label>
-                                <input type="text" name="twelve_sc" placeholder="Enter School/College" />
-                                <input type="text" name="twelve_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="twelve_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="twelve_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="twelve_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="twelve_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-                                <label class="fieldlabels">Graduation: *</label>
-                                <input type="text" name="graduation_sc" placeholder="Enter School/College" />
-                                <input type="text" name="graduation_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="graduation_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="graduation_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="graduation_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="graduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-
-                                <label class="fieldlabels">Postgraduation: *</label>
-                                <input type="text" name="postgraduation_sc" placeholder="Enter School/College" />
-                                <input type="text" name="postgraduation_py" placeholder="Enter Year of Passing" />
-                                <input type="text" name="postgraduation_bu" placeholder="Enter Board/University" />
-                                <input type="text" name="postgraduation_tm" placeholder="Enter Total Marks" />
-                                <input type="text" name="postgraduation_mo" placeholder="Enter Marks Obtain" />
-                                <input type="text" name="postgraduation_pgc" placeholder="Enter Percentage/Grade/CGPA" />
-
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title"> Work Experience Details: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 5 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Year: * </label> <input type="number" name="year" placeholder="Enter Year" />
-                                <label class="fieldlabels"> Month: * </label> <input type="number" name="month" placeholder="Enter Month" />
-                                <label class="fieldlabels"> Designation: * </label> <input type="text" name="designation" placeholder="Enter Designation" />
-                                <label class="fieldlabels"> Department: * </label> <input type="text" name="department" placeholder="Enter Department" />
-                                <label class="fieldlabels"> Company name: * </label> <input type="text" name="companyname" placeholder="Enter Company Name" />
-                                <label class="fieldlabels"> Type Of Appointmen: * </label> <input type="text" name="appointmen" placeholder="Enter Appointmen" />
-
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-
-                        <!--<fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Criteria : </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 6 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Designation: * </label> <input type="text" name="designation" placeholder="Enter Designation" />
-                                <label class="fieldlabels"> Department: * </label> <input type="text" name="department" placeholder="Enter Department" />
-                                <label class="fieldlabels"> Academic: * </label> <input type="text" name="academic" placeholder="Enter %" />
-                                <label class="fieldlabels"> Experiences: * </label> <input type="text" name="experiences" placeholder="Enter Experience" />
-                            </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>-->
-
-
-
-                        <fieldset>
-                            <div class="form-card">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <h2 class="fs-title">Documents Upload: </h2>
-                                    </div>
-                                    <div class="col-5">
-                                        <h2 class="steps"> Step 6 - 6 </h2>
-                                    </div>
-                                </div> <label class="fieldlabels"> Upload Your Photo: </label> <input type="file" name="profilepic">
-                                <label class="fieldlabels"> Upload Signature Photo: </label> <input type="file" name="signature">
-
-                            </div> <input type="submit" name="submit" class="submit action-button" value="Submit" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
-                        </fieldset>
-                        <!--<fieldset>#}
-                        {#                        <div class="form-card">#}
-                        {#                            <div class="row">#}
-                        {#                                <div class="col-7">#}
-                        {#                                    <h2 class="fs-title"> Review: </h2>#}
-                        {#                                </div>#}
-                        {#                                <div class="col-5">#}
-                        {#                                    <h2 class="steps"> Step 8 - 8 </h2>#}
-                        {#                                </div>#}
-                        {#                            </div> <br> <br>#}
-                        {#                            <h2 class="purple-text text-center"><strong> SUCCESS ! </strong></h2> <br>#}
-                        {#                            <div class="row justify-content-center">#}
-                        {#                                <div class="col-3"> <img src="1.png" class="fit-image"> </div>#}
-                        {#                            </div> <br><br>#}
-                        {#                            <div class="row justify-content-center">#}
-                        {#                                <div class="col-7 text-center">#}
-                        {#                                    <h5 class="purple-text text-center"> You Have Successfully Signed Up </h5>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
-                        {#                        </div>#}
-                        {#                    </fieldset>#}-->
-                    </form>
-                </div>
+                        </div> <input type="submit" id="subclear"   name="submit" class="submit action-button" value="Submit" /> <input type="submit" u name="submit" style="display: none;padding-left: 10px;padding-right: 30px" class="submit action-button" id="suredata" value="Are U sure?" /> <input type="button" u name="submit" style="display: none" class="submit action-button" id="backdata" value="Back" /> <input type="button" name="pre" id="preid" class="pre action-button-pre" value="Pre" />
+                    </fieldset>
+<!--{#                    <fieldset>#}-->
+<!--{#                        <div class="form-card">#}-->
+<!--{#                            <div class="row">#}-->
+<!--{#                                <div class="col-7">#}-->
+<!--{#                                    <h2 class="fs-title"> Review: </h2>#}-->
+<!--{#                                </div>#}-->
+<!--{#                                <div class="col-5">#}-->
+<!--{#                                    <h2 class="steps"> Step 8 - 8 </h2>#}-->
+<!--{#                                </div>#}-->
+<!--{#                            </div> <br> <br>#}-->
+<!--{#                            <h2 class="purple-text text-center"><strong> SUCCESS ! </strong></h2> <br>#}-->
+<!--{#                            <div class="row justify-content-center">#}-->
+<!--{#                                <div class="col-3"> <img src="1.png" class="fit-image"> </div>#}-->
+<!--{#                            </div> <br><br>#}-->
+<!--{#                            <div class="row justify-content-center">#}-->
+<!--{#                                <div class="col-7 text-center">#}-->
+<!--{#                                    <h5 class="purple-text text-center"> You Have Successfully Signed Up </h5>#}-->
+<!--{#                                </div>#}-->
+<!--{#                            </div>#}-->
+<!--{#                        </div>#}-->
+<!--{#                    </fieldset>#}-->
+                </form>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="form-group">
-                {% if messages %}
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            {% if messages %}
                 {% for message in messages %}
-                {% if message.tags == 'success' %}
-                <div class="alert alert-success">{{ message }}</div>
-                {% elif message.tags == 'error' %}
-                <div class="alert alert-danger">{{ message }}</div>
-                {% endif %}
+                    {% if message.tags == 'success' %}
+                        <div class="alert alert-success">{{ message }}</div>
+                    {% elif message.tags == 'error' %}
+                        <div class="alert alert-danger">{{ message }}</div>
+                    {% endif %}
                 {% endfor %}
-                {% endif %}
-            </div>
+            {% endif %}
         </div>
     </div>
+</div>
 
-    <script>
+
+
+
+
+
+
+
+  <script>
 
         $(document).ready(function () {
             var current_fs, next_fs, pre_fs;
@@ -673,65 +1519,1132 @@
         });
     </script>
 
+ <script>
+         $(document).ready(function(){
+
+            $("#identity").on('change',function(){
+                $(".data1").hide();
+              $("#" + $(this).val()).fadeIn(700);
+             }).change();
+
+            });
+
+        $(document).ready(function(){
+
+        $("#pDomicile").on('change',function(){
+            $(".data2").hide();
+           $("#" + $(this).val()).fadeIn(700);
+         }).change();
+
+        });
+
+         $(document).ready(function(){
+
+        $("#Qualification").on('change',function(){
+            $(".data2").hide();
+           $("#" + $(this).val()).fadeIn(700);
+         }).change();
+
+        });
+
+
+
+
+  </script>
+
+
+
+
+<!--<script>-->
+<!--    function radioCheck() {-->
+<!--  document.getElementById("Yes").checked = "checked";-->
+<!--}-->
+<!--</script>-->
+
+<script>
+
+        $(document).ready(function(){
+            var add_mode_fields = document.getElementById('add_mode_fields');
+
+            add_mode_fields.onclick = function()
+            {
+                var newField = document.createElement('input');
+                var newField2 = document.createElement('input');
+                var newField3 = document.createElement('input');
+                var newField4 = document.createElement('input');
+                var newField5 = document.createElement('input');
+                var newField6 = document.createElement('input');
+                var newField7 = document.createElement('input');
+                var newField8 = document.createElement('input');
+
+                newField.setAttribute('type','text');
+                newField.setAttribute('name','addmore[]');
+                newField.setAttribute('class','addmore');
+                newField.setAttribute('siz',50);
+                newField.setAttribute('placeholder','Enter Designation');
+                addmore.appendChild(newField);
+
+                newField2.setAttribute('type','text');
+                newField2.setAttribute('name','addmore[]');
+                newField2.setAttribute('class','addmore');
+                newField2.setAttribute('siz',50);
+                newField2.setAttribute('placeholder','Enter Department');
+                addmore.appendChild(newField2);
+
+                newField3.setAttribute('type','text');
+                newField3.setAttribute('name','addmore[]');
+                newField3.setAttribute('class','addmore');
+                newField3.setAttribute('siz',50);
+                newField3.setAttribute('placeholder','Enter Organization');
+                addmore.appendChild(newField3);
+
+                newField4.setAttribute('type','text');
+                newField4.setAttribute('name','addmore[]');
+                newField4.setAttribute('class','addmore');
+                newField4.setAttribute('siz',50);
+                newField4.setAttribute('placeholder','Enter Appointment');
+                addmore.appendChild(newField4);
+
+                newField5.setAttribute('type','number');
+                newField5.setAttribute('name','addmore[]');
+                newField5.setAttribute('class','addmore');
+                newField5.setAttribute('siz',50);
+                newField5.setAttribute('placeholder','Enter Experience In Year');
+                addmore.appendChild(newField5);
+
+                newField6.setAttribute('type','number');
+                newField6.setAttribute('name','addmore[]');
+                newField6.setAttribute('class','addmore');
+                newField6.setAttribute('siz',50);
+                newField6.setAttribute('placeholder','Enter Experience In Month');
+                addmore.appendChild(newField6);
+
+                newField7.setAttribute('type','number');
+                newField7.setAttribute('name','addmore[]');
+                newField7.setAttribute('class','addmore');
+                newField7.setAttribute('siz',50);
+                newField7.setAttribute('placeholder','Enter Current Salary');
+                addmore.appendChild(newField7);
+
+                newField8.setAttribute('type','number');
+                newField8.setAttribute('name','addmore[]');
+                newField8.setAttribute('class','addmore');
+                newField8.setAttribute('siz',50);
+                newField8.setAttribute('placeholder','Enter Expected Salary');
+                addmore.appendChild(newField8);
+
+
+            }
+
+        });
+
+</script>
+
+<!--<script>-->
+
+<!--    function isempty() {-->
+        <!--// let usern = document.getElementById('usern11').value;-->
+<!--        let emailn = document.getElementById('emailn11').value;-->
+<!--        let contactn = document.getElementById('contactn11').value;-->
+
+<!--        if (emailn.length > 0 && contactn.length > 0){-->
+
+<!--            document.getElementById("nextbutt").style.display = "block";-->
+<!--        }-->
+
+<!--    }-->
+<!--</script>-->
+
+<!--<script>-->
+
+<!--    function isempty1() {-->
+<!--        let fn = document.getElementById('fn1').value;-->
+        <!--// let mn = document.getElementById('mn1').value;-->
+<!--        let ln = document.getElementById('ln1').value;-->
+<!--        let fh = document.getElementById('fathn').value;-->
+<!--        let mh = document.getElementById('mothn').value;-->
+<!--        let pd = document.getElementById('pass11').value;-->
+<!--        let pd1 = document.getElementById('pass12').value;-->
+
+
+
+<!--        if (fn.length > 0 && ln.length > 0 && fh.length > 0 && mh.length > 0 && pd.length > 0 && pd1.length > 0){-->
+
+<!--            document.getElementById("next2n").style.display = "block";-->
+<!--        }-->
+
+<!--    }-->
+<!--</script>-->
+
+<!--<script>-->
+
+<!--    function isempty2() {-->
+<!--        let fn = document.getElementById('a1').value;-->
+<!--        let mn = document.getElementById('a2').value;-->
+<!--        let ln = document.getElementById('a3').value;-->
+<!--        let fh = document.getElementById('a4').value;-->
+<!--        let mh = document.getElementById('a5').value;-->
+<!--        let pd = document.getElementById('a6').value;-->
+
+
+
+<!--        if (fn.length > 0 && mn.length > 0 && ln.length > 0 && fh.length > 0 && mh.length > 0 && pd.length > 0){-->
+
+<!--            document.getElementById("nextn3").style.display = "block";-->
+<!--        }-->
+
+<!--    }-->
+<!--</script>-->
+
+<!--<script>-->
+
+<!--    function isempty3() {-->
+<!--        let t1 = document.getElementById('t1').value;-->
+<!--        let t2 = document.getElementById('t2').value;-->
+<!--        let t3 = document.getElementById('t3').value;-->
+<!--        let t4 = document.getElementById('t4').value;-->
+<!--        let t5 = document.getElementById('t5').value;-->
+<!--        let t6 = document.getElementById('t6').value;-->
+<!--        let t7 = document.getElementById('t7').value;-->
+<!--        let t8 = document.getElementById('t8').value;-->
+<!--        let t9 = document.getElementById('t9').value;-->
+<!--        let t10 = document.getElementById('t10').value;-->
+<!--        let t11 = document.getElementById('t11').value;-->
+<!--        let t12 = document.getElementById('t12').value;-->
+<!--        let t13 = document.getElementById('t13').value;-->
+<!--        let t14 = document.getElementById('t14').value;-->
+<!--        let t15 = document.getElementById('t15').value;-->
+<!--        let t16 = document.getElementById('t16').value;-->
+<!--        let t17 = document.getElementById('t17').value;-->
+<!--        let t18 = document.getElementById('t18').value;-->
+<!--        let t19 = document.getElementById('t19').value;-->
+<!--        let t20 = document.getElementById('t20').value;-->
+<!--        let t21 = document.getElementById('t21').value;-->
+<!--        let t22 = document.getElementById('t22').value;-->
+<!--        let t23 = document.getElementById('t23').value;-->
+<!--        let t24 = document.getElementById('t24').value;-->
+
+
+<!--        if (t1.length > 0 && t2.length > 0 && t3.length > 0 && t4.length > 0 && t5.length > 0 && t6.length > 0 && t7.length > 0 && t8.length > 0 && t9.length > 0 && t10.length > 0 && t11.length > 0 && t12.length > 0 && t13.length > 0 && t14.length > 0 && t15.length > 0 && t16.length > 0 && t17.length > 0 && t18.length > 0 && t19.length > 0 && t20.length > 0 && t21.length > 0 && t22.length > 0 && t23.length > 0 && t24.length > 0){-->
+
+<!--            document.getElementById("nextn4").style.display = "block";-->
+<!--        }-->
+
+<!--    }-->
+<!--</script>-->
+
+
+
+
+<!--<script>-->
+
+<!--    function isempty4() {-->
+<!--        let fn = document.getElementById('p1').value;-->
+<!--        let mn = document.getElementById('p2').value;-->
+<!--        let ln = document.getElementById('p3').value;-->
+<!--        let fh = document.getElementById('p4').value;-->
+<!--        let mh = document.getElementById('p5').value;-->
+<!--        let pd = document.getElementById('p6').value;-->
+
+
+
+<!--        if (fn.length > 0 && mn.length > 0 && ln.length > 0 && fh.length > 0 && mh.length > 0 && pd.length > 0){-->
+
+<!--            document.getElementById("nextn5").style.display = "block";-->
+<!--        }-->
+
+<!--    }-->
+<!--</script>-->
+
+<!--<script>-->
+<!--    $("#subclear").on("click",function(){-->
+
+<!--    $("#suredata").css("display","block")-->
+<!--    $("#backdata").css("display","block")-->
+<!--    $("#subclear").css("display","none")-->
+<!--    $("#preid").css("display","none")-->
+
+<!--});-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    $("#backdata").on("click",function(){-->
+
+<!--    $("#suredata").css("display","none")-->
+<!--    $("#backdata").css("display","none")-->
+<!--    $("#subclear").css("display","block")-->
+<!--    $("#preid").css("display","block")-->
+
+<!--});-->
+<!--</script>-->
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#fn1").keyup(function(){
+
+
+     if(Number(this.value)){
+          alert('please type only character')
+      }
+
+
+
+  });
+});
+</script>
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#mn1").keyup(function(){
+
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#mn1").val(null);
+      }
+
+
+
+  });
+});
+</script>
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#ln1").keyup(function(){
+
+
+      if(Number(this.value)){
+          alert('please type only character')
+          $("#ln1").val(null);
+      }
+
+
+
+  });
+});
+</script>
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#fathn").keyup(function(){
+
+
+      if(Number(this.value)){
+          alert('please type only character')
+          $("#fathn").val(null);
+      }
+
+
+
+  });
+});
+</script>
+
+
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#mothn").keyup(function(){
+
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#mothn").val(null);
+      }
+
+
+  });
+});
+</script>
+
+{#             <script type="text/javascript">#}
+{#$(document).ready(function(){#}
+{#  $("#a1").keyup(function(){#}
+{##}
+{##}
+{#<!--      if(Number(this.value)){-->#}
+{#<!--          alert('please type only character')-->#}
+{#<!--      }-->#}
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#a2").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#a3").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#a4").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#a5").keyup(function(){-->
+
+
+<!--      if(isNaN()(this.value)){-->
+<!--          alert('please type only Number')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#a6").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t1").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t2").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t7").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t8").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t13").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t14").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t19").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#t20").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#p1").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#p2").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#p3").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--              <script type="text/javascript">-->
+<!--$(document).ready(function(){-->
+<!--  $("#p4").keyup(function(){-->
+
+
+<!--      if(Number(this.value)){-->
+<!--          alert('please type only character')-->
+<!--      }-->
+
+
+
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#filesizecheck').on('change',function(){
+     for(var i=0; i< $(this).get(0).files.length; ++i){
+        var file1 = $(this).get(0).files[i].size;
+        if(file1){
+          var file_size = $(this).get(0).files[i].size;
+          if(file_size > 100000){
+            $('#error-message').html("File upload size is larger than 2MB");
+            $('#error-message').css("display","block");
+            $('#error-message').css("color","red");
+            alert("File size cannot be larger than 1MB");
+            $("#filesizecheck").val(null);
+         }else{
+          $('#error-message').css("display","none");
+
+        }
+       }
+    }
+  });
+  });
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#filesizecheck1').on('change',function(){
+     for(var i=0; i< $(this).get(0).files.length; ++i){
+        var file1 = $(this).get(0).files[i].size;
+        if(file1){
+          var file_size = $(this).get(0).files[i].size;
+          if(file_size > 100000){
+           $('#error-message').html("File upload size is larger than 2MB");
+            $('#error-message').css("display","block");
+           $('#error-message').css("color","red");
+            alert("File size cannot be larger than 1MB");
+             $("#filesizecheck1").val(null);
+        }else{
+            $('#error-message').css("display","none");
+
+          }
+       }
+     }
+   });
+ });
+</script>
+
+
+<script type="text/javascript">
+
+function autoFilAddress()
+    {
+       let checkBox= document.getElementById('checkBox');
+
+       let pAddressLine1 = document.getElementById("pAddressLine1");
+       let pAddressLine2 = document.getElementById("pAddressLine2");
+       let pLandmark = document.getElementById("pLandmark");
+       let pZipcode = document.getElementById("pZipcode");
+       let pCity = document.getElementById("pCity");
+       let pDistrict = document.getElementById("pDistrict");
+       let pTehsil = document.getElementById("pTehsil");
+
+       let curAddressLine1 = document.getElementById("cAddressLine1");
+       let curAddressLine2 = document.getElementById("cAddressLine2");
+       let curLandmark = document.getElementById("cLandmark");
+       let curZipcode = document.getElementById("cZipcode");
+       let curCity = document.getElementById("cCity");
+       let curDistrict = document.getElementById("cDistrict");
+       let curTehsil = document.getElementById("cTehsil");
+
+        if (checkBox.checked == true)
+        {
+
+       let pAddressLine1Value = pAddressLine1.value;
+       let pAddressLine2Value = pAddressLine2.value;
+       let pLandmarkValue     = pLandmark.value;
+       let pZipcodeValue      = pZipcode.value;
+       let pCityValue         = pCity.value;
+       let pDistrictValue     = pDistrict.value;
+       let pTehsilValue       = pTehsil.value;
+
+       curAddressLine1.value = pAddressLine1Value;
+       curAddressLine2.value = pAddressLine2Value;
+       curLandmark.value     = pLandmarkValue;
+       curZipcode.value      = pZipcodeValue;
+       curCity.value         = pCityValue;
+       curDistrict.value     = pDistrictValue;
+       curTehsil.value       = pTehsilValue;
+
+
+       }
+        else
+        {
+       curAddressLine1.value = "";
+       curAddressLine2.value = "";
+       curLandmark.value     = "";
+       curZipcode.value      = "";
+       curCity.value         = "";
+
+       curDistrict           = "";
+       curTehsil             = "";
+
+        }
+    }
+
+</script>
+
+<script>
+function yesnoCheck(that) {
+    if (that.value == "illiterate") {
+
+        document.getElementById("ifYes").style.display = "block";
+    } else {
+        document.getElementById("ifYes").style.display = "none";
+    }
+   if (that.value == "ssc"){
+
+        document.getElementById("ifYes1").style.display = "block";
+   }
+   else {
+        document.getElementById("ifYes1").style.display = "none";
+    }
+      if (that.value == "hsc"){
+
+        document.getElementById("ifYes2").style.display = "block";
+   }
+   else {
+        document.getElementById("ifYes2").style.display = "none";
+    }
+
+         if (that.value == "graduation"){
+
+        document.getElementById("ifYes3").style.display = "block";
+   }
+   else {
+        document.getElementById("ifYes3").style.display = "none";
+    }
+
+            if (that.value == "postgraduation"){
+
+        document.getElementById("ifYes4").style.display = "block";
+   }
+   else {
+        document.getElementById("ifYes4").style.display = "none";
+    }
+
+               if (that.value == "phd"){
+
+        document.getElementById("ifYes5").style.display = "block";
+   }
+   else {
+        document.getElementById("ifYes5").style.display = "none";
+    }
+
+
+
+
+}
+</script>
+
+
+
+
+<script>
+
+     var input = document.querySelector('#myzipcode');
+
+
+
+
+
+    var codelength = /^\d{6}$/
+
+    input.addEventListener('keyup', () => {
+
+
+        if (input.value.match(codelength)) {
+           
+             debugger;
+
+            $.ajax({
+                type: "GET",
+                url: "https://api.postalpincode.in/pincode/" + input.value,
+
+
+                success: (response) => {
+                    $('#myCity').val((response[0].PostOffice[0].District));
+                    $('#myDistrict').val((response[0].PostOffice[0].District));
+                    $('#myTehsil').val((response[0].PostOffice[0].State));
+                    console.log('ppp',response)
+
+
+                }
+            });
+
+
+        }
+
+        else {
+
+            info.innerHTML = "Type valid zipcode";
+
+        }
+
+    });
+</script>
+
+
+
+
+                            <script>
+ $(document).ready(function() {
+$("#msform").validate({
+rules: {
+
+        pwd11 : {
+                    minlength : 8
+                },
+                cpwd : {
+                    minlength : 8,
+                    equalTo : "#pwd"
+                },
+
+
+
+
+weight: {
+required: {
+depends: function(elem) {
+return $("#age").val() > 50
+}
+},
+number: true,
+min: 0
+}
+},
+messages : {
+      fname: {
+        required: "Please enter firstname",
+      },
+    lname: {
+        required: "Please enter lastname",
+      },
+    father: {
+        required: "Please enter fathername",
+      },
+    mother: {
+        required: "Please enter mothername",
+      },
+    identity: {
+        required: "Please enter Identity",
+      },
+    marital: {
+        required: "Please select marital",
+      },
+    age: {
+        required: "Please enter age",
+      },
+    gender: {
+        required: "Please select gender",
+      },
+
+    add1: {
+        required: "Please enter address",
+      },
+    add2: {
+        required: "Please enter address",
+      },
+
+    landmark1: {
+        required: "Please enter landmark",
+      },
+
+    zipcode1: {
+        required: "Please enter zipcode",
+      },
+    city1: {
+        required: "Please enter city",
+      },
+    district1: {
+        required: "Please enter district",
+      },
+    tehsil1: {
+        required: "Please enter tehsil",
+      },
+
+    state: {
+        required: "Please select state",
+      },
+    domicile: {
+        required: "Please select domicile",
+      },
+    nationality: {
+        required: "Please select nationlity",
+      },
+    cadd: {
+        required: "Please enter address",
+      },
+    cadd1: {
+        required: "Please enter address2",
+      },
+    clandmark: {
+        required: "Please enter landmark",
+      },
+    czip: {
+        required: "Please enter zip",
+      },
+    ccity: {
+        required: "Please enter city",
+      },
+    cdistrict: {
+        required: "Please enter district",
+      },
+    ctehsil: {
+        required: "Please enter tehsil",
+      },
+
+    state1: {
+        required: "Please enter state",
+      },
+    cnationality: {
+        required: "Please enter nationality",
+      },
+    economically: {
+        required: "Please enter conomically",
+      },
+    caste: {
+        required: "Please enter caste",
+      },
+    physicallyhandicap: {
+        required: "Please enter physicallyhandicap",
+      },
+    quota: {
+        required: "Please enter quota",
+      },
+    minority: {
+        required: "Please enter minority",
+      },
+    qualification: {
+        required: "Please select qualification",
+      }
+
+
+
+
+
+
+
+
+      }
+
+});
+});
+</script>
+
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#p1").keyup(function(){
+
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#p1").val(null);
+      }
+
+
+  });
+});
+</script>
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#p2").keyup(function(){
+
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#p2").val(null);
+      }
+
+
+  });
+});
+</script>
+
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#p3").keyup(function(){
+
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#p3").val(null);
+      }
+
+
+  });
+});
+</script>
+
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#p4").keyup(function(){
+
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#p4").val(null);
+      }
+
+
+  });
+});
+</script>
+
+
+<script>
+
+$(document).ready(function(){
+  $("#pass12").keyup(function(){
+      if(this.value.length>=8){
+  $("#sub11").css("display","none")
+  $("#sub12").css("display","block")
+
+      }
+});
+});
+
+</script>
+             <script type="text/javascript">
+$(document).ready(function(){
+ $("#fn1").keyup(function(){
+
+      if(Number(this.value)){
+         alert('please type only character')
+          $("#fn1").val(null);
+      }
+
+ });
+});
+</script>
+
+<script>
+
+$(document).ready(function(){
+  $("#minority").change(function(){
+      if(this.value.length!=0){
+  $("#sub21").css("display","none")
+  $("#sub22").css("display","block")
+
+      }
+});
+});
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+  $("#qualification1").change(function(){
+      if(this.value.length!=0){
+  $("#sub31").css("display","none")
+  $("#sub32").css("display","block")
+
+      }
+});
+});
+
+</script>
+
+<script>
+
+$(document).ready(function(){
+  $("#p6").change(function(){
+      if(this.value.length!=0){
+  $("#sub41").css("display","none")
+  $("#sub42").css("display","block")
+
+      }
+});
+});
+
+</script>
+
+
+{#             <script type="text/javascript">#}
+{#$(document).ready(function(){#}
+{# $("#ln1").keyup(function(){#}
+{##}
+{##}
+{#      if(Number(this.value)){#}
+{#         alert('please type only character')#}
+{#          $("#ln1").val(null);#}
+{#      }#}
+{##}
+{##}
+{##}
+{# });#}
+{#});#}
+{#</script>#}
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+       <script src="https://cdn.datatables.net/1.10.16/js/dataTables/bootstrap4.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 </body>
 </html>
 
 {% endblock %}
-
-<!--//var myInput = document.getElementById("psw");
-        //var letter = document.getElementById("letter");
-        //var capital = document.getElementById("capital");
-        //var number = document.getElementById("number");
-        //var length = document.getElementById("length");
-
-        //// When the user clicks on the password field, show the message box
-        //myInput.onfocus = function() {
-        //document.getElementById("message").style.display = "block";
-        //}
-
-        //// When the user clicks outside of the password field, hide the message box
-        //myInput.onblur = function() {
-        //document.getElementById("message").style.display = "none";
-        //}
-
-        //// When the user starts to type something inside the password field
-        //myInput.onkeyup = function() {
-        //// Validate lowercase letters
-        //var lowerCaseLetters = /[a-z]/g;
-        //if(myInput.value.match(lowerCaseLetters)) {
-        //    letter.classList.remove("invalid");
-        //    letter.classList.add("valid");
-        //} else {
-        //    letter.classList.remove("valid");
-        //    letter.classList.add("invalid");
-        //}
-
-        //// Validate capital letters
-        //var upperCaseLetters = /[A-Z]/g;
-        //if(myInput.value.match(upperCaseLetters)) {
-        //    capital.classList.remove("invalid");
-        //    capital.classList.add("valid");
-        //} else {
-        //    capital.classList.remove("valid");
-        //    capital.classList.add("invalid");
-        //}
-
-        //// Validate numbers
-        //var numbers = /[0-9]/g;
-        //if(myInput.value.match(numbers)) {
-        //    number.classList.remove("invalid");
-        //    number.classList.add("valid");
-        //} else {
-        //    number.classList.remove("valid");
-        //    number.classList.add("invalid");
-        //}
-
-        //// Validate length
-        //if(myInput.value.length >= 8) {
-        //    length.classList.remove("invalid");
-        //    length.classList.add("valid");
-        //} else {
-        //    length.classList.remove("valid");
-        //    length.classList.add("invalid");
-        //}
-        //}-->

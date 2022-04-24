@@ -66,7 +66,7 @@
     }
 
     #msform fieldset:not(:first-of-type) {
-        display: none
+        display: none;
     }
 
     #msform input {
@@ -81,7 +81,8 @@
         color: #2C3E50;
         background-color: #ECEFF1;
         font-size: 16px;
-        letter-spacing: 1px
+        letter-spacing: 1px;
+        font-family: Trebuchet MS;
     }
 
     #msform textarea {
@@ -96,7 +97,8 @@
         color: #2C3E50;
         background-color: #ECEFF1;
         font-size: 16px;
-        letter-spacing: 1px
+        letter-spacing: 1px;
+
     }
 
     #msform input:focus {
@@ -121,7 +123,7 @@
         font-weight: bold;
         color: white;
         border: 0 none;
-        border-radius: 0px;
+        border-radius: 20px;
         cursor: pointer;
         padding: 10px 5px;
         margin: 10px 0px 10px 5px;
@@ -142,7 +144,7 @@
         font-weight: bold;
         color: white;
         border: 0 none;
-        border-radius: 0px;
+        border-radius: 20px;
         cursor: pointer;
         padding: 10px 5px;
         margin: 10px 5px 10px 0px;
@@ -150,7 +152,7 @@
     }
 
     #msform .action-button-pre:hover {
-        background-color: #000000
+        background-color: red;
     }
 
     #msform .action-button-pre:focus {
@@ -168,7 +170,8 @@
         color: rgb(211,100,046);
         margin-bottom: 15px;
         font-weight: normal;
-        text-align: left
+        text-align: left;
+        font-family: Trebuchet MS;
     }
 
     .purple-text {
@@ -186,7 +189,8 @@
 
     .fieldlabels {
         color: gray;
-        text-align: left
+        text-align: left;
+        font-family: Trebuchet MS;
     }
 
     #progressbar {
@@ -293,12 +297,22 @@
     }
 </style>
 <body>
-<div class="container-fluid">
+       {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      ×
+      </button>
+      <strong>{{message}}<strong>
+    </div>
+ {% endfor %}
+{% endif %}
+<div class="container-fluid" >
     <div class="row justify-content-center">
         <div class="col-12 col-sm-11 col-md-10 col-lg-8 col-xl-7 col-xl-6 col-xl-5 col-xl-4 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
-                <form id="msform"  method="post" enctype="multipart/form-data" action="{% url 'student_signup_save' %}">
+                <form id="msform12345"  method="post" enctype="multipart/form-data" action="{% url 'student_signup_save' %}">
                     {% csrf_token %}
                  <h2 id="heading"> Sign Up Form </h2>
                     <ul id="progressbar">
@@ -325,11 +339,11 @@
                                     <h2 class="steps"> Step 1 - 8 </h2>
                                 </div>
                             </div>
-                            <label class="fieldlabels"> Username: * </label> <input type="text" name="username" id="usrnamet" placeholder="UserName" required/>
-                            <label class="fieldlabels"> Email: * </label> <input type="email" name="email" id="emailt" placeholder="Email Id" required />
-                            <label class="fieldlabels"> Contact No.: * </label> <input type="text" id="cont" name="contact" placeholder="Contact No." />
+                            <label class="fieldlabels"> Username: * </label> <input type="text" id="usern11" name="username" placeholder="UserName" maxlength="10" required onkeyup="isempty()" />
+                            <label class="fieldlabels"> Email: * </label> <input type="email" id="emailn11" name="email" placeholder="Email Id" required onkeyup="isempty()" />
+                            <label class="fieldlabels"> Contact No.: * </label> <input type="text" id="contactn11" name="contact" placeholder="Contact No." maxlength="10"  onkeyup="isempty()" />
 
-                        </div> <input type="button" name="next"  id="btn11" class="next action-button"  value="Next" />
+                        </div> <input type="button" style="display: none"  id="nextbutt" name="next" class="next action-button" value="Next" />
                     </fieldset>
                     <fieldset>
                         <div class="form-card">
@@ -340,15 +354,16 @@
                                 <div class="col-5">
                                     <h2 class="steps"> Step 2 - 8 </h2>
                                 </div>
-                            </div> <label class="fieldlabels"> First Name: * </label> <input type="text" name="fname" placeholder="First Name"/>
-                            <label class="fieldlabels"> Last Name: * </label> <input type="text" name="lname" placeholder="Last Name" />
-                            <label class="fieldlabels"> Father Name: * </label> <input type="text" name="father" placeholder="Father Name" />
-                            <label class="fieldlabels"> Mother Name: * </label> <input type="text" name="mother" placeholder="Mother Name" />
-                            <label class="fieldlabels"> Aadhar No.: * </label> <input type="text" name="aadhar" placeholder="Aadhar No." />
-                            <label class="fieldlabels"> Marital Status: * </label> <input type="text" name="marital"/>
-                            <label class="fieldlabels"> Age: * </label> <input type="date" name="age"/>
+                            </div> <label class="fieldlabels"> First Name: * </label> <input type="text" name="fname" id="fn1" placeholder="First Name" onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Last Name: * </label> <input type="text" name="lname" id="ln1" placeholder="Last Name" onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Middle Name: * </label> <input type="text" name="middlename" id="mn1" placeholder="Middle Name"  />
+                            <label class="fieldlabels"> Father Name: * </label> <input type="text" name="father" id="fathn" placeholder="Father Name" onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Mother Name: * </label> <input type="text" name="mother" id="mothn" placeholder="Mother Name" onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Aadhar No.: * </label> <input type="text" name="aadhar" id="adrn" placeholder="Aadhar No." maxlength="12" minlength="12" onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Marital Status: * </label> <input type="text" id="mtrln" name="marital" onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Age: * </label> <input type="date" name="age" id="agen" onkeyup="isempty1()" />
                             <label > Gender: * </label>
-                            <div style="border: 1px solid lightgrey;padding: 6px;border-radius: 6px">
+                            <div style="border: 6px solid lightgrey;padding: 6px;border-radius: 6px">
                             <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="customRadioInline1" value="Male" name="gender" class="custom-control-input"/>
                                 <label class="custom-control-label" for="customRadioInline1">Male</label>
@@ -365,10 +380,10 @@
                              </div>
                             </div>
 
-                            <label class="fieldlabels"> Password</label> <input type="password" name="pwd11" placeholder="Password"  required/>
-                            <label class="fieldlabels"> Confirm Password</label> <input type="password" name="cpwd" placeholder="Confirm Password" required />
+                            <label class="fieldlabels"> Password</label> <input type="password" name="pwd11" id="pwdnn" placeholder="Password"  required onkeyup="isempty1()" />
+                            <label class="fieldlabels"> Confirm Password</label> <input type="password" id="pwdcn" name="cpwd" placeholder="Confirm Password" required onkeyup="isempty1()" />
 
-                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                        </div> <input type="button"  name="next"  id="next2n" class="next action-button" value="Next" /> <input type="button" name="pre"  class="pre action-button-pre" value="Pre" />
                     </fieldset>
 
                     <fieldset>
@@ -380,39 +395,74 @@
                                 <div class="col-5">
                                     <h2 class="steps"> Step 3 - 8 </h2>
                                 </div>
-                            </div> <label class="fieldlabels"> Address 1: * </label> <input type="text" name="address1" placeholder="Adresss" />
-                            <label class="fieldlabels"> Address 2: * </label> <input type="text" name="adress2" placeholder="Address" />
-                            <label class="fieldlabels"> State: * </label> <input type="text" name="state" placeholder="State" />
-                            <label class="fieldlabels"> City: * </label> <input type="text" name="city" placeholder="City" />
-                            <label class="fieldlabels"> City: * </label> <input type="text" name="city" placeholder="City" />
-                            <label class="fieldlabels"> District: * </label> <input type="text" name="district" placeholder="district" />
-                            <label class="fieldlabels"> Pincode: * </label> <input type="text" name="pin" placeholder="Pincode" />
-                            <label class="fieldlabels"> Tehsil: * </label> <input type="text" name="tehsil" placeholder="Tehsil" />
-                            <label > Nationality: * </label>
+                            </div> <label class="fieldlabels"> Address 1: * </label> <input type="text" id="ad1" name="address1" placeholder="Adresss" onkeyup="isempty2()" />
+                            <label class="fieldlabels"> Address 2: * </label> <input type="text" id="ad2" name="address2" placeholder="Address" onkeyup="isempty2()" />
+                            <label class="fieldlabels"> State: * </label> <input type="text" id="ad3" name="state" placeholder="State" onkeyup="isempty2()"/>
+                            <label class="fieldlabels"> City: * </label> <input type="text" id="ad4" name="city" placeholder="City" onkeyup="isempty2()" />
+                            <label class="fieldlabels"> District: * </label> <input type="text" id="ad5" name="district" placeholder="district" onkeyup="isempty2()" />
+                            <label class="fieldlabels"> Pincode: * </label> <input type="text" name="pin" id="ad6" placeholder="Pincode" onkeyup="isempty2()"/>
+                            <label class="fieldlabels"> Tehsil: * </label> <input type="text" id="ad7" name="tehsil" placeholder="Tehsil" onkeyup="isempty2()"/>
+                            <label class="fieldlabels">Economically Weaker Section: * </label>
+                            <input type="text" name="economically" id="ad8" placeholder="Economically" onkeyup="isempty2()" />
 
-                            <input type="radio" name="nationality" value="Indian"> Indian
-<input type="radio" name="nationality" value="Other"> Other
+                            <div style="border: 6px solid lightgrey;padding: 4px;border-radius: 4px">
+                             <h6> Nationality: * </h6>
+                            <label class="radio-inline" >
+                            <input type="radio" name="nationality" value="Nationality" > INDIAN
+                            </label>
+                            <label class="radio-inline" style="margin-left: 3%;">
+                            <input type="radio" name="nationality" value="Others" > OTHERS
+                            </label>
+                            </div><br>
+                            <div style="border: 6px solid lightgrey;padding: 4px;border-radius: 4px">
+                            <h6> Caste: * </h6>
+                            <label class="radio-inline">
+                             <input type="radio" name="caste" value="General" > GENERAL
+                            </label>
+                            <label class="radio-inline" style="margin-left: 2%;">
+                            <input type="radio" name="caste" value="Obc"> OBC
+                            </label>
+                            <label class="radio-inline" style="margin-left: 5%;">
+                             <input type="radio" name="caste" value="Sc"> SC
+                            </label>
+                            <label class="radio-inline" style="margin-left: 8%;">
+                            <input type="radio" name="caste" value="St"> ST
+                            </label>
+                            </div><br>
+                            <div style="border: 6px solid lightgrey;padding: 4px;border-radius: 4px">
+                            <h6 > Physically Handicap: *</h6>
+                            <label class="radio-inline">
+                            <input type="radio" name="physicallyhandicap" value="Yes"> YES
+                            </label>
+                            <label class="radio-inline" style="margin-left: 5%;">
+                            <input type="radio" name="physicallyhandicap" value="No"> NO
+                            </label>
+                            </div><br>
+                            <div style="border: 6px solid lightgrey;padding: 4px;border-radius: 4px">
+                            <h6 > Quota: *</h6>
+                            <label class="radio-inline">
+                            <input type="radio" name="quota" value="sports" > SPORTS
+                            </label>
+                            <label class="radio-inline" style="margin-left: 2%;">
+                            <input type="radio" name="quota" value="Ex Army" > EX ARMY
+                            </label>
+                            <label class="radio-inline" style="margin-left: 5%;">
+                            <input type="radio" name="quota" value="Nc" > NCC
+                            </label>
+                            </div><br>
+                            <div style="border: 6px solid lightgrey;padding: 4px;border-radius: 4px;">
+                            <h6 > Minority: *</h6>
+                            <label class="radio-inline">
+                            <input type="radio" name="minority" value="minority" > MINORITY
+                            </label>
+                            <label class="radio-inline" style="margin-left: 3%;">
+                            <input type="radio" name="minority" value="no-minority" > NON-MINORITY
+                            </label>
+                            </div>
 
-                            <label > Caste: * </label>
-                             <input type="radio" name="caste" value="General"> General
-<input type="radio" name="caste" value="Obc"> Obc
-                             <input type="radio" name="caste" value="Sc"> Sc
-<input type="radio" name="caste" value="St"> St
-                            <label > Physically Handicap: *</label>
-                            <input type="radio" name="physicallyhandicap" value="Yes"> Yes
-<input type="radio" name="physicallyhandicap" value="No"> No
-                            <label class="fieldlabels">Economically Weaker Section: * </label> <input type="text" name="economically" placeholder="Eco" />
-
-                            <label > Quata: *</label>
-                            <input type="radio" name="quota" value="sports"> Sports
-<input type="radio" name="quota" value="Ex Army"> Ex Army
-<input type="radio" name="quota" value="Nc"> Ncc
-                            <label > Minority: *</label>
-                            <input type="radio" name="minority" value="minority"> Minority
-<input type="radio" name="minority" value="no-minority"> No-Minority
 
 
-                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                        </div> <input type="button"  name="next" id="next3n"  class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
                     </fieldset>
 
                     <fieldset>
@@ -424,36 +474,40 @@
                                 <div class="col-5">
                                     <h2 class="steps"> Step 4 - 8 </h2>
                                 </div>
-                            </div> <label class="fieldlabels"> 10th: *
-                        </label> <input type="text" name="tenth_sc" placeholder="Enter 10th marks" />
-                        </label> <input type="text" name="tenth_py" placeholder="Enter 10th marks" />
-                        </label> <input type="text" name="tenth_bu" placeholder="Enter 10th marks" />
-                        </label> <input type="text" name="tenth_tm" placeholder="Enter 10th marks" />
-                        </label> <input type="text" name="tenth_mo" placeholder="Enter 10th marks" />
-                        </label> <input type="text" name="tenth_pgc" placeholder="Enter 10th marks" />
-                            <label class="fieldlabels"> 12th: *
-                            </label> <input type="text" name="twelve_sc" placeholder="Enter 12th marks" />
-                            </label> <input type="text" name="twelve_py" placeholder="Enter 12th marks" />
-                            </label> <input type="text" name="twelve_bu" placeholder="Enter 12th marks" />
-                            </label> <input type="text" name="twelve_tm" placeholder="Enter 12th marks" />
-                            </label> <input type="text" name="twelve_mo" placeholder="Enter 12th marks" />
-                            </label> <input type="text" name="twelve_pgc" placeholder="Enter 12th marks" />
+                            </div><label class="fieldlabels">10th: *</label>
+                            <input type="text" id="t1" name="tenth_sc" placeholder="Enter School/College" onkeyup="isempty3()"/>
+                            <input type="text" id="t2" name="tenth_py" placeholder="Enter Year of Passing" onkeyup="isempty3()"/>
+                            <input type="text" id="t3" name="tenth_bu" placeholder="Enter Board/University" onkeyup="isempty3()"/>
+                            <input type="text" id="t4" name="tenth_tm" placeholder="Enter Total Marks" onkeyup="isempty3()"/>
+                            <input type="text" id="t5" name="tenth_mo" placeholder="Enter Marks Obtain" onkeyup="isempty3()"/>
+                            <input type="text" id="t6" name="tenth_pgc" placeholder="Enter Percentage/Grade/CGPA" onkeyup="isempty3()"/>
 
-                            <label class="fieldlabels"> Graduation: *
-                            </label> <input type="text" name="graduation_sc" placeholder="Enter Graduation marks" />
-                            </label> <input type="text" name="graduation_py" placeholder="Enter Graduation marks" />
-                            </label> <input type="text" name="graduation_bu" placeholder="Enter Graduation marks" />
-                            </label> <input type="text" name="graduation_mo" placeholder="Enter Graduation marks" />
-                            </label> <input type="text" name="graduation_tm" placeholder="Enter Graduation marks" />
-                            </label> <input type="text" name="graduation_pgc" placeholder="Enter Graduation marks" />
-                            <label class="fieldlabels"> Post Graduation: *
-                            </label> <input type="text" name="postgraduation_sc" placeholder="Enter PG marks" />
-                            </label> <input type="text" name="postgraduation_py" placeholder="Enter PG marks" />
-                            </label> <input type="text" name="postgraduation_bu" placeholder="Enter PG marks" />
-                            </label> <input type="text" name="postgraduation_tm" placeholder="Enter PG marks" />
-                            </label> <input type="text" name="postgraduation_mo" placeholder="Enter PG marks" />
-                            </label> <input type="text" name="postgraduation_pgc" placeholder="Enter PG marks" />
-                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+
+                            <label class="fieldlabels">12th: *</label>
+                            <input type="text" id="t7" name="twelve_sc" placeholder="Enter School/College" onkeyup="isempty3()"/>
+                            <input type="text" id="t8" name="twelve_py" placeholder="Enter Year of Passing" onkeyup="isempty3()"/>
+                            <input type="text" id="t9" name="twelve_bu" placeholder="Enter Board/University" onkeyup="isempty3()"/>
+                            <input type="text" id="t10" name="twelve_tm" placeholder="Enter Total Marks" onkeyup="isempty3()"/>
+                            <input type="text" id="t11" name="twelve_mo" placeholder="Enter Marks Obtain" onkeyup="isempty3()"/>
+                            <input type="text" id="t12" name="twelve_pgc" placeholder="Enter Percentage/Grade/CGPA" onkeyup="isempty3()"/>
+
+                            <label class="fieldlabels">Graduation: *</label>
+                            <input type="text" id="t13" name="graduation_sc" placeholder="Enter School/College" onkeyup="isempty3()"/>
+                            <input type="text" id="t14" name="graduation_py" placeholder="Enter Year of Passing" onkeyup="isempty3()"/>
+                            <input type="text" id="t15" name="graduation_bu" placeholder="Enter Board/University" onkeyup="isempty3()" />
+                            <input type="text" id="t16" name="graduation_tm" placeholder="Enter Total Marks" onkeyup="isempty3()"/>
+                            <input type="text" id="t17" name="graduation_mo" placeholder="Enter Marks Obtain" onkeyup="isempty3()"/>
+                            <input type="text" id="t18" name="graduation_pgc" placeholder="Enter Percentage/Grade/CGPA" onkeyup="isempty3()"/>
+
+
+                            <label class="fieldlabels">Postgraduation: *</label>
+                            <input type="text" id="t19" name="postgraduation_sc" placeholder="Enter School/College" onkeyup="isempty3()"/>
+                            <input type="text" id="t20" name="postgraduation_py" placeholder="Enter Year of Passing" onkeyup="isempty3()"/>
+                            <input type="text" id="t21" name="postgraduation_bu" placeholder="Enter Board/University" onkeyup="isempty3()"/>
+                            <input type="text" id="t22" name="postgraduation_tm" placeholder="Enter Total Marks" onkeyup="isempty3()"/>
+                            <input type="text" id="t23" name="postgraduation_mo" placeholder="Enter Marks Obtain" onkeyup="isempty3()" />
+                            <input type="text" id="t24" name="postgraduation_pgc" placeholder="Enter Percentage/Grade/CGPA" onkeyup="isempty3()"/>
+                        </div> <input type="button" id="next4"  name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
                     </fieldset>
 
                     <fieldset>
@@ -465,9 +519,9 @@
                                 <div class="col-5">
                                     <h2 class="steps"> Step 5 - 8 </h2>
                                 </div>
-                            </div> <label class="fieldlabels"> Year: * </label> <input type="number" name="year" placeholder="Enter Year" />
-                            <label class="fieldlabels"> Month: * </label> <input type="number" name="month" placeholder="Enter Month" />
-                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                            </div> <label class="fieldlabels"> Year: * </label> <input type="number" id="p1" name="year" placeholder="Enter Experience In Year" onkeyup="isempty4()"/>
+                            <label class="fieldlabels"> Month: * </label> <input type="number" name="month" id="p2" placeholder="Enter Experience In Month" onkeyup="isempty4()"/>
+                        </div> <input type="button" id="next5"  name="next"  class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
                     </fieldset>
 
                     <fieldset>
@@ -479,11 +533,11 @@
                                 <div class="col-5">
                                     <h2 class="steps"> Step 6 - 8 </h2>
                                 </div>
-                            </div> <label class="fieldlabels"> Designation: * </label> <input type="text" name="designation" placeholder="Enter Designation" />
-                            <label class="fieldlabels"> Department: * </label> <input type="text" name="department" placeholder="Enter Department" />
-                            <label class="fieldlabels"> Company: * </label> <input type="text" name="companyname" placeholder="Enter %" />
-                            <label class="fieldlabels"> Appoointment: * </label> <input type="text" name="appointmen" placeholder="Enter Experience" />
-                        </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                            </div> <label class="fieldlabels"> Designation: * </label> <input type="text" id="k1" name="designation" placeholder="Enter Designation" onkeyup="isempty5()"/>
+                            <label class="fieldlabels"> Department: * </label> <input type="text" id="k2" name="department" placeholder="Enter Department" onkeyup="isempty5()"/>
+                            <label class="fieldlabels"> Name of Organization: * </label> <input type="text" id="k3" name="organization" placeholder="Enter Organization " onkeyup="isempty5()"/>
+                            <label class="fieldlabels"> Appointment: * </label> <input type="text" name="appointmen" id="k4" placeholder="Enter Appointment" onkeyup="isempty5()"/>
+                        </div> <input type="button" id="next6" style="display: none"  name="next" class="next action-button" value="Next" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
                     </fieldset>
 
 
@@ -497,10 +551,10 @@
                                 <div class="col-5">
                                     <h2 class="steps"> Step 7 - 8 </h2>
                                 </div>
-                            </div> <label class="fieldlabels"> Upload Your Photo: </label> <input type="file" name="profilepic" >
+                            </div> <label class="fieldlabels"> Upload Your Photo: </label> <input type="file" id="filesizecheck" name="profilepic" >
                              <label class="fieldlabels"> Upload Signature Photo: </label> <input type="file" name="signature" >
 
-                        </div> <input type="submit" name="submit" class="submit action-button" value="Submit" /> <input type="button" name="pre" class="pre action-button-pre" value="Pre" />
+                        </div> <input type="button" id="subclear"   name="submit" class="submit action-button" value="Submit" /> <input type="submit" u name="submit" style="display: none;padding-left: 10px;padding-right: 30px" class="submit action-button" id="suredata" value="Are U sure?" /> <input type="button" u name="submit" style="display: none" class="submit action-button" id="backdata" value="Back" /> <input type="button" name="pre" id="preid" class="pre action-button-pre" value="Pre" />
                     </fieldset>
 {#                    <fieldset>#}
 {#                        <div class="form-card">#}
@@ -598,6 +652,249 @@
 
     });
 </script>
+
+
+<script>
+    
+    function isempty() {
+        let usern = document.getElementById('usern11').value;
+        let emailn = document.getElementById('emailn11').value;
+        let contactn = document.getElementById('contactn11').value;
+
+        if (usern.length > 0 && emailn.length > 0 && contactn.length > 0){
+
+            document.getElementById("nextbutt").style.display = "block";
+        }
+
+    }
+</script>
+
+<script>
+
+    function isempty1() {
+        let fn = document.getElementById('fn1').value;
+        let ln = document.getElementById('ln1').value;
+        let fath = document.getElementById('fathn').value;
+        let moth = document.getElementById('mothn').value;
+        let adr = document.getElementById('adrn').value;
+        let mtrl = document.getElementById('mtrln').value;
+        let ag = document.getElementById('agen').value;
+        let pwd = document.getElementById('pwdnn').value;
+        let cpwd = document.getElementById('pwdcn').value;
+
+        if (fn.length > 0 && ln.length > 0 && fath.length > 0 && moth.length > 0 && adr.length > 0 && mtrl.length > 0 && ag.length > 0 && pwd.length > 0 && cpwd.length > 0){
+
+            document.getElementById("next2n").style.display = "block";
+        }
+
+    }
+</script>
+
+<script>
+
+    function isempty2() {
+        let ad1 = document.getElementById('ad1').value;
+        let ad2 = document.getElementById('ad2').value;
+        let ad3 = document.getElementById('ad3').value;
+        let ad4 = document.getElementById('ad4').value;
+        let ad5 = document.getElementById('ad5').value;
+        let ad6 = document.getElementById('ad6').value;
+        let ad7 = document.getElementById('ad7').value;
+        let ad8 = document.getElementById('ad8').value;
+
+
+        if (ad1.length > 0 && ad2.length > 0 && ad3.length > 0 && ad4.length > 0 && ad6.length > 0 && ad7.length > 0 && ad8.length > 0 && ad5>0){
+
+            document.getElementById("next3n").style.display = "block";
+        }
+
+    }
+</script>
+
+<script>
+
+    function isempty3() {
+        let ad1 = document.getElementById('t1').value;
+        let ad2 = document.getElementById('t2').value;
+        let ad3 = document.getElementById('t3').value;
+        let ad4 = document.getElementById('t4').value;
+        let ad5 = document.getElementById('t5').value;
+        let ad6 = document.getElementById('t6').value;
+        let ad7 = document.getElementById('t7').value;
+        let ad8 = document.getElementById('t8').value;
+        let ad9 = document.getElementById('t9').value;
+        let ad10 = document.getElementById('t10').value;
+        let ad11 = document.getElementById('t11').value;
+        let ad12 = document.getElementById('t12').value;
+        let ad13 = document.getElementById('t13').value;
+        let ad14 = document.getElementById('t14').value;
+        let ad15 = document.getElementById('t15').value;
+        let ad16 = document.getElementById('t16').value;
+        let ad17 = document.getElementById('t17').value;
+        let ad18 = document.getElementById('t18').value;
+        let ad19 = document.getElementById('t19').value;
+        let ad20 = document.getElementById('t20').value;
+        let ad21 = document.getElementById('t21').value;
+        let ad22 = document.getElementById('t22').value;
+        let ad23 = document.getElementById('t23').value;
+        let ad24 = document.getElementById('t24').value;
+
+
+
+        if (ad1.length > 0 && ad2.length > 0 && ad3.length > 0 && ad4.length > 0 && ad5.length > 0 && ad6.length > 0 && ad7.length > 0 && ad8.length > 0 && ad9.length > 0 && ad10.length > 0 && ad11.length > 0 && ad12.length > 0 && ad13.length > 0 && ad14.length > 0 && ad15.length > 0 && ad16.length > 0 && ad17.length > 0 &&  ad18.length > 0 && ad19.length > 0 && ad20.length > 0 && ad21.length > 0 && ad22.length > 0 && ad23.length > 0 && ad24.length > 0){
+
+            document.getElementById("next4").style.display = "block";
+        }
+
+    }
+</script>
+
+
+<script>
+
+    function isempty4() {
+        let ad1 = document.getElementById('p1').value;
+        let ad2 = document.getElementById('p2').value;
+
+
+        if (ad1.length > 0 && ad2.length > 0){
+
+            document.getElementById("next5").style.display = "block";
+        }
+
+    }
+</script>
+
+
+<script>
+
+    function isempty5() {
+        let ad1 = document.getElementById('k1').value;
+        let ad2 = document.getElementById('k2').value;
+        let ad3 = document.getElementById('k3').value;
+        let ad4 = document.getElementById('k4').value;
+
+
+        if (ad1.length > 0 && ad2.length > 0 && ad3.length > 0 && ad4.length > 0){
+
+            document.getElementById("next6").style.display = "block";
+        }
+
+    }
+</script>
+
+<script>
+    $("#subclear").on("click",function(){
+
+    $("#suredata").css("display","block")
+    $("#backdata").css("display","block")
+    $("#subclear").css("display","none")
+    $("#preid").css("display","none")
+
+});
+</script>
+
+
+<script>
+    $("#backdata").on("click",function(){
+
+    $("#suredata").css("display","none")
+    $("#backdata").css("display","none")
+    $("#subclear").css("display","block")
+    $("#preid").css("display","block")
+
+});
+</script>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#filesizecheck').on('change',function(){
+      for(var i=0; i< $(this).get(0).files.length; ++i){
+        var file1 = $(this).get(0).files[i].size;
+        if(file1){
+          var file_size = $(this).get(0).files[i].size;
+          if(file_size > 100000){
+            $('#error-message').html("File upload size is larger than 2MB");
+            $('#error-message').css("display","block");
+            $('#error-message').css("color","red");
+            alert("File size cannot be larger than 1MB");
+          }else{
+            $('#error-message').css("display","none");
+
+          }
+        }
+      }
+    });
+  });
+</script>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#usern11").keyup(function(){
+      if(this.value.length<10){
+          alert("less than 10 ");
+      }
+
+  });
+});
+</script>
+
+       <script type="text/javascript">
+$(document).ready(function(){
+  $("#emailn11").keyup(function(){
+      if(this.value.length<10){
+          alert("less than 10 ");
+      }
+
+  });
+});
+</script>
+
+              <script type="text/javascript">
+$(document).ready(function(){
+  $("#contactn11").keyup(function(){
+
+      if(this.value.length<10){
+          alert("less than 10 ");
+      }
+
+      if(isNaN(this.value)){
+          alert('please type only character')
+      }
+
+
+
+  });
+});
+</script>
+
+       <script type="text/javascript">
+$(document).ready(function(){
+  $("#fn1").keyup(function(){
+      if(this.value.length<10){
+          alert("less than 10 ");
+          $("#fn1").val(null);
+      }
+
+  });
+});
+</script>
+
+       <script type="text/javascript">
+$(document).ready(function(){
+  $("#ln1").keyup(function(){
+      if(this.value.length<10){
+          alert("less than 10 ");
+      }
+
+  });
+});
+</script>
+
 
 </body>
 </html>

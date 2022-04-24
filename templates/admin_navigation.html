@@ -25,7 +25,7 @@
     }
     .navbar-brand:hover{
         color:yellow !important;
-    
+
     }
     </style>
 
@@ -57,7 +57,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
 
         <!--datatable end -->
-        
+
 
 </head>
 <body>
@@ -66,7 +66,7 @@
             <div class="col-sm-3">
                 <img src="{% static 'images/MUJ logo_High.png'%}" style="width:200px; height:160px">
             </div>
-        </div>    
+        </div>
     </div>
 
 <nav class="navbar-expand-sm" style="background-color: maroon">
@@ -88,18 +88,18 @@
             <a class="nav-link" href="{% url 'job_list' %}"><i class="fa fa-list-ol mr-1"></i>Job List</a>
         </li>
 
-        
 
-        
+
+
 
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'view_users'%}"><i class="fa fa-user-o mr-1"></i>View Users</a>
+            <a class="nav-link" href="#"><i class="fa fa-user-o mr-1"></i>View Users</a>
              <div class="dropdown-menu">
 
-            <a class="dropdown-item" href="{% url 'recruiter_pending'%}">Pending</a>
-            <a class="dropdown-item" href="{% url 'recruiter_accepted'%}">Accepted</a>
-            <a class="dropdown-item" href="{% url 'recruiter_rejected'%}">Rejected</a>
-            <a class="dropdown-item" href="{% url 'recruiter_all'%}">All Recruiters</a>
+            <a class="dropdown-item" href="{% url 'student_pending'%}">Pending</a>
+            <a class="dropdown-item" href="{% url 'student_accepted'%}">Accepted</a>
+            <a class="dropdown-item" href="{% url 'student_rejected'%}">Rejected</a>
+            <a class="dropdown-item" href="{% url 'student_all'%}">All Student</a>
 
         </div>
         </li>
@@ -107,7 +107,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{% url 'change_passwordadmin'%}"><i class="fa fa-cog mr-1"></i>Change Password</a>
         </li>
-        
+
         <li class="nav-item">
             <a class="nav-link" href="{% url 'Logout' %}"> <i class="fa fa-sign-out mr-1"></i>Logout</a>
         </li>

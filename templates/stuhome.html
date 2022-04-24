@@ -5,170 +5,270 @@
 
 {%   include 'student_navigation.html'%}
 
-     <marquee style="font-family:Trebuchet MS; font-size: 25px; color: white;background-color: orangered;">
+     <marquee style="font-family: Trebuchet MS sans-serif; font-size: 25px; color: white; background-color: orangered; margin-top: 0.5%">
         Student Home
     </marquee>
 
 <hr>
 <div class="container">
+    <div class="Jumbotron">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-12">
 
 
 <form class=" mt-5" action="/studup"  method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-row">
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Username</label>
             <input type="text" class="form-control" name="name11" value="{{u.Name}}" required>
         </div>
 
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Email</label>
-            <input type="text" class="form-control" name="email11" value="{{u.email}}" required>
+            <input type="text" class="form-control" name="email11" value="{{u.email}}" readonly required>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Contact</label>
             <input type="text" class="form-control" name="contact11" value="{{u.contact}}" required>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>First name</label>
             <input type="text" class="form-control" name="fname11" value="{{u.fname}}" required>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Last name</label>
             <input type="text" class="form-control" name="laname11" value="{{u.laname}}" required>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Father name</label>
             <input type="text" class="form-control" name="father11" value="{{u.father}}" required>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Mother name</label>
             <input type="text" class="form-control" name="mother11" value="{{u.mother}}" required>
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Aadhar no</label>
-            <input type="text" class="form-control" name="aadhar11" value="{{u.aadhar}}"required>
+            <input type="text" class="form-control" name="aadhar11" value="{{u.aadhar}}" required>
         </div>
-   </div>
-
-
-     <div class="form-row">
-        <div class="form-group col-md-2">
-        <label>Martial</label>
-        <input type="text" class="form-control" name="martial11" value="{{u.martial}}" required>
+        <div class="form-group col-md-4">
+            <label>Martial</label>
+            <input type="text" class="form-control" name="martial11" value="{{u.martial}}" required>
         </div>
 
-
-    </div>
-
-    <div class="form-row">
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-4">
             <label>Age</label>
-            <input type="text" class="form-control" name="age11" value="{{u.age}}" readonly required>
+            <input type="text" class="form-control" name="age11" value="{{u.age}}" required>
         </div>
+
+
+            <div class="form-group col-md-4">
+                <label>Gender</label>
+                {% if u.gender == "Male" %}
+                <div style="border:1px solid lightgray; padding:6px; border-radius:6px;">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline" name="gender" class="custom-control-input" value="Male" checked>
+                        <label class="custom-control-label" for="customRadioInline">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Female">
+                        <label class="custom-control-label" for="customRadioInline2">Female</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline3" name="gender" class="custom-control-input" value="Others">
+                        <label class="custom-control-label" for="customRadioInline3">Others</label>
+                    </div>
+                </div>
+
+                {% else %}
+
+                <div style="border:1px solid lightgray; padding:6px; border-radius:6px;">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline" name="gender" class="custom-control-input" value="Male">
+                        <label class="custom-control-label" for="customRadioInline">Male</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="Female" checked>
+                        <label class="custom-control-label" for="customRadioInline2">Female</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline3" name="gender" class="custom-control-input" value="Others">
+                        <label class="custom-control-label" for="customRadioInline3">Others</label>
+                    </div>
+                </div>
+
+                {% endif %}
+
+               </div>
+
+
+                <div class="form-group col-md-4">
+                    <label>Address1</label>
+                    <input type="text" class="form-control" name="address111" value="{{u.address1}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Address2</label>
+                    <input type="text" class="form-control" name="address211" value="{{u.address2}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>State</label>
+                    <input type="text" class="form-control" name="state11" value="{{u.state}}">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city11" value="{{u.city}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>District</label>
+                    <input type="text" class="form-control" name="district11" value="{{u.district}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Tehsil</label>
+                    <input type="text" class="form-control" name="tehsil11" value="{{u.tehsil}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Pin</label>
+                    <input type="text" class="form-control" name="pin11" value="{{u.pin}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Nationality</label>
+                    <input type="text" class="form-control" name="nationality11" value="{{u.nationlity}}" >
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Caste</label>
+                    <input type="text" class="form-control" name="caste11" value="{{u.caste}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Physically Handicap</label>
+                    <input type="text" class="form-control" name="physicallyhandicap11" value="{{u.PhysicallyHandicap}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Economically Weaker Section</label>
+                    <input type="text" class="form-control" name="economically11" value="{{u.economically}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Quota</label>
+                    <input type="text" class="form-control" name="quota11" value="{{u.Quata}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Minority</label>
+                    <input type="text" class="form-control" name="minority11" value="{{u.Minority}}">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Tenth School/College</label>
+                    <input type="text" class="form-control" name="tenth11" value="{{u.tenthsc}}">
+                    <label>Year of Passing</label>
+                    <input type="text" class="form-control" name="tenth12" value="{{u.tenthpy}}">
+                    <label>Board/University</label>
+                    <input type="text" class="form-control" name="tenth13" value="{{u.tenthbu}}">
+                    <label>Total Marks</label>
+                    <input type="text" class="form-control" name="tenth14" value="{{u.tenthtm}}">
+                    <label>Marks Obtain</label>
+                    <input type="text" class="form-control" name="tenth15" value="{{u.tenthmo}}">
+                    <label>Percentage/Grade/CGPA</label>
+                    <input type="text" class="form-control" name="tenth16" value="{{u.tenthpgc}}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Twelve School/College</label>
+                    <input type="text" class="form-control" name="twelve11" value="{{u.twelvesc}}">
+                    <label>Year of Passing</label>
+                    <input type="text" class="form-control" name="twelve12" value="{{u.twelvepy}}">
+                    <label>Board/University</label>
+                    <input type="text" class="form-control" name="twelve13" value="{{u.twelvebu}}">
+                    <label>Total Marks</label>
+                    <input type="text" class="form-control" name="twelve14" value="{{u.twelvetm}}">
+                    <label>Marks Obtain</label>
+                    <input type="text" class="form-control" name="twelve15" value="{{u.twelvemo}}">
+                    <label>Percentage/Grade/CGPA</label>
+                    <input type="text" class="form-control" name="twelve16" value="{{u.twelvepgc}}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Graduation School/College</label>
+                    <input type="text" class="form-control" name="graduation11" value="{{u.graduationsc}}">
+                    <label>Year of Passing</label>
+                    <input type="text" class="form-control" name="graduation12" value="{{u.graduationpy}}">
+                    <label>Board/University</label>
+                    <input type="text" class="form-control" name="graduation13" value="{{u.graduationbu}}">
+                    <label>Total Marks</label>
+                    <input type="text" class="form-control" name="graduation14" value="{{u.graduationtm}}">
+                    <label>Marks Obtain</label>
+                    <input type="text" class="form-control" name="graduation15" value="{{u.graduationmo}}">
+                    <label>Percentage/Grade/CGPA</label>
+                    <input type="text" class="form-control" name="graduation16" value="{{u.graduationpgc}}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Postgraduation School/College</label>
+                    <input type="text" class="form-control" name="postgraduation11" value="{{u.postgraduationsc}}">
+                    <label>Year of Passing</label>
+                    <input type="text" class="form-control" name="postgraduation12" value="{{u.postgraduationpy}}">
+                    <label>Board/University</label>
+                    <input type="text" class="form-control" name="postgraduation13" value="{{u.postgraduationbu}}">
+                    <label>Total Marks</label>
+                    <input type="text" class="form-control" name="postgraduation14" value="{{u.postgraduationtm}}">
+                    <label>Marks Obtain</label>
+                    <input type="text" class="form-control" name="postgraduation15" value="{{u.postgraduationmo}}">
+                    <label>Percentage/Grade/CGPA</label>
+                    <input type="text" class="form-control" name="postgraduation16" value="{{u.postgraduationpgc}}">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Year</label>
+                    <input type="text" class="form-control" name="year11" value="{{u.year}}">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Month</label>
+                    <input type="text" class="form-control" name="month11" value="{{u.month}}">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Designation</label>
+                    <input type="text" class="form-control" name="designation11" value="{{u.designation}}">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label>Department</label>
+                    <input type="text" class="form-control" name="department11" value="{{u.department}}">
+                </div>
+
+
+                <div class="form-group col-md-4">
+                    <label>Organization Name</label>
+                    <input type="text" class="form-control" name="organization11" value="{{u.companyname}}">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Type Of Appointmen</label>
+                    <input type="text" class="form-control" name="appointmen11" value="{{u.appointmen}}">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Profilepic</label>
+                    <input type="file" class="form-control" name="image11" accept="image/*">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Signature</label>
+                    <input type="file" class="form-control" name="sing11" accept="image/*">
+                </div>
+            </div>
+            <input type="submit" value="UpdateDetails" class="btn btn-primary my-3" style="width: 200px;">
+
 
     </div>
-
-   <div class="form-row">
-
-        <div class="form-group col-md-2">
-            <label>Address1</label>
-            <input type="text" class="form-control" name="address111" value="{{u.address1}}">
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>Address2</label>
-            <input type="text" class="form-control" name="address211" value="{{u.address2}}">
-        </div>
-
-        <div class="form-group col-md-2">
-            <label>State</label>
-            <input type="text" class="form-control" name="state11" value="{{u.state}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>City</label>
-            <input type="text" class="form-control" name="city11" value="{{u.city}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Pin</label>
-            <input type="text" class="form-control" name="pin11" value="{{u.pin}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Tenth</label>
-            <input type="text" class="form-control" name="tenth11" value="{{u.tenth}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Twelve</label>
-            <input type="text" class="form-control" name="twelve11" value="{{u.twelve}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>graduation</label>
-            <input type="text" class="form-control" name="graduation11" value="{{u.graduation}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Postgraduation</label>
-            <input type="text" class="form-control" name="postgraduation11" value="{{u.postgraduation}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Year</label>
-            <input type="text" class="form-control" name="year11" value="{{u.year}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Month</label>
-            <input type="text" class="form-control" name="month11" value="{{u.month}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Designation</label>
-            <input type="text" class="form-control" name="designation11" value="{{u.designation}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Academic</label>
-            <input type="text" class="form-control" name="academic11" value="{{u.academic}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Experience</label>
-            <input type="text" class="form-control" name="experience11" value="{{u.experience}}">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Profilepic</label>
-            <input type="file" class="form-control" name="image11" accept="image/*">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Signature</label>
-            <input type="file" class="form-control" name="sing11" accept="image/*">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Tenmrk</label>
-            <input type="file" class="form-control" name="ten11" accept="image/*">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Twelvemrk</label>
-            <input type="file" class="form-control" name="twel11" accept="image/*">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Graduationmrk</label>
-            <input type="file" class="form-control" name="grad11" accept="image/*">
-        </div>
-   <div class="form-group col-md-2">
-            <label>Postgraduationmrk</label>
-            <input type="file" class="form-control" name="postgrad11" accept="image/*">
-        </div>
-
-    </div>
-<input type="submit" value="UpdateDetails" class="btn btn-primary my-3" style="width: 200px;">
-
-</form>
-    </div><!--col 2 end-->
-    <div class="cl-sm-4 mt-5" text-center>
-        <img src="{{student.profilepic.url}}" width="300px" height="300px">
-    </div>
+    {% comment %} <div class="cl-sm-4 mt-5" text-center>
+        <img src="{{email.profilepic.url}}" style="width:300px; height:300px;">
+    </div> {% endcomment %}
     </div><!--row 1 end-->
 </div>
-
-
-
+</div>
 
 
 {%   endblock %}

@@ -38,10 +38,10 @@ def adminlogin(request):
 
             else:
                 messages.error(request, 'You have entered incorrect password')
-                return redirect('')
+                return redirect('/admin_login')
         else:
             messages.error(request, 'This email is not exists')
-            return redirect('')
+            return redirect('/admin_login')
 
     return redirect('/ooooooooo')
 
@@ -66,8 +66,20 @@ def jobaddform(request):
         desc = request.POST.get('adddescription')
         education = request.POST.get('adddeducation')
         jobtype = request.POST.get('adddjobtype')
-        add = Addjob(title=title,startdate=sdate,enddate=edate,salary=salary,logo=logo,Experience=experience,company=company,skill=skill,description=desc,Education=education,Jobtype=jobtype)
+        price = request.POST.get('adddprice')
+        locjob = request.POST.get('addlocation')
+        add = Addjob(title=title,startdate=sdate,enddate=edate,salary=salary,logo=logo,Experience=experience,company=company,skill=skill,description=desc,Education=education,Jobtype=jobtype,prize=price,location=locjob)
         add.save()
+        u = user.objects.filter(department__icontains = add.Education)
+        for i in u:
+            sub = 'Welcome to Placement Portal'
+            msg = '''Hi there!
+                                    We are sending you this mail , you got matching job as you mention your department
+                                    '''+ "Jobtitile:" + " " + title + "\nSalary:" + " "+ salary + " " + "\nExperience:" +"  " + experience+ "  "+ "\nCompany:" + "  "+ company + "\nSkill:"+"  "+skill+"  "+"\nLocation:"+"  "+locjob
+            EmailMessage(sub, msg, to=[i]).send()
+
+        print(u,'uu')
+
         messages.success(request,'Successfully added job')
         return redirect('/addjob')
 
@@ -79,9 +91,9 @@ def showusers(request):
     allusers = user.objects.filter(is_superuser=False)
     return render(request,'admin/studentview.html',{'allusers':allusers})
 
-def editusers(request,id):
-    userid = user.objects.get(id=id)
-    return render(request,'admin/editusers.html',{'userid':userid})
+# def editusers(request,id):
+#     userid = user.objects.get(id=id)
+#     return render(request,'admin/editusers.html',{'userid':userid})
 
 def updateuserdetail(request,id):
     u = user.objects.get(id=id)
@@ -123,6 +135,10 @@ def deletejob(request):
 
 def changepass(request):
     return render(request,'admin/changepassword.html')
+
+# def Logout(request):
+#     logout(request)
+#     return redirect('admin_login')
 
 
 

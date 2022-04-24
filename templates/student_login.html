@@ -4,81 +4,339 @@
 
 {% include 'navigation.html'  %}
 
-    <style>
-    .link{
-        color: blue;
-    }
-    p{
-        margin: 3px 0px;
-    }
-    .container{
-            position: absolute;
-            right: 400px;
-            max-width: 400px;
-            padding: 15px;
-            background: rgb(247,141, 045);
-            border-radius: 10px;
-            top: 190px;
-
-        }
-        input[type=text],input[type=password]{
-            width: 100%;
-            padding:13px;
-            margin: 5px 0 22px 0;
-            border:none;
-            background:#f1f1f1 ;
-            font-size: 15px;
-        }
-        .btn{
-            background: green;
-            color:#fff;
-            padding: 13px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            width: 100%;
-
-        }
-        .btn:hover{
-            background:#333;
-        }
-        .forget{
-            float: right;
-        }
 
 
-    </style>
 
-
-    <marquee style="font-family:Trebuchet MS; font-size: 25px; color: white;background-color: orangered;margin-top:0.5%">
+    <marquee style="font-family:Trebuchet MS,sans-serif; font-size: 25px; color: white;background-color: orangered;margin-top:0.5%">
         Student Login
     </marquee>
+{#<form class="container mt-5" method="post" action="{% url 'stu' %}">#}
 
-{#    <hr>#}
-<form class="container mt-5" method="post" action="{% url 'stu' %}">
-    {% csrf_token %}
+<style>
+    /*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-                <h1>Student Login</h1>
-                <hr>
-                <label for="email"><b>Email</b></label>
-                    <input type="text" name="email1" placeholder="Enter Email" required>
-                <label for="password"><b>Password</b></label>
-                    <input type="password" name="password1" placeholder="Enter Password" required>
-                <p>
-                    <input type="checkbox"/>Keep Me Sign In
-                <span class="forget"><a href="#">Forget Password</a></span>
-                </p>
-                <button type="submit" class="btn">Login</button>
-                <p style="text-align: center;">
-                    <span>Not a member?</span><a class="link" href="{% url 'student_signup' %}">Sign Up</a>
+/*===== VARIABLES CSS =====*/
 
-                </p>
-{#    <a href="#" class="btn btn-primary"style="margin-top: 2%;">CREATE AN ACCOUNT</a>#}
-       <a href="#" class="btn btn btn-danger btn-lg btn-block" style="margin-top: 4%;" role="button" aria-pressed="true">Sign in with Google</a>
+/*=== Colores ===*/
+:root{
+    --first-color: #12192C;
+    --text-color: #8590AD;
+}
+
+/*=== Fuente y tipografia ===*/
+:root{
+    --body-font: 'Roboto', sans-serif;
+    --big-font-size: 2rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.875rem;
+}
+@media screen and (min-width: 768px){
+    :root{
+        --big-font-size: 2.5rem;
+        --normal-font-size: 1rem;
+    }
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    color: var(--first-color);
+}
+h1{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+/*===== FORM =====*/
+.l-form{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*=== Shapes ===*/
+.shape1,
+.shape2{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.shape1{
+    top: -7rem;
+    left: -3.5rem;
+    background: linear-gradient(180deg, var(--first-color) 0%, rgba(196,196,196,0) 100%);
+}
+.shape2{
+    bottom: -6rem;
+    right: -5.5rem;
+    background: linear-gradient(180deg, var(--first-color) 0%, rgba(196,196,196,0) 100%);
+    transform: rotate(180deg);
+}
+/*=== Form ===*/
+.form{
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+.form__content{
+    width: 290px;
+}
+.form__img{
+    display: none;
+}
+.form__title{
+    font-size: var(--big-font-size);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.form__div{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin-bottom: 1rem;
+    padding: .25rem 0;
+    border-bottom: 1px solid var(--text-color);
+}
+/*=== Div focus ===*/
+
+    .form__div-one{
+    margin-bottom: 3rem;
+}
+
+.form__icon{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: .3s;
+}
+/*=== Icon focus ===*/
+.form__div.focus .form__icon{
+    color: var(--first-color);
+}
+
+.form__label{
+    display: block;
+    position: absolute;
+    left: .75rem;
+    top: .25rem;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    transition: .3s;
+}
+/*=== Label focus ===*/
+.form__div.focus .form__label{
+    top: -1.5rem;
+    font-size: .875rem;
+    color: var(--first-color);
+}
+
+.form__div-input{
+    position: relative;
+}
+.form__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    padding: .5rem .75rem;
+    font-size: 1.2rem;
+    color: var(--first-color);
+    transition: .3s;
+}
+.form__forgot{
+    display: block;
+    text-align: right;
+    margin-bottom: 2rem;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    font-weight: 500;
+    {#transition: .5px;#}
+}
+.form__forgot:hover{
+    color: var(--first-color);
+    transition: .5s;
+}
+.form__button{
+    width: 100%;
+    padding: 1rem;
+    font-size: var(--normal-font-size);
+    outline: none;
+    border: none;
+    margin-bottom: 3rem;
+    background-color: var(--first-color);
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+.form__button:hover{
+    box-shadow: 0 15px 36px rgba(0,0,0,.15);
+}
+
+/*=== Form social===*/
+.form__social{
+    text-align: center;
+}
+.form__social-text{
+    display: block;
+    font-size: var(--normal-font-size);
+    margin-bottom: 1rem;
+}
+.form__social-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    padding: .5rem;
+    background-color: green;
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 50%;
+}
+.form__social-icon:hover{
+    background-color: var(--first-color);
+}
+/*===== MEDIA QUERIS =====*/
+@media screen and (min-width: 968px){
+    .shape1{
+        width: 400px;
+        height: 400px;
+        top: -11rem;
+        left: -6.5rem;
+    }
+    .shape2{
+        width: 300px;
+        height: 300px;
+        right: -6.5rem;
+    }
+
+    .form{
+        grid-template-columns: 1.5fr 1fr;
+        padding: 0 2rem;
+    }
+    .form__content{
+        width: 320px;
+    }
+    .form__img{
+        display: block;
+        width: 700px;
+        justify-self: center;
+    }
+}
+</style>
+
+
+
+<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="l-form">
+            <div class="shape1"></div>
+            <div class="shape2"></div>
+                                       {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-dismissible alert-success">
+      <button type="button" class="close" data-dismiss="alert">
+      ×
+      </button>
+      <strong>{{message}}<strong>
+    </div>
+ {% endfor %}
+{% endif %}
+
+            <div class="form">
+                <img src="https://raw.githubusercontent.com/bedimcode/responsive-login-form/eafbae66248bc27a0b1e26e2a5ddd2ad0d01956b/assets/img/authentication.svg" alt="" class="form__img">
+    {#<form class="container mt-5" method="post" action="{% url 'stu' %}">#}
+                <form action="{% url 'stu' %}" class="form__content" method="post" >
+                    {% csrf_token %}
+                    <h1 class="form__title">Welcome</h1>
+
+                    <div class="form__div form__div-one">
+                        <div class="form__icon">
+                            <i class='bx bx-user-circle'></i>
+                        </div>
+
+                        <div class="form__div-input">
+                            <label for="" class="form__label">Email</label>
+                            <input type="text" name="email1" class="form__input">
+                        </div>
+                    </div>
+
+                    <div class="form__div">
+                        <div class="form__icon">
+                            <i class='bx bx-lock' ></i>
+                        </div>
+
+                        <div class="form__div-input">
+                            <label for="" class="form__label">Password</label>
+                            <input type="password" name="password1" class="form__input">
+                        </div>
+                    </div>
+                    <a href="/forgotpass" class="form__forgot">Forgot Password?</a>
+                    <p style="text-align: center;">
+                    <span>Not a member?</span>
+                        <a class="link" href="/homesite">Sign Up</a>
+                    </p>
+<div class="g-recaptcha" data-sitekey="6LdPVVUfAAAAAPc8ZjTepnHlPkd6hfHkqLgFKX2C
+"></div>
+                    <input type="submit" class="form__button" value="Login">
+
+                    <div class="form__social">
+                        <span class="form__social-text">login with Social Accounts</span>
+
+
+                        <a href="#" class="form__social-icon"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#" class="form__social-icon"><i class='bx bxl-google' ></i></a>
+                        <a href="#" class="form__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    </div>
+                </form>
             </div>
 
+        </div>
 
 
-</form>
+<script>
+    /*===== FOCUS =====*/
+const inputs = document.querySelectorAll(".form__input")
+
+/*=== Add focus ===*/
+function addfocus(){
+    let parent = this.parentNode.parentNode
+    parent.classList.add("focus")
+}
+
+/*=== Remove focus ===*/
+function remfocus(){
+    let parent = this.parentNode.parentNode
+    if(this.value === ""){
+        parent.classList.remove("focus")
+    }
+}
+
+/*=== To call function===*/
+inputs.forEach(input=>{
+    input.addEventListener("focus",addfocus)
+    input.addEventListener("blur",remfocus)
+})
+</script>
 
 
 

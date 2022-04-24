@@ -36,7 +36,6 @@
             <div class="col-sm-3">
                 <img src="{% static 'images/MUJ logo_High.png'%}" style=" margin-left:-5px;width:330px; height:80px">
             </div>
-{#
         </div>
     </div>
 
@@ -51,10 +50,10 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#" style="font-family:Trebuchet MS;"> <i class="fa fa-sign-language mr-1"></i>Password Change</a>
+            <a class="nav-link" href="{% url 'change_passwordstudent'%}" style="font-family:Trebuchet MS;"> <i class="fa fa-sign-language mr-1"></i>Password Change</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" style="font-family:Trebuchet MS;"> <i class="fa fa-sign-in mr-1"></i>Logout</a>
+            <a class="nav-link" href="{% url 'Logout'%}" style="font-family:Trebuchet MS;"> <i class="fa fa-sign-in mr-1"></i>Logout</a>
         </li>
 
     </ul>

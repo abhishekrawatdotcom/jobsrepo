@@ -19,6 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from job.views import *
 from superadmin.views import *
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
@@ -61,8 +63,8 @@ urlpatterns = [
     path('jobaddform', jobaddform, name="jobaddform"),
     path('joblist', joblist, name="joblist"),
     path('showuser', showusers, name="showuser"),
-    path('edituser', editusers, name="edituser"),
-    path('edituser/<int:id>', editusers, name="edituser"),
+    # path('edituser', editusers, name="edituser"),
+    # path('edituser/<int:id>', editusers, name="edituser"),
     path('updateudetail/<int:id>', updateuserdetail, name="upud"),
     path('deleteuser', deleteuserview, name="duv"),
     path('editjob/<int:id>', editjobs, name="ejob"),
@@ -75,8 +77,21 @@ urlpatterns = [
     path('alljob', alljobs, name='alj'),
     path('jpl/<int:id>', jobaply, name='jp'),
     path('jobaply', jobapplied, name='joba'),
+    path('jppl/<int:id>', jobaply11, name='joba'),
     path('deletejobcan', deletejobcan, name='djc'),
     path('payment', rrhomee, name='paym'),
+    path('succ', successpayment1, name='paym'),
+    path('payment1', rrhomee1, name='paym'),
     path('success', successpayment, name='succs'),
+    path('adminn/logout', auth_views.LogoutView.as_view(next_page='/student_login'), name='logout'),
+    path('forgotpass', forgotpassword, name='succs'),
+    path('checkemail', check_email, name='succs'),
+    path('forgot-otp', forgot_otp, name='succs'),
+    path('verifyotp', verify_forgot, name='succs'),
+    path('addpassw', change_password, name='succs'),
+    path('emailverify', emailcheckverify, name='ecv'),
+    path('homesite', student_signup11, name='hh'),
+    path('find', finddata, name='f'),
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
