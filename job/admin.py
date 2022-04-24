@@ -3,3 +3,5 @@ from job.models import User,Applyjobs
 admin.site.register(User)
 admin.site.register(Applyjobs)
 # Register your models here.
+# Register your models here.
+# Register your models here.
